@@ -20,7 +20,7 @@ return new class extends Migration
             $table->text('content')->nullable();
             $table->text('description')->nullable();
             $table->text('translation')->nullable();
-            $table->boolean('status')->default('true');
+            $table->boolean('status')->default(true);
             $table->string('image')->nullable();
             $table->integer('index')->default(0);
             $table->timestamps();

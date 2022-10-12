@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('title');
             $table->text('overview')->nullable();
             $table->text('description')->nullable();
-            $table->boolean('status')->default('true');
+            $table->boolean('status')->default(true);
             $table->string('image')->nullable();
             $table->integer('index')->default(0);
             $table->boolean('recommended')->default(false);
