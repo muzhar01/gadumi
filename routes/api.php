@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\CourseController;
+use App\Http\Controllers\ExerciseController;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -31,3 +33,10 @@ Route::middleware('auth:sanctum')->get('/logout', function (Request $request) {
 Route::post('/login', [LoginController::class, 'authenticate']);
 
 Route::post('/register', [RegisterController::class, 'register']);
+Route::group(['prefix'=>'admin'], function(){
+    Route::resource('/course', CourseController::class);
+    Route::post('/course/upload', [CourseController::class, 'upload']);
+    Route::resource('/exercise', ExerciseController::class);
+    Route::post('/exercise/upload', [ExerciseController::class, 'upload']);
+    
+});

@@ -9,56 +9,104 @@ class CourseController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        
+        $courses = Course::all();
+        if($courses->count() > 0){
+            return $this->success($courses, "Courses data!");
+        }else{
+            return $this->error("Not Found!");
+        }
     }
 
     /**
      * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            'title'=> 'required',
+            'description'=> '',
+            'status' => '',
+            'image' => '',
+        ]);
+
+        $course = new Course;
+        $course->fill($data);
+        if($course->save()){
+            return $this->success($course, "Course Saved Successfully!");
+        }else{
+            return $this->error("Course not saved!");
+        }
+        
     }
 
     /**
      * Display the specified resource.
-     *
-     * @param  \App\Models\Course  $course
-     * @return \Illuminate\Http\Response
      */
     public function show(Course $course)
     {
-        //
+        if($course){
+            return $this->success($course, "Course data!");
+        }else{
+            return $this->error("Not Found!");
+        }
     }
 
     /**
      * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Course  $course
-     * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Course $course)
+    public function update(Course $course, Request $request)
     {
-        //
+        $data = $request->validate([
+            'title'=> '',
+            'description' => '',
+            'status' => '',
+            'image'=> '',
+        ]);
+
+        $course->fill($data);
+        if($course->save()){
+            return $this->success($course, "Course Updated Successfully!");
+        }else{
+            return $this->error("Course not updated!");
+        }
     }
 
     /**
      * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Course  $course
-     * @return \Illuminate\Http\Response
      */
-    public function destroy(Course $course)
+    public function destroy($id)
     {
-        //
+        $course = Course::find($id);
+        if($course && $course->delete()){
+            return $this->success($course, "Course Deleted Successfully!");
+        }else{
+            return $this->error("Already Deleted!");
+        }
     }
+
+    /**
+     * upload image to storage.
+     */
+    public function upload(Request $request)
+    {
+        $request->validate([
+            'image'=> 'required|image'
+        ]);
+
+        if($request->hasFile('image')){
+            $name = time() . '.' . $request->image->getClientOriginalExtension();
+            $data = $request->image->move('storage/category', $name);
+            $out = "/storage/category/" . $name;
+        };
+
+        if(true){
+            return $this->success($out, "Course Image Uploaded!");
+        }else{
+            return $this->error("Not Deleted!");
+        }
+    }
+
 }
