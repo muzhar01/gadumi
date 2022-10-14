@@ -109,7 +109,7 @@ class QuestionController extends Controller
         };
 
         if(true){
-            return $this->success($out, "Course Image Uploaded!");
+            return $this->success($out, "Question Image Uploaded!");
         }else{
             return $this->error("Not Deleted!");
         }

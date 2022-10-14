@@ -26,14 +26,12 @@ class PlanController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'lesson_id'=>'required',
             'title'=>'required',
-            'content'=>'',
-            'description'=>'',
-            'translation'=>'',
-            'status'=>'',
-            'image'=>'',
-            'index'=>''
+            'price'=>'',
+            'currency_iso'=>'',
+            'currency_symbol'=>'',
+            'currency_left'=>'',
+            'status'=>''
         ]);
 
         $plan = new Plan;
@@ -90,28 +88,6 @@ class PlanController extends Controller
             return $this->success($plan, "Plan Deleted Successfully!");
         }else{
             return $this->error("Already Deleted!");
-        }
-    }
-
-    /**
-     * upload image to storage.
-     */
-    public function upload(Request $request)
-    {
-        $request->validate([
-            'image'=> 'required|image'
-        ]);
-
-        if($request->hasFile('image')){
-            $name = time() . '.' . $request->image->getClientOriginalExtension();
-            $data = $request->image->move('storage/plan', $name);
-            $out = "/storage/plan/" . $name;
-        };
-
-        if(true){
-            return $this->success($out, "Course Image Uploaded!");
-        }else{
-            return $this->error("Not Deleted!");
         }
     }
 
