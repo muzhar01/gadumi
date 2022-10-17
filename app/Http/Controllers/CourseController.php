@@ -19,6 +19,11 @@ class CourseController extends Controller
             return $this->error("Not Found!");
         }
     }
+    public function courselist()
+    {
+        $courses = Course::all();
+        return view('admin.courses.index',compact('courses'));
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -38,6 +43,24 @@ class CourseController extends Controller
             return $this->success($course, "Course Saved Successfully!");
         }else{
             return $this->error("Course not saved!");
+        }
+        
+    }
+    public function submit(Request $request)
+    {
+        $data = $request->validate([
+            'title'=> 'required',
+            'description'=> '',
+            'status' => '',
+            'image' => '',
+        ]);
+
+        $course = new Course;
+        $course->fill($data);
+        if($course->save()){
+            return response()->json("Course Add Successfully!");
+        }else{
+            return response()->json("Course not saved!");
         }
         
     }
@@ -73,6 +96,24 @@ class CourseController extends Controller
             return $this->error("Course not updated!");
         }
     }
+    public function updatecourse(Request $request,$id)
+    {
+        $data = $request->validate([
+            'title'=> '',
+            'description' => '',
+            'status' => '',
+            'image'=> '',
+        ]);
+
+        $course=Course::find($id);
+        $course->title=$request->title;
+        $course->description=$request->description;
+        if($course->save()){
+            return redirect()->route('courses-index')->with("success","Course Updated Successfully!");
+        }else{
+            return redirect()->route('courses-index')->with("error","Course not updated!");
+        }
+    }
 
     /**
      * Remove the specified resource from storage.
@@ -85,6 +126,30 @@ class CourseController extends Controller
         }else{
             return $this->error("Already Deleted!");
         }
+    }
+    public function delete($id)
+    {
+        $course = Course::find($id);
+        if($course && $course->delete()){
+            return redirect()->back()->with('success','Course deleted successfully');
+        }else{
+            return redirect()->back()->with('error','Failed to delete course');
+        }
+    }
+    public function status($id,$status)
+    {
+        $course = Course::find($id);
+        $course->status=$status;
+        if($course->update()){
+            return redirect()->back()->with('success','Status change successfully');
+        }else{
+            return redirect()->back()->with('error','Failed to change status');
+        }
+    }
+    public function edit($id)
+    {
+        $course = Course::find($id);
+        return view('admin.courses.edit',compact('course'));
     }
 
     /**
