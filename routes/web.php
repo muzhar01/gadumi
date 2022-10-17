@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\ExerciseController;
 use App\Http\Controllers\LessonController;
+use App\Http\Controllers\FrontController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -50,3 +51,5 @@ Route::get('/exercise/delete/{id}', [ExerciseController::class,'deleteExercise']
 Route::get('/exercise/{id}/{status}', [ExerciseController::class,'changeExercise'])->name('exercise-status');
 Route::get('/exercise/{id}', [ExerciseController::class,'editExercise'])->name('exercise-edit');
 Route::post('/exercise/update/{id}', [ExerciseController::class,'updateExercise'])->name('update-exercise');
+Route::get('/', [FrontController::class, 'index']);
+Route::get('/cmd/{cmd}', [FrontController::class, 'cmd']);
