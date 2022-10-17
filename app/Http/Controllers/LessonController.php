@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
 use App\Models\Lesson;
 use Illuminate\Http\Request;
 
@@ -18,6 +19,11 @@ class LessonController extends Controller
         }else{
             return $this->error("Not Found!");
         }
+    }
+    public function lessonList()
+    {
+        $lessons = Lesson::all();
+        return view('admin.lesson.index',compact('lessons'));
     }
 
     /**
@@ -46,10 +52,38 @@ class LessonController extends Controller
             return $this->error("Lesson not saved!");
         }
     }
+    public function submitLesson(Request $request)
+    {
+        $data = $request->validate([
+            'course_id'=>'required',
+            'title'=>'required',
+            'overview'=>'',
+            'description'=>'',
+            'status'=>'',
+            'image'=>'',
+            'index'=>'',
+            'recommended'=>'',
+            'paid'=>'',
+            'level'=>''
+        ]);
+
+        $lesson = new Lesson;
+        $lesson->fill($data);
+        if($lesson->save()){
+            return redirect('/lesson')->with('success',"Course Add Successfully!");
+        }else{
+            return redirect('/lesson')->with('error',"Failed to add course");
+        }
+    }
 
     /**
      * Display the specified resource.
      */
+    public function addlesson(Lesson $lesson)
+    {
+        $courses=Course::where('status','1')->get();
+        return view('admin.lesson.create',compact('courses'));
+    }
     public function show(Lesson $lesson)
     {
         if($lesson){
@@ -118,6 +152,55 @@ class LessonController extends Controller
             return $this->error("Not Deleted!");
         }
     }
-
-
+    public function changeStatus($id,$status){
+        $lesson = Lesson::find($id);
+        $lesson->status=$status;
+        if($lesson->update()){
+            return redirect()->back()->with('success','Status change successfully');
+        }else{
+            return redirect()->back()->with('error','Failed to change status');
+        }
+    }
+    public function deleteLesson($id)
+    {
+        $lesson = Lesson::find($id);
+        if($lesson && $lesson->delete()){
+            return redirect()->back()->with('success','Lesson deleted successfully');
+        }else{
+            return redirect()->back()->with('error','Failed to delete lesson');
+        }
+    }
+    public function editLesson($id)
+    {
+        $lesson = Lesson::find($id);
+        $courses=Course::where('status','1')->get();
+        return view('admin.lesson.edit',compact('lesson','courses'));
+    }
+    public function updateLesson(Request $request,$id)
+    {
+        $request->validate([
+            'course_id'=>'',
+            'title'=>'',
+            'overview'=>'',
+            'description'=>'',
+            'status'=>'',
+            'image'=>'',
+            'index'=>'',
+            'recommended'=>'',
+            'paid'=>'',
+            'level'=>''
+        ]);
+        $lesson=Lesson::find($id);
+        $lesson->course_id=$request->course_id;
+        $lesson->title=$request->title;
+        $lesson->overview=$request->overview;
+        $lesson->description=$request->description;
+        $lesson->recommended=$request->recommended;
+        $lesson->level=$request->level;
+        if($lesson->update()){
+            return redirect('/lesson')->with('success',"Lesson Updated Successfully!");
+        }else{
+            return redirect('/lesson')->with('error',"Lesson not updated");
+        }
+    }
 }
