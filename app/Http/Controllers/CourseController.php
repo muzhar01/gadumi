@@ -21,7 +21,7 @@ class CourseController extends Controller
     }
     public function courselist()
     {
-        $courses = Course::all();
+        $courses = Course::orderBy('id', 'DESC')->get();
         return view('admin.courses.index',compact('courses'));
     }
 
@@ -48,7 +48,7 @@ class CourseController extends Controller
     }
     public function submit(Request $request)
     {
-        $data = $request->validate([
+        $request->validate([
             'title'=> 'required',
             'description'=> '',
             'status' => '',
@@ -56,11 +56,18 @@ class CourseController extends Controller
         ]);
 
         $course = new Course;
-        $course->fill($data);
+        if($request->hasFile('image')){
+            $name = time() . '.' . $request->image->getClientOriginalExtension();
+            $data = $request->image->move('storage/category', $name);
+            $out = "/storage/category/" . $name;
+            $course->image=$out;
+        };
+        $course->title=$request->title;
+        $course->description=$request->description;
         if($course->save()){
-            return response()->json("Course Add Successfully!");
+            return redirect()->back()->with("success","Course Add Successfully!");
         }else{
-            return response()->json("Course not saved!");
+            return redirect()->back()->with("error","Course not saved!");
         }
         
     }
@@ -108,6 +115,17 @@ class CourseController extends Controller
         $course=Course::find($id);
         $course->title=$request->title;
         $course->description=$request->description;
+        if($request->hasFile('image')){
+            $image_path = public_path($course->image); 
+            if (isset($course->image) && file_exists($image_path)) {
+                unlink($image_path);
+            }
+            $name = time() . '.' . $request->image->getClientOriginalExtension();
+            $data = $request->image->move('storage/category', $name);
+            $out = "/storage/category/" . $name;
+            $course->image=$out;
+        };
+
         if($course->save()){
             return redirect()->route('courses-index')->with("success","Course Updated Successfully!");
         }else{

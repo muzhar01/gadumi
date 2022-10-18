@@ -27,7 +27,7 @@
         <div class="card mb-4">
           <h5 class="card-header">Edit Exercise</h5>
           <div class="card-body">
-            <form action="{{ route('update-exercise',$exercise->id) }}" method="post">
+            <form action="{{ route('update-exercise',$exercise->id) }}" method="post" enctype="multipart/form-data">
               @csrf
               <div class="row">
                 <div class="col-lg-6">
@@ -57,6 +57,14 @@
                   <label for="" class="mt-3">Description</label>
                   <textarea name="description" class="form-control" placeholder="Enter description">{{ $exercise->description ?? '' }}</textarea>
                 </div>
+                <div class="col-lg-6">
+                  <label for="" class="mt-3">Image</label>
+                  @if ($exercise->image)
+                  <br>
+                    <img src="{{ asset($exercise->image) }}" id="output" alt="" style="height: 100px" width="100px">
+                  @endif
+                  <input type="file" name="image" class="form-control" onchange="loadFile(event)">
+                </div>
                 <div class="col-lg-12">
                   <button type="submit" class="btn btn-outline-primary mt-4">Update</button>
                 </div>
@@ -77,5 +85,13 @@
   <!-- Add Course -->
 
 </div>
-
+<script>
+  var loadFile = function(event) {
+    var output = document.getElementById('output');
+    output.src = URL.createObjectURL(event.target.files[0]);
+    output.onload = function() {
+      URL.revokeObjectURL(output.src) // free memory
+    }
+  };
+</script>
 @endsection

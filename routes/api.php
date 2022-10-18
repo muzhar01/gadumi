@@ -7,6 +7,7 @@ use App\Http\Controllers\ExerciseController;
 use App\Http\Controllers\LessonController;
 use App\Http\Controllers\OptionController;
 use App\Http\Controllers\QuestionController;
+use App\Http\Controllers\PlanController;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;

@@ -5,6 +5,8 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\ExerciseController;
 use App\Http\Controllers\LessonController;
 use App\Http\Controllers\FrontController;
+use GuzzleHttp\Middleware;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,13 +19,17 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/admin',[AdminController::class,'index']);
-Route::post('/admin/login',[AdminController::class,'login'])->name('admin-login');
-Route::get('/dashboard',[AdminController::class,'dashboard'])->name('dashboard');
+
+Route::get('/admin',[AdminController::class,'index'])->name('admin.login');
+Route::post('/admin/login',[AdminController::class,'login'])->name('admin.login.submit');
+//Admin Routes
+Route::group(['prefix'=>'admin','middleware'=>'admin'],function() {
+    Route::get('/dashboard',[AdminController::class,'dashboard'])->name('admin.dashboard');
+    Route::get('/admin/logout',[AdminController::class,'logout'])->name('admin.logout');
+    
 // Courset Routes
 Route::controller(CourseController::class)->prefix('courses')->name('courses-')->group(function () {
     Route::get('/', 'courselist')->name('index');
@@ -51,5 +57,13 @@ Route::get('/exercise/delete/{id}', [ExerciseController::class,'deleteExercise']
 Route::get('/exercise/{id}/{status}', [ExerciseController::class,'changeExercise'])->name('exercise-status');
 Route::get('/exercise/{id}', [ExerciseController::class,'editExercise'])->name('exercise-edit');
 Route::post('/exercise/update/{id}', [ExerciseController::class,'updateExercise'])->name('update-exercise');
+
+//Admin Profile
+Route::get('/profile', [AdminController::class,'profile'])->name('admin-profile');
+Route::post('/profile/details', [AdminController::class,'profileDetails'])->name('admin-profile-details');
+Route::post('/change/password', [AdminController::class,'changePassword'])->name('admin-change-password');
+
+});
+
 Route::get('/', [FrontController::class, 'index']);
 Route::get('/cmd/{cmd}', [FrontController::class, 'cmd']);

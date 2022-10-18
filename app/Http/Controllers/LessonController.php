@@ -22,7 +22,7 @@ class LessonController extends Controller
     }
     public function lessonList()
     {
-        $lessons = Lesson::all();
+        $lessons = Lesson::orderBy('id', 'DESC')->get();
         return view('admin.lesson.index',compact('lessons'));
     }
 
@@ -66,13 +66,23 @@ class LessonController extends Controller
             'paid'=>'',
             'level'=>''
         ]);
-
         $lesson = new Lesson;
-        $lesson->fill($data);
+        if($request->hasFile('image')){
+            $name = time() . '.' . $request->image->getClientOriginalExtension();
+            $data = $request->image->move('storage/lesson', $name);
+            $out = "/storage/lesson/" . $name;
+            $lesson->image=$out;
+        };
+        $lesson->title=$request->title;
+        $lesson->course_id=$request->course_id;
+        $lesson->recommended=$request->recomended;
+        $lesson->level=$request->level;
+        $lesson->overview=$request->overview;
+        $lesson->description=$request->description;
         if($lesson->save()){
-            return redirect('/lesson')->with('success',"Course Add Successfully!");
+            return redirect('/admin/lesson')->with('success',"Lesson Add Successfully!");
         }else{
-            return redirect('/lesson')->with('error',"Failed to add course");
+            return redirect('/admin/lesson')->with('error',"Failed to add lesson");
         }
     }
 
@@ -191,6 +201,16 @@ class LessonController extends Controller
             'level'=>''
         ]);
         $lesson=Lesson::find($id);
+        if($request->hasFile('image')){
+            $image_path = public_path($lesson->image); 
+            if (isset($lesson->image) && file_exists($image_path)) {
+                unlink($image_path);
+            }
+            $name = time() . '.' . $request->image->getClientOriginalExtension();
+            $data = $request->image->move('storage/lesson', $name);
+            $out = "/storage/lesson/" . $name;
+            $lesson->image=$out;
+        };
         $lesson->course_id=$request->course_id;
         $lesson->title=$request->title;
         $lesson->overview=$request->overview;
@@ -198,9 +218,9 @@ class LessonController extends Controller
         $lesson->recommended=$request->recommended;
         $lesson->level=$request->level;
         if($lesson->update()){
-            return redirect('/lesson')->with('success',"Lesson Updated Successfully!");
+            return redirect('/admin/lesson')->with('success',"Lesson Updated Successfully!");
         }else{
-            return redirect('/lesson')->with('error',"Lesson not updated");
+            return redirect('/admin/lesson')->with('error',"Lesson not updated");
         }
     }
 }
