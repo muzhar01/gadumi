@@ -31,8 +31,8 @@
         <table class="table">
           <thead>
             <tr>
+              <th>Image</th>
               <th>Title</th>
-              <th>Description</th>
               <th>Status</th>
               <th>Actions</th>
             </tr>
@@ -44,9 +44,6 @@
                   <img src="{{ $exercise->image }}" alt="" style="height: 100px" width="100px">
                 </td>
                 <td>{{ $exercise->title }}</td>
-                <td>
-                  <p>{{ $exercise->description }}</p>
-                </td>
                 <td>
                   <div class="dropdown">
                     <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">

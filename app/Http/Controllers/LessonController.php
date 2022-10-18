@@ -80,9 +80,9 @@ class LessonController extends Controller
         $lesson->overview=$request->overview;
         $lesson->description=$request->description;
         if($lesson->save()){
-            return redirect('/admin/lesson')->with('success',"Course Add Successfully!");
+            return redirect('/admin/lesson')->with('success',"Lesson Add Successfully!");
         }else{
-            return redirect('/admin/lesson')->with('error',"Failed to add course");
+            return redirect('/admin/lesson')->with('error',"Failed to add lesson");
         }
     }
 
