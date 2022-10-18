@@ -40,6 +40,9 @@
           <tbody class="table-border-bottom-0">
             @foreach ($exercises as $exercise)
               <tr>
+                <td>
+                  <img src="{{ $exercise->image }}" alt="" style="height: 100px" width="100px">
+                </td>
                 <td>{{ $exercise->title }}</td>
                 <td>
                   <p>{{ $exercise->description }}</p>

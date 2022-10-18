@@ -22,7 +22,7 @@ class ExerciseController extends Controller
     }
     public function exerciseList()
     {
-        $exercises = Exercise::all();
+        $exercises = Exercise::orderBy('id', 'DESC')->get();
         return view('admin.exercise.index', compact('exercises'));
     }
     public function addExercise()
@@ -137,13 +137,21 @@ class ExerciseController extends Controller
             'image' => '',
             'index' => ''
         ]);
-
         $exercise = new Exercise();
-        $exercise->fill($data);
+        if($request->hasFile('image')){
+            $name = time() . '.' . $request->image->getClientOriginalExtension();
+            $data = $request->image->move('storage/exercise', $name);
+            $out = "/storage/exercise/" . $name;
+            $exercise->image=$out;
+        };
+        $exercise->title=$request->title;
+        $exercise->lesson_id=$request->lesson_id;
+        $exercise->content=$request->content;
+        $exercise->description=$request->description;
         if ($exercise->save()) {
-            return redirect('/exercise')->with('success', "Exercise Added Successfully!");
+            return redirect('/admin/exercise')->with('success', "Exercise Added Successfully!");
         } else {
-            return redirect('/exercise')->with('error', "Exercise not added");
+            return redirect('/admin/exercise')->with('error', "Exercise not added");
         }
     }
     public function changeExercise($id, $status)
@@ -184,15 +192,25 @@ class ExerciseController extends Controller
             'index' => ''
         ]);
         $exercise=Exercise::find($id);
+        if($request->hasFile('image')){
+            $image_path = public_path($exercise->image); 
+            if (isset($exercise->image) && file_exists($image_path)) {
+                unlink($image_path);
+            }
+            $name = time() . '.' . $request->image->getClientOriginalExtension();
+            $data = $request->image->move('storage/exercise', $name);
+            $out = "/storage/exercise/" . $name;
+            $exercise->image=$out;
+        };
         $exercise->lesson_id=$request->lesson_id;
         $exercise->title=$request->title;
-        $exercise->content=$request->content;content
+        $exercise->content=$request->content;
         $exercise->description=$request->description;
 
         if ($exercise->save()) {
-            return redirect('/exercise')->with('success', "Exercise Updated Successfully!");
+            return redirect('/admin/exercise')->with('success', "Exercise Updated Successfully!");
         } else {
-            return redirect('/exercise')->with('error', "Failed to Update Exercise");
+            return redirect('/admin/exercise')->with('error', "Failed to Update Exercise");
         }
     }
 }

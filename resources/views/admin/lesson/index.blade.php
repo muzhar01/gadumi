@@ -31,6 +31,8 @@
         <table class="table">
           <thead>
             <tr>
+              {{-- <th>Index</th> --}}
+              <th>Image</th>
               <th>Title</th>
               <th>Overview</th>
               <th>Status</th>
@@ -40,6 +42,12 @@
           <tbody class="table-border-bottom-0">
             @foreach ($lessons as $lesson)
               <tr>
+                {{-- <td>
+                  <i class="bx bx-transfer-alt"></i>
+                </td> --}}
+                <td>
+                  <img src="{{ asset($lesson->image) }}" alt="" style="height: 100px" width="100px">
+                </td>
                 <td>{{ $lesson->title }}</td>
                 <td>
                   <p>{{ $lesson->overview }}</p>
@@ -92,63 +100,7 @@
 
 
   <div class="content-backdrop fade"></div>
-  <!-- Add Course -->
-  <div class="modal fade" id="addCourse" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="modalCenterTitle">Add Course</h5>
-          <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="modal"
-            aria-label="Close"
-          ></button>
-        </div>
-        <form method="post" id="submit-form">
-          <div class="modal-body">
-            <div class="alert alert-primary alert-dismissible"  id="response" style="display:none" role="alert">
-            </div>
-            <div class="row">
-              <div class="col mb-3">
-                <label for="nameWithTitle" class="form-label">Title</label>
-                <input
-                  type="text"
-                  id="nameWithTitle"
-                  class="form-control"
-                  placeholder="Enter Title"
-                  name="title"
-                />
-              </div>
-            </div>
-            <div class="row">
-              <div class="col mb-3">
-                <label for="image" class="form-label">Image</label>
-                <input
-                  type="file"
-                  id="image"
-                  class="form-control"
-                  name="image"
-                />
-              </div>
-            </div>
-            <div class="row">
-              <div class="col mb-3">
-                <label for="nameWithTitle" class="form-label">Description</label>
-                <textarea class="form-control" placeholder="Enter Description" name="description"></textarea>
-              </div>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
-              Close
-            </button>
-            <button type="submit" class="btn btn-primary">Save changes</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
+
 </div>
 
 @endsection

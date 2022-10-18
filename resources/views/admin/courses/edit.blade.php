@@ -27,12 +27,16 @@
         <div class="card mb-4">
           <h5 class="card-header">Edit Course</h5>
           <div class="card-body">
-            <form action="{{ route('update-course',$course->id) }}" method="post">
+            <form action="{{ route('update-course',$course->id) }}" method="post" enctype="multipart/form-data">
               @csrf
               <label for="defaultFormControlInput" class="form-label mt-3">Title</label>
               <input type="text" class="form-control" id="defaultFormControlInput" placeholder="Enter title" aria-describedby="defaultFormControlHelp" name="title" value="{{ $course->title ?? '' }}">
               <label for="defaultFormControlInput" class="form-label mt-3">Image</label>
-              <input type="file" class="form-control" name="image">
+              @if ($course->image)
+              <br>
+                <img src="{{ asset($course->image) }}" id="output" alt="" style="height: 100px" width="100px">
+              @endif
+              <input type="file" class="form-control" name="image"  onchange="loadFile(event)">
               <label for="defaultFormControlInput" class="form-label mt-3">Description</label>
               <textarea name="description" id="description" class="form-control" placeholder="Enter description">{{ $course->description ?? '' }}</textarea>
               <button type="submit" class="btn btn-outline-primary mt-4" data-bs-toggle="modal" data-bs-target="#addCourse">
@@ -54,5 +58,13 @@
   <!-- Add Course -->
 
 </div>
-
+<script>
+  var loadFile = function(event) {
+    var output = document.getElementById('output');
+    output.src = URL.createObjectURL(event.target.files[0]);
+    output.onload = function() {
+      URL.revokeObjectURL(output.src) // free memory
+    }
+  };
+</script>
 @endsection
