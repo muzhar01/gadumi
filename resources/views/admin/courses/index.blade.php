@@ -43,7 +43,9 @@
           <tbody class="table-border-bottom-0">
             @foreach ($courses as $course)
               <tr>
-                <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>Angular Project</strong></td>
+                <td>
+                  <img src="{{ asset($course->image) }}" alt="" style="height: 100px" width="100px">
+                </td>
                 <td>{{ $course->title }}</td>
                 <td>
                   <p>{{ $course->description }}</p>
@@ -109,7 +111,8 @@
             aria-label="Close"
           ></button>
         </div>
-        <form method="post" id="submit-form">
+        <form method="post"  enctype="multipart/form-data" action="{{ route('courses-store') }}">
+          @csrf
           <div class="modal-body">
             <div class="alert alert-primary alert-dismissible"  id="response" style="display:none" role="alert">
             </div>
@@ -128,11 +131,14 @@
             <div class="row">
               <div class="col mb-3">
                 <label for="image" class="form-label">Image</label>
+                <br>
+                <img src="{{ asset('images/imageperview.png') }}" id="output" alt="" style="height: 100px" width="100px">
                 <input
                   type="file"
                   id="image"
                   class="form-control"
                   name="image"
+                  onchange="loadFile(event)"
                 />
               </div>
             </div>
@@ -154,32 +160,13 @@
     </div>
   </div>
 </div>
-
 <script>
-  $("#submit-form").submit(function(event) {
-    event.preventDefault();
-    $.ajax({
-        type: "post",
-        url: "{{ route('courses-store') }}",
-        dataType: "json",
-        headers: {
-          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        },
-        data: $('#submit-form').serialize(),
-        success: function(data){
-          if(data){
-            $('#response').html('');
-            $('#response').css('display','block');
-            $('#response').append(data);
-            setTimeout(function () {
-              window.location.reload(true)
-            }, 100);
-          }
-        },
-        error: function(data){
-             alert("Error")
-        }
-    });
-});
+  var loadFile = function(event) {
+    var output = document.getElementById('output');
+    output.src = URL.createObjectURL(event.target.files[0]);
+    output.onload = function() {
+      URL.revokeObjectURL(output.src) // free memory
+    }
+  };
 </script>
 @endsection
