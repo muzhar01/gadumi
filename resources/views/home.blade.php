@@ -1,89 +1,756 @@
-<html lang="en">
-<head>
-    <meta charset="utf-8">
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Gadumi | Home</title>
 
-    <title>Gadumi</title>
-    <meta name="description" content="">
-    <meta name="author" content="htmlGenerator">
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Arial&display=swap" rel="stylesheet">
+        <!-- Latest compiled and minified CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="styles.css">
+        <!-- JQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-    <style>
-        /*
-                Figma Background for illustrative/preview purposes only.
-                You can remove this style tag with no consequence
-              */
-        body {
-            background: #E5E5E5;
-        }
+        <!-- Latest compiled JavaScript -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+        <style>
+            :root {
+                --primary-new: #0b7cfe;
+                --primary-new-2: rgb(0, 170, 255);
+                --primary-new-lite: #6eaaf7;
 
-    </style>
+                --success-new: rgb(20, 230, 140);
+                --success-new-2: rgb(59, 255, 170);
 
-</head>
+                --warning-new: rgb(255, 120, 10);
+                --warning-new-2: rgb(255, 139, 51);
+            }
 
-<body>
-    <div class=e1_2>
-        <div class="e1_3"></div>
-        <div class="e1_4"></div>
-        <div class="e1_5"></div>
-        <div class="e1_6"></div>
-        <div class="e1_7"></div>
-        <div class="e1_8"></div>
-        <div class="e1_9"></div>
-        <div class="e1_10"></div>
-        <div class="e1_11"></div>
-        <div class="e1_12"></div>
-        <div class="e1_13"></div>
-        <div class="e1_14"></div>
-        <div class="e1_15"></div>
-        <div class="e1_16"></div>
-        <div class="e1_17"></div>
-        <div class="e1_18"></div>
-        <div class="e1_19"></div>
-        <div class="e1_20"></div>
-        <div class="e1_21"></div>
-        <div class="e1_22"></div>
-        <div class="e1_23"></div>
-        <div class="e1_24"></div>
-        <div class="e1_25"></div>
-        <div class="e1_26"></div>
-        <div class="e1_27"></div>
-        <div class="e1_28"></div>
-        <div class="e1_29"></div>
-        <div class="e1_30"></div>
-        <div class="e1_31"></div>
-        <div class="e1_32"></div>
-        <div class="e1_33"></div>
-        <div class="e1_34"></div>
-        <div class="e1_35"></div>
-        <div class="e1_36"></div>
-        <div class="e1_37"></div>
-        <div class="e1_38"></div>
-        <div class="e1_39"></div>
-        <div class="e1_40"></div>
-        <div class="e1_41"></div>
-        <div class="e1_42"></div>
-        <div class="e1_43"></div>
-        <div class="e1_44"></div>
-        <div class="e1_45"></div>
-        <div class="e1_46"></div>
-        <div class="e1_47"></div>
-        <div class="e1_48"></div>
-        <div class="e1_49"></div>
-        <div class="e1_50"></div>
-        <div class="e1_51"></div>
-        <div class="e1_52"></div>
-        <div class="e1_53"></div>
-        <div class="e1_54"></div>
-        <div class="e1_55"></div>
-        <div class="e1_56"></div>
-        <div class="e1_57"></div>
-        <div class="e1_58"></div>
-        <div class="e1_59"></div>
-        <div class="e1_60"></div>
-        <div class="e1_61"></div><span class="e1_64">Wypróbuj Gadumi całkowicie za darmo</span><span class="e1_65">Wypróbuj Gadumi za darmo</span><span class="e1_66">Nie masz nic do stracenia. Możesz tylko zyskać.</span><span class="e1_67">Hi!</span><span class="e1_68">How are you?</span><span class="e1_69">Hello</span><span class="e1_70">Great</span><span class="e1_71">.</span><span class="e1_72">Bye!</span><span class="e1_73">See you!</span><span class="e1_74">Rozmawiaj biegle po angielsku w krótkim czasie</span><span class="e1_76">Opanuj język angielski dzięki kursowi stworzonemu przez miłośników języków obcych bez konieczności płacenia nauczycielowi za każdą godzinę nauki.</span><span class="e1_77">Zacznij teraz</span><span class="e1_78">Poznaj Gadumi</span><span class="e1_79">kurs stworzony z ❤️ właśnie dla Ciebie</span><span class="e1_80">Zawsze jest dobry czas na naukę</span><span class="e1_81">Dzięki krótkim kilkuminutowym lekcjom zawsze znajdziesz chwilę, aby rozwijać swoje zdolności językowe.</span><span class="e1_82">Poznaj angielski</span><span class="e1_83">Twój rozwój jest dla nas najważniejszy</span><span class="e1_84">Każdego tygodnia zespół Gadumi przygotowuje</span><span class="e1_85">dla Ciebie nowe lekcje dzięki którym jeszcze lepiej poznasz język angielski.</span><span class="e1_86">Poznaj angielski</span><span class="e1_87">Otwórz się na nowe możliwości</span><span class="e1_88">Znając angielski uzyskujesz dostęp do nieograniczonej wiedzy</span><span class="e1_89">z całego świata. Pamiętaj, że większość książek i treści w Internecie powstaje właśnie po angielsku!</span><span class="e1_90">Poznaj angielski</span><span class="e1_91">Dlaczego warto uczyć się języka angielskiego wraz z Gadumi?</span><span class="e1_92">Najczęściej używane słowa</span><span class="e1_93">wraz ze zdjęciami i przykładami, które pomogą Ci szybciej i lepiej je zapamiętać</span><span class="e1_94">Dialogi z życia wzięte</span><span class="e1_95">w oparciu o codzienne sytuacje jak np. zakupy w sklepie czy rezerwacja biletu</span><span class="e1_96">Lekcje gramatyki</span><span class="e1_97">wyjaśniające jak budować wypowiedzi</span><span class="e1_98">w poprawny sposób</span><span class="e1_99">Fiszki</span><span class="e1_100">czyli jedna z najpopularniejszych metod do nauki języków obcych</span><span class="e1_101">Co o Gadumi mówią jego użytkownicy?</span><span class="e1_102">Norwegia</span><span class="e1_103">Adam K.</span><span class="e1_104">Przykładowy tekst, tekst, kte przykładowy tekst, tekst tekst Przykładowy tekst, przykładow y, tekst, ktest, t</span><span class="e1_105">tekst Przykładowy tekst, przykładow y</span><span class="e1_106">Wielka Brytania</span><span class="e1_107">Adam K.</span><span class="e1_108">Przykładowy tekst, tekst, te przykładowy, tekst, ktest tekst Przykładowy tekst, tekst Przykładowy tekst, przykładowyzykładowy tekst Przykładowy tekst</span><span class="e1_109">Polska</span><span class="e1_110">Adam K.</span><span class="e1_111">Przykładowy tekst, przykład przykładowy, przykład tekst przykład, tekst Przykładowy tekst, zykładowy tekst Przykładowy tekst, przykładowy</span><span class="e1_112">Polska</span><span class="e1_113">Adam K.</span><span class="e1_114">Przykładowy tekst, tekst te przykładowy testk testk, kt tekst Przykładowy tekst, przykładowy , teskt, testk ,</span><span class="e1_115">tekst, przykładowy</span><span class="e1_116">Czas nie gra roli</span><span class="e1_117">ucz się języka angielskiego gdzie chcesz, kiedy chcesz i jak długo chcesz, 24 h/7</span><span class="e1_118">Zawsze przy Tobie</span><span class="e1_119">kurs dostępny na każdym urządzeniu.</span><span class="e1_120">Telefon, tablet, laptop? Ty wybierasz!</span><span class="e1_121">Nauka wydaje się być zabawą</span><span class="e1_122">Czytasz, słuchasz, powtarzasz, klikasz.</span><span class="e1_123">Tworząc Gadumi pamiętaliśmy, że nauka powinna być nie tylko skuteczna, ale też przyjemna.</span><span class="e1_124">Poznaj angielski</span><span class="e1_125">© Gadumi Regulamin Polityka prywatności Kontakt</span><span class="e1_126">Created with ❤️ by language lovers</span><span class="e1_127">Zaloguj się</span><span class="e1_128">Zacznij teraz!</span><span class="e1_129">Opinie</span><span class="e1_130">Jak to działa</span><span class="e1_131">Dlaczego warto</span><span class="e1_132">Gadumi</span><span class="e1_133">Twój kurs języka angielskiego</span>
-    </div>
-</body>
+            .site-header {
+                opacity: 1;
+                background-color: rgb(255, 255, 255);
+                background-size: auto;
+                background-attachment: scroll;
+                background-repeat: repeat;
+                background-position: left top;
+                border-radius: 0px;
+                border-left: 1px solid rgb(235, 235, 235);
+                border-right: 1px solid rgb(235, 235, 235);
+                border-top: 1px solid rgb(235, 235, 235);
+                border-bottom: 1px solid rgb(235, 235, 235);
+                box-shadow: none;
+                position: fixed;
+                top: 0;
+                width: 100%;
+                z-index: 5000;
+            }
+
+            .site-logo {
+                width: 40px;
+                height: 40px;
+                display: block;
+            }
+
+            .site-info .site-name h1 {
+                    font-size: 29px;
+                    line-height: 29px;
+                    color: var(--primary-new);
+                    font-weight: 700;
+            }
+
+            .site-info .site-name p {
+                color: var(--primary-new-lite);
+                font-size: 14px;
+                line-height: 16px;
+            }
+
+            .main-nav-menu li a {
+                color: #161823;
+                font-size: 15px;
+                line-height: 18px;
+                font-weight: 600;
+            }
+
+            .main-nav-menu li a:hover {
+                color: var(--primary-new-2);
+            }
+
+            .btn.btn-primary-new {
+                background-color: var(--primary-new);
+                color: white;
+                border-radius: 8px;
+                padding: 3px 32px;
+                font-weight: 600;
+            }
+
+            .btn.btn-primary-new:hover {
+                background-color: var(--primary-new-2);
+                color: white;
+            }
+
+            .btn.btn-success-new {
+                background-color: var(--success-new);
+                color: black;
+                border-radius: 8px;
+                padding: 3px 32px;
+                font-weight: 600;
+            }
+
+            .btn.btn-success-new:hover {
+                background-color: var(--success-new-2);
+                color: black;
+            }
+
+            .btn.btn-warning-new {
+                background-color: var(--warning-new);
+                color: white;
+                border-radius: 8px;
+                padding: 3px 32px;
+                font-weight: 600;
+            }
+
+            .btn.btn-warning-new:hover {
+                background-color: var(--warning-new-2);
+                color: white;
+            }
+
+            .btn.btn-primary-new-outline {
+                background-color: white;
+                color: var(--primary-new);
+                border-radius: 8px;
+                padding: 2px 28px;
+                font-weight: 600;
+                border: 2px solid var(--primary-new);
+            }
+
+            .btn.btn-primary-new-outline:hover {
+                background-color: white;
+                color: var(--primary-new);
+                border-radius: 8px;
+                padding: 2px 32px;
+                font-weight: 600;
+                border: 2px solid var(--primary-new);
+            }
+
+            .btn.btn-success-new-outline {
+                background-color: white;
+                color: var(--success-new);
+                border-radius: 8px;
+                padding: 2px 28px;
+                font-weight: 600;
+                border: 2px solid var(--success-new);
+            }
+
+            .btn.btn-success-new-outline:hover {
+                background-color: white;
+                color: var(--success-new);
+                border-radius: 8px;
+                padding: 2px 32px;
+                font-weight: 600;
+                border: 2px solid var(--success-new);
+            }
+
+            .section-hero {
+                margin-top: 66px;
+                height: 500px;
+            }
+
+            .section-hero .hero-image img.img-girl {
+                width: 248px;
+                height: 330px;
+                display: block;
+                position: absolute;
+                left: 129px;
+                top: 42px;
+                z-index: 2;
+            }
+
+            .section-hero .hero-image img.img-arrow {
+                width: 207px;
+                height: 400px;
+                display: block;
+                position: absolute;
+                left: 85px;
+                top: 133px;
+                transform: rotate(179deg);
+            }
+
+            .section-hero .hero-image .hollow-el {
+                width: 428px;
+                height: 164px;
+                display: block;
+                position: absolute;
+                left: 59px;
+                top: 206px;
+                opacity: 1;
+                background-color: var(--primary-new);
+                background-size: cover;
+                background-attachment: scroll;
+                background-repeat: repeat;
+                background-position: left top;
+                border-radius: 100px;
+                border: none;
+                box-shadow: none;
+            }
+
+            .section-hero .hero-image .text-el {
+                color: var(--primary-new-lite);
+                font-weight: 700;
+                font-size: 18px;
+            }
+
+            .section-hero .hero-image .text-el.text-el-1 {
+                width: 197px;
+                height: 90px;
+                display: block;
+                position: absolute;
+                left: 128px;
+                top: 116px;
+            }
+            .section-hero .hero-image .text-el.text-el-2 {
+                width: 148px;
+                height: 53px;
+                display: block;
+                position: absolute;
+                left: 396px;
+                top: 149px;
+            }
+
+            .section-hero .hero-image .text-el.text-el-3 {
+                width: 197px;
+                height: 90px;
+                display: block;
+                position: absolute;
+                left: -15px;
+                top: 193px;
+            }
+
+            .section-hero .hero-image .text-el.text-el-4 {
+                width: 179px;
+                height: 53px;
+                display: block;
+                position: absolute;
+                left: 442px;
+                top: 228px;
+            }
+
+            .section-hero .hero-image .text-el.text-el-5 {
+                width: 179px;
+                height: 53px;
+                display: block;
+                position: absolute;
+                left: 52px;
+                top: 284px;
+            }
+
+            .section-hero .hero-image .text-el.text-el-6 {
+                width: 179px;
+                height: 53px;
+                display: block;
+                position: absolute;
+                left: 406px;
+                top: 310px;
+            }
+
+            .section-hero .hero-text h1 {
+                font-size: 40px;
+                line-height: 48px;
+                font-weight: 700;
+            }
+
+            .section-hero .hero-text p {
+                font-size: 18px;
+                line-height: 30px;
+            }
+
+            .section-1 {
+
+            }
+
+            .section-title {
+                font-weight: 700;
+            }
+
+            .section-1-desc {
+                font-weight: 700;
+            }
+
+            .section-1-text {
+                width: 70%;
+                margin-left: 70px;
+                margin-top: -64px;
+            }
+
+            .section-1-text h1 {
+                font-size: 32px;
+                line-height: 38px;
+                font-weight: 700;
+            }
+
+            .section-1-img {
+                width: 236px;
+                height: 506px;
+                overflow: hidden;
+                margin: auto;
+            }
+
+            .section-1-img img {
+                width: 1051px;
+                height: 736px;
+            }
+
+            .section-2-img {
+                width: 510px;
+                height: 322px;
+                overflow: hidden;
+                margin: auto;
+                border-radius: 20px;
+            }
+
+            .section-2-img img {
+                width: 510px;
+                height: 340px;
+            }
+
+            .section-2-text {
+                width: 70%;
+                margin-left: 70px;
+            }
+
+            .section-2-text h1 {
+                font-size: 32px;
+                line-height: 38px;
+                font-weight: 700;
+            }
+
+            .section-3 .image img {
+                width: 45px;
+                height: 45px;
+            }
+
+            .section-3 .box .text {
+                margin-right: 48px;
+            }
+
+            .section-3 .box .text h3 {
+                color: #161823;
+                font-size: 18px;
+                line-height: 21px;
+                font-weight: 700;
+            }
+
+            .section-testimonials {
+                background-color: rgb(235, 244, 255);
+                padding-bottom: 96px !important;
+            }
+
+            .section-testimonials .box {
+                opacity: 1;
+                background-color: rgb(255, 255, 255);
+                background-size: cover;
+                background-attachment: scroll;
+                background-repeat: repeat;
+                background-position: left top;
+                border-radius: 10px;
+                border-left: 1px solid rgb(225, 225, 225);
+                border-right: 1px solid rgb(225, 225, 225);
+                border-top: 1px solid rgb(225, 225, 225);
+                border-bottom: 1px solid rgb(225, 225, 225);
+                box-shadow: 0px 2px 10px rgb(215 215 215);
+                width: 220px;
+                height: 296px;
+                padding: 16px 16px 8px;
+            }
+
+            .section-testimonials .box .rating img {
+                width: 20px;
+                height: 20px;
+            }
+
+            .section-testimonials .box .name {
+                color: #161823;
+                font-size: 17px;
+                line-height: 20px;
+            }
+
+            .section-testimonials .box .comment {
+                color: #161823;
+                font-size: 14px;
+                line-height: 24px;
+            }
+
+            .section-testimonials .box .country .country-name {
+                color: #161823;
+                font-size: 14px;
+                line-height: 16px;
+            }
+
+            .section-testimonials .box .country .country-flag img {
+                width: 20px;
+                height: 20px;
+            }
+
+            .section-call-to-action {
+                opacity: 1;
+                background-size: cover;
+                background-attachment: scroll;
+                background-image: linear-gradient(0deg, rgb(105, 0, 253) 0%, rgb(11, 124, 254) 100%);
+                background-repeat: repeat;
+                background-position: left top;
+                border-radius: 0px;
+                border: none;
+                box-shadow: none;
+                color: white;
+                padding-bottom: 96px !important;
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <!-- Header -->
+        <header class="site-header">
+            <div class="container">
+                <div class="top-bar d-flex align-items-center py-2 gap-4">
+                    <!-- Site Logo -->
+                    <div class="site-info flex-grow-1 d-flex align-items-center gap-2">
+                        <div class="site-logo d-flex align-items-center">
+                            <img src="https://gadumi.pl/lib/glcqhy/united-kingdom-1-l92kgbny.svg" alt="Gadumi">
+                        </div>
+                        <div class="site-name">
+                            <h1 class="m-0">Gadumi</h1>
+                            <p class="m-0">Your English language course</p>
+                        </div>
+                    </div>
+                    <!-- /Site Logo -->
+
+                    <!-- Main Navigation Menu -->
+                    <div class="main-nav-menu navbar navbar-expand-lg">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <nav class="collapse navbar-collapse">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">How it's working</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">Why is it worth it</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">Feedback</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <!-- /Main Navigation Menu -->
+
+                    <!-- Featured Navigation Menu -->
+                    <div class="featured-menu d-flex gap-3">
+                        <a href="#" class="btn btn-primary-new">Start now!</a>
+                        <a href="#" class="btn btn-primary-new-outline">Log in</a>
+                    </div>
+                    <!-- /Featured Navigation Menu -->
+                </div>
+            </div>
+        </header>
+        <!-- /Header -->
+
+        <!-- Hero Section -->
+        <section class="section-hero mb-5">
+            <div class="container h-100">
+                <div class="row h-100">
+                    <div class="col-12 col-md-6 px-5">
+                        <div class="hero-image position-relative h-100">
+                            <img class="img-girl" src="https://gadumi.pl/files/dynamicContent/sites/glcqhy/images/pl/webpage_274/l9cdjs4g/element_24494/ghen-mar-cuano-R6dSBkz32B8-unsplash-removebg-preview.png" alt="">
+                            <img class="img-arrow" src="data:image/svg+xml,%3Csvg%20fill%3D%27rgb%2811%2C%20124%2C%20254%29%27%20id%3D%27ww-location-arrow%27%20version%3D%271.1%27%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27100%25%27%20height%3D%27100%25%27%20viewBox%3D%270%200%2011%2014%27%3E%3Cpath%20d%3D%27M10.945%202.727l-5%2010q-0.133%200.273-0.445%200.273-0.039%200-0.117-0.016-0.172-0.039-0.277-0.176t-0.105-0.309v-4.5h-4.5q-0.172%200-0.309-0.105t-0.176-0.277%200.031-0.328%200.227-0.234l10-5q0.102-0.055%200.227-0.055%200.211%200%200.352%200.148%200.117%200.109%200.145%200.27t-0.051%200.309z%27%3E%3C%2Fpath%3E%3C%2Fsvg%3E" alt="">
+                            <div class="hollow-el"></div>
+                            <div class="text-el text-el-1">Hello</div>
+                            <div class="text-el text-el-2">Hi!</div>
+                            <div class="text-el text-el-3">How are you?</div>
+                            <div class="text-el text-el-4">Great.</div>
+                            <div class="text-el text-el-5">See you!</div>
+                            <div class="text-el text-el-6">Bye!</div>
+                        </div>
+                    </div>
+                    <div class="hero-text col-12 col-md-6 d-flex flex-column gap-3 justify-content-center px-5">
+                        <h1>Speak English fluently in no time</h1>
+                        <p>
+                            <b>Master the English language</b> with a course created by foreign language lovers without having to pay the teacher for each hour of study.
+                        </p>
+                        <a href="#" class="btn btn-primary-new btn-lg w-fit-content" style="width: fit-content">Get started now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /Hero Section -->
+
+        <!-- Section 1 -->
+        <section class="section-1 mb-5">
+            <div class="container">
+                <h1 class="section-1-title text-center">Meet Gadumi</h1>
+                <h2 class="section-1-desc text-center">a course created with ❤️ just for you</h2>
+                <div class="row mx-auto mt-5" style="width: 80%;">
+                    <div class="col-md-7 d-flex align-items-center">
+                        <div class="section-1-text d-flex flex-column gap-3 justify-content-center">
+                            <h1>It's always a good time to learn</h1>
+                            <p>
+                                Thanks to the short lessons of a few minutes, you will always find a moment to develop your language skills.
+                            </p>
+                            <a href="#" class="btn btn-success-new btn-lg w-fit-content" style="width: fit-content">Learn English</a>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="section-1-img d-flex justify-content-center align-items-center">
+                            <img src="https://gadumi.pl/files/dynamicContent/sites/glcqhy/images/pl/webpage_274/l9cdjs4g/element_24503/Vivo-X80-Pro_Screenshot_20220930-151731_Chrome.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /Section 1 -->
+
+        <!-- Section 2 -->
+        <section class="section-2 mb-5 pt-5">
+            <div class="container">
+                <div class="row mx-auto" style="width: 80%;">
+                    <div class="col-md-6">
+                        <div class="section-2-img d-flex justify-content-center align-items-center">
+                            <img src="{{ asset('images/gadumi-section-2-image.webp') }}" alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-6 d-flex align-items-center">
+                        <div class="section-2-text d-flex flex-column gap-3 justify-content-center ml-5">
+                            <h1>Your development is most important to us</h1>
+                            <p>
+                                Every week, the Gadumi team prepares new lessons for you, thanks to which you will learn the English language even better.
+                            </p>
+                            <a href="#" class="btn btn-success-new btn-lg w-fit-content" style="width: fit-content">Learn English</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /Section 2 -->
+
+        <!-- Section 1 -->
+        <section class="section-1 mb-5 pt-5">
+            <div class="container">
+                <div class="row mx-auto" style="width: 80%;">
+                    <div class="col-md-7 d-flex align-items-center">
+                        <div class="section-1-text d-flex flex-column gap-3 justify-content-center">
+                            <h1>Learning feels like fun</h1>
+                            <p>
+                                You read, listen, repeat, click. When creating Gadumi, we remembered that learning should not only be effective, but also enjoyable.
+                            </p>
+                            <a href="#" class="btn btn-success-new btn-lg w-fit-content" style="width: fit-content">Learn English</a>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="section-1-img d-flex justify-content-center align-items-center">
+                            <img src="https://gadumi.pl/files/dynamicContent/sites/glcqhy/images/pl/webpage_274/l9cdjs4g/element_24503/Vivo-X80-Pro_Screenshot_20220930-151731_Chrome.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /Section 1 -->
+
+        <!-- Section 2 -->
+        <section class="section-2 mb-5 pt-5">
+            <div class="container">
+                <div class="row mx-auto" style="width: 80%;">
+                    <div class="col-md-6">
+                        <div class="section-2-img d-flex justify-content-center align-items-center">
+                            <img src="{{ asset('images/gadumi-section-2-img-2.webp') }}" alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-6 d-flex align-items-center">
+                        <div class="section-2-text d-flex flex-column gap-3 justify-content-center ml-5">
+                            <h1>Open up to new possibilities</h1>
+                            <p>
+                                Knowing English you gain access to unlimited knowledge from all over the world. Remember that most books and content on the Internet are written in English!
+                            </p>
+                            <a href="#" class="btn btn-success-new btn-lg w-fit-content" style="width: fit-content">Learn English</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /Section 2 -->
+
+        <!-- Section 3 -->
+        <section class="section-3 mb-5 pt-5">
+            <div class="container">
+                <h1 class="section-title text-center">Why is it worth learning English with Gadumi?</h1>
+                <div class="row mt-5">
+                    <div class="box col-12 col-md-6 col-lg-4 d-flex gap-3 mb-4">
+                        <div class="image py-2">
+                            <img src="{{ asset('images/gadumi-hello.svg') }}" alt="">
+                        </div>
+                        <div class="text">
+                            <h3>The most commonly used words</h3>
+                            <p>along with photos and examples to help you remember them faster and better</p>
+                        </div>
+                    </div>
+                    <div class="box col-12 col-md-6 col-lg-4 d-flex gap-3 mb-4">
+                        <div class="image py-2">
+                            <img src="{{ asset('images/gadumi-hello.svg') }}" alt="">
+                        </div>
+                        <div class="text">
+                            <h3>Grammar lessons</h3>
+                            <p>explaining how to build statements correctly</p>
+                        </div>
+                    </div>
+                    <div class="box col-12 col-md-6 col-lg-4 d-flex gap-3 mb-4">
+                        <div class="image py-2">
+                            <img src="{{ asset('images/gadumi-hello.svg') }}" alt="">
+                        </div>
+                        <div class="text">
+                            <h3>Always by your side</h3>
+                            <p>course available on any device. Phone, tablet, laptop? You choose!</p>
+                        </div>
+                    </div>
+                    <div class="box col-12 col-md-6 col-lg-4 d-flex gap-3 mb-4">
+                        <div class="image py-2">
+                            <img src="{{ asset('images/gadumi-hello.svg') }}" alt="">
+                        </div>
+                        <div class="text">
+                            <h3>Real-life dialogues</h3>
+                            <p>based on everyday situations such as shopping in a store or booking a ticket</p>
+                        </div>
+                    </div>
+                    <div class="box col-12 col-md-6 col-lg-4 d-flex gap-3 mb-4">
+                        <div class="image py-2">
+                            <img src="{{ asset('images/gadumi-hello.svg') }}" alt="">
+                        </div>
+                        <div class="text">
+                            <h3>Flashcards</h3>
+                            <p>which is one of the most popular methods for learning foreign languages</p>
+                        </div>
+                    </div>
+                    <div class="box col-12 col-md-6 col-lg-4 d-flex gap-3 mb-4">
+                        <div class="image py-2">
+                            <img src="{{ asset('images/gadumi-hello.svg') }}" alt="">
+                        </div>
+                        <div class="text">
+                            <h3>Time doesn't matter</h3>
+                            <p>learn English wherever you want, when you want and for as long as you want, 24/7</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /Section 1 -->
+
+        <!-- section-testimonials -->
+        <section class="section-testimonials py-5">
+            <div class="container">
+                <h1 class="section-title text-center">What do users say about Gadumi?</h1>
+                <div class="d-flex align-items-center justify-content-between mt-5 mx-auto" style="width: 78%;">
+                    <div class="box d-flex flex-column">
+                        <div class="rating d-flex gap-1 align-items-center justify-content-center mb-2">
+                            <img src="{{ asset('images/rating-star.svg') }}" alt="">
+                            <img src="{{ asset('images/rating-star.svg') }}" alt="">
+                            <img src="{{ asset('images/rating-star.svg') }}" alt="">
+                            <img src="{{ asset('images/rating-star.svg') }}" alt="">
+                            <img src="{{ asset('images/rating-star.svg') }}" alt="">
+                        </div>
+                        <h3 class="name">Adam K.</h3>
+                        <p class="comment flex-grow-1">
+                            Sample text, example text, example text, example text, sample text, sample text, sample text, sample text 
+                        </p>
+                        <div class="country d-flex align-items-center justify-content-end gap-2">
+                            <div class="country-name">Poland</div>
+                            <div class="country-flag d-flex align-items-center">
+                                <img src="{{ asset('images/poland-flag.svg') }}" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="box d-flex flex-column">
+                        <div class="rating d-flex gap-1 align-items-center justify-content-center mb-2">
+                            <img src="{{ asset('images/rating-star.svg') }}" alt="">
+                            <img src="{{ asset('images/rating-star.svg') }}" alt="">
+                            <img src="{{ asset('images/rating-star.svg') }}" alt="">
+                            <img src="{{ asset('images/rating-star.svg') }}" alt="">
+                            <img src="{{ asset('images/rating-star.svg') }}" alt="">
+                        </div>
+                        <h3 class="name">Adam K.</h3>
+                        <p class="comment flex-grow-1">
+                            Sample text, sample text, sample text, sample text, sample text, sample text, sample text, sample text, sample text 
+                        </p>
+                        <div class="country d-flex align-items-center justify-content-end gap-2">
+                            <div class="country-name">Great Britain</div>
+                            <div class="country-flag d-flex align-items-center">
+                                <img src="{{ asset('images/great-britain-flag.svg') }}" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="box d-flex flex-column">
+                        <div class="rating d-flex gap-1 align-items-center justify-content-center mb-2">
+                            <img src="{{ asset('images/rating-star.svg') }}" alt="">
+                            <img src="{{ asset('images/rating-star.svg') }}" alt="">
+                            <img src="{{ asset('images/rating-star.svg') }}" alt="">
+                            <img src="{{ asset('images/rating-star.svg') }}" alt="">
+                            <img src="{{ asset('images/rating-star.svg') }}" alt="">
+                        </div>
+                        <h3 class="name">Adam K.</h3>
+                        <p class="comment flex-grow-1">
+                            Sample text, example text, example text, example text, sample text, sample text, sample text, sample text 
+                        </p>
+                        <div class="country d-flex align-items-center justify-content-end gap-2">
+                            <div class="country-name">Norway</div>
+                            <div class="country-flag d-flex align-items-center">
+                                <img src="{{ asset('images/norway-flag.svg') }}" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="box d-flex flex-column">
+                        <div class="rating d-flex gap-1 align-items-center justify-content-center mb-2">
+                            <img src="{{ asset('images/rating-star.svg') }}" alt="">
+                            <img src="{{ asset('images/rating-star.svg') }}" alt="">
+                            <img src="{{ asset('images/rating-star.svg') }}" alt="">
+                            <img src="{{ asset('images/rating-star.svg') }}" alt="">
+                            <img src="{{ asset('images/rating-star.svg') }}" alt="">
+                        </div>
+                        <h3 class="name">Adam K.</h3>
+                        <p class="comment flex-grow-1">
+                            Sample text, text also sample testk testk text Sample text, sample, text, test, text, sample
+                        </p>
+                        <div class="country d-flex align-items-center justify-content-end gap-2">
+                            <div class="country-name">Poland</div>
+                            <div class="country-flag d-flex align-items-center">
+                                <img src="{{ asset('images/poland-flag.svg') }}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /section-testimonials -->
+
+        <!-- section-call-to-action -->
+        <section class="section-call-to-action py-5">
+            <div class="container text-center">
+                <h1 class="section-title text-center">Try Gadumi absolutely for free</h1>
+                <p class="text-center mb-4">You have nothing to lose. You can only gain.</p>
+                <a href="#" class="btn btn-warning-new btn-lg w-fit-content" style="width: fit-content; border-radius: 5px; padding: 10px 98px;">Try Gadumi for free</a>
+            </div>
+        </section>
+        <!-- /section-call-to-action -->
+
+        <!-- footer -->
+        <footer>
+            <div class="container py-3">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div style="color:#666e7e; font-size: 14px; line-height: 16px;">© Gadumi Regulations Privacy policy Contact</div>
+                    <div style="color: #161823; font-size: 14px; line-height: 16px;">Created with ❤️ by language lovers</div>
+                </div>
+            </div>
+        </footer>
+        <!-- /footer -->
+    </body>
 </html>
