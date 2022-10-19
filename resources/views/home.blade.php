@@ -25,7 +25,11 @@
                 --warning-new: rgb(255, 120, 10);
                 --warning-new-2: rgb(255, 139, 51);
             }
+            html, body {
+                overflow-x: hidden;
+            }
 
+            /*---------------Header-----------------*/
             .site-header {
                 opacity: 1;
                 background-color: rgb(255, 255, 255);
@@ -75,6 +79,18 @@
                 color: var(--primary-new-2);
             }
 
+            .featured-menu {
+                width: 100%;
+            }
+
+            @media (min-width: 768px) {
+                .featured-menu {
+                    width: auto;
+                }
+            }
+
+            /*----------------/ Header----------------*/
+
             .btn.btn-primary-new {
                 background-color: var(--primary-new);
                 color: white;
@@ -118,7 +134,7 @@
                 background-color: white;
                 color: var(--primary-new);
                 border-radius: 8px;
-                padding: 2px 28px;
+                padding: 2px 32px;
                 font-weight: 600;
                 border: 2px solid var(--primary-new);
             }
@@ -136,7 +152,7 @@
                 background-color: white;
                 color: var(--success-new);
                 border-radius: 8px;
-                padding: 2px 28px;
+                padding: 2px 32px;
                 font-weight: 600;
                 border: 2px solid var(--success-new);
             }
@@ -152,15 +168,58 @@
 
             .section-hero {
                 margin-top: 66px;
-                height: 500px;
+                height: 836px;
+                --left-offset: 0px;
             }
 
+            @media(min-width: 485px) {
+                .section-hero {
+                    --left-offset: 16px;
+                    height: 737px;
+                }
+            }
+
+            @media(min-width: 533px) {
+                .section-hero {
+                    --left-offset: 40px;
+                }
+            }
+
+            @media(min-width: 576px) {
+                .section-hero {
+                    --left-offset: 20px;
+                }
+            }
+
+            @media(min-width: 768px) {
+                .section-hero {
+                    --left-offset: 100px;
+                }
+            }
+
+            @media(min-width: 992px) {
+                .section-hero {
+                    height: 500px;
+                    --left-offset: 0px;
+                }
+            }
+
+            .section-hero .hero-image {
+                height: 457px;
+            }
+
+            @media(min-width: 992px) {
+                .section-hero .hero-image {
+                    height: 100%;
+                }
+            }
             .section-hero .hero-image img.img-girl {
-                width: 248px;
-                height: 330px;
+                width: 100%;
+                max-width: 248px;
+                height: auto;
                 display: block;
                 position: absolute;
-                left: 129px;
+                left: calc(129px + var(--left-offset));
                 top: 42px;
                 z-index: 2;
             }
@@ -170,17 +229,18 @@
                 height: 400px;
                 display: block;
                 position: absolute;
-                left: 85px;
+                left: calc(85px + var(--left-offset));
                 top: 133px;
                 transform: rotate(179deg);
             }
 
             .section-hero .hero-image .hollow-el {
-                width: 428px;
+                max-width: 428px;
+                width: 80%;
                 height: 164px;
                 display: block;
                 position: absolute;
-                left: 59px;
+                left: calc(59px + var(--left-offset));
                 top: 206px;
                 opacity: 1;
                 background-color: var(--primary-new);
@@ -204,7 +264,7 @@
                 height: 90px;
                 display: block;
                 position: absolute;
-                left: 128px;
+                left: calc(128px + var(--left-offset));
                 top: 116px;
             }
             .section-hero .hero-image .text-el.text-el-2 {
@@ -212,7 +272,7 @@
                 height: 53px;
                 display: block;
                 position: absolute;
-                left: 396px;
+                left: calc(396px + var(--left-offset));
                 top: 149px;
             }
 
@@ -221,7 +281,7 @@
                 height: 90px;
                 display: block;
                 position: absolute;
-                left: -15px;
+                left: calc(0px + var(--left-offset)) ;
                 top: 193px;
             }
 
@@ -230,7 +290,7 @@
                 height: 53px;
                 display: block;
                 position: absolute;
-                left: 442px;
+                left: calc(442px + var(--left-offset));
                 top: 228px;
             }
 
@@ -239,7 +299,7 @@
                 height: 53px;
                 display: block;
                 position: absolute;
-                left: 52px;
+                left: calc(52px + var(--left-offset));
                 top: 284px;
             }
 
@@ -248,8 +308,57 @@
                 height: 53px;
                 display: block;
                 position: absolute;
-                left: 406px;
+                left: calc(406px + var(--left-offset));
                 top: 310px;
+            }
+
+            @media (max-width: 486px) {
+                .section-hero .hero-image img.img-girl {
+                    left: calc(60px + var(--left-offset));
+                    top: 40px;
+                }
+
+                .section-hero .hero-image .text-el.text-el-1 {
+                    left: calc(119px + var(--left-offset));
+                    top: 73px;
+                }
+
+                .section-hero .hero-image .text-el.text-el-3 {
+                    left: calc(17px + var(--left-offset));
+                    top: 144px;
+                }
+
+                .section-hero .hero-image .text-el.text-el-4 {
+                    left: calc(342px + var(--left-offset));
+                }
+
+                .section-hero .hero-image .text-el.text-el-2 {
+                    left: calc(317px + var(--left-offset));
+                }
+
+                .section-hero .hero-image .text-el.text-el-6 {
+                    left: calc(324px + var(--left-offset));
+                }
+            }
+
+            .section-hero .hero-text {
+                text-align: center;
+            }
+
+            .section-hero .hero-text .btn {
+                margin-right: auto;
+                margin-left: auto;
+            }
+
+            @media (min-width: 992px) {
+                .section-hero .hero-text {
+                    text-align: left;
+                }
+
+                .section-hero .hero-text .btn {
+                    margin-right: initial;
+                    margin-left: initial;
+                }
             }
 
             .section-hero .hero-text h1 {
@@ -275,10 +384,29 @@
                 font-weight: 700;
             }
 
+            @media (min-width: 992px) {
+                .section-1 .row {
+                    width: 80%;
+                }
+            }
+
             .section-1-text {
-                width: 70%;
+                /* width: 70%;
                 margin-left: 70px;
-                margin-top: -64px;
+                margin-top: -64px; */
+            }
+            @media (min-width: 786px) {
+                .section-1-text {
+                
+                }
+            }
+
+            @media (min-width: 992px) {
+                .section-1-text {
+                    width: 70%;
+                    margin-left: 70px;
+                    margin-top: -64px;
+                }
             }
 
             .section-1-text h1 {
@@ -299,8 +427,14 @@
                 height: 736px;
             }
 
+            @media (min-width: 992px) {
+                .section-2 .row {
+                    width: 80%;
+                }
+            }
+
             .section-2-img {
-                width: 510px;
+                max-width: 510px;
                 height: 322px;
                 overflow: hidden;
                 margin: auto;
@@ -308,13 +442,35 @@
             }
 
             .section-2-img img {
-                width: 510px;
+                max-width: 510px;
                 height: 340px;
             }
 
             .section-2-text {
-                width: 70%;
-                margin-left: 70px;
+                text-align: center;
+                margin-top: 3rem;
+            }
+            .section-2-text .btn {
+                margin: auto;
+            }
+
+            @media (min-width: 992px) {
+                .section-2-text {
+                    text-align: left;
+                    margin-top: 0;
+                    margin-left: 70px;
+                }
+
+                .section-2-text .btn {
+                    margin: 0;
+                }
+            }
+
+            @media (min-width: 1200px) {
+                .section-2-text {
+                    width: 70%;
+                    text-align: left;
+                }
             }
 
             .section-2-text h1 {
@@ -342,6 +498,22 @@
             .section-testimonials {
                 background-color: rgb(235, 244, 255);
                 padding-bottom: 96px !important;
+            }
+
+            .section-testimonials .boxes {
+                justify-content: center
+            }
+
+            @media (min-width: 768px) {
+                .section-testimonials .boxes {
+                    justify-content: space-between;
+                }
+            }
+
+            @media (min-width: 768px) {
+                .section-testimonials .boxes {
+                    width: 78%;
+                }
             }
 
             .section-testimonials .box {
@@ -411,11 +583,11 @@
         <!-- Header -->
         <header class="site-header">
             <div class="container">
-                <div class="top-bar d-flex align-items-center py-2 gap-4">
+                <div class="top-bar d-flex align-items-center flex-wrap py-2 gap-4">
                     <!-- Site Logo -->
                     <div class="site-info flex-grow-1 d-flex align-items-center gap-2">
                         <div class="site-logo d-flex align-items-center">
-                            <img src="https://gadumi.pl/lib/glcqhy/united-kingdom-1-l92kgbny.svg" alt="Gadumi">
+                            <img src="{{ asset('images/gadumi-logo.svg') }}" alt="Gadumi">
                         </div>
                         <div class="site-name">
                             <h1 class="m-0">Gadumi</h1>
@@ -426,9 +598,11 @@
 
                     <!-- Main Navigation Menu -->
                     <div class="main-nav-menu navbar navbar-expand-lg">
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mainNavMenuOffCanvas" aria-controls="Toggle Mobile Menu">
                             <span class="navbar-toggler-icon"></span>
                         </button>
+
+                        <!-- Desktop menu -->
                         <nav class="collapse navbar-collapse">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
@@ -442,12 +616,38 @@
                                 </li>
                             </ul>
                         </nav>
+
+                        <!-- Mobile menu -->
+                        <nav class="offcanvas offcanvas-start d-lg-none" id="mainNavMenuOffCanvas" tabindex="-1" aria-labelledby="Mobile Menu">
+                            <div class="offcanvas-body position-relative">
+                                <button class="border-none navbar-toggler position-absolute" style="top: 0px; right: 0px; border: none !important; font-weight: 700; font-size: 2rem; box-shadow: none;" type="button" data-bs-toggle="offcanvas" data-bs-target="#mainNavMenuOffCanvas" aria-controls="Toggle Mobile Menu">
+                                    <span>&times;</span>
+                                </button>
+                                <ul class="navbar-nav">
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link">How it's working</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link">Why is it worth it</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link">Feedback</a>
+                                    </li>
+                                    <li class="mt-4">
+                                        <div class="featured-menu d-flex justify-content-center gap-3 flex-column">
+                                            <a href="{{ url('/listing') }}" class="btn btn-primary-new btn-lg">Start now!</a>
+                                            <a href="#" class="btn btn-primary-new-outline btn-lg">Log in</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
                     </div>
                     <!-- /Main Navigation Menu -->
 
                     <!-- Featured Navigation Menu -->
-                    <div class="featured-menu d-flex gap-3">
-                        <a href="#" class="btn btn-primary-new">Start now!</a>
+                    <div class="featured-menu d-none d-lg-flex justify-content-end gap-3">
+                        <a href="{{ url('/listing') }}" class="btn btn-primary-new">Start now!</a>
                         <a href="#" class="btn btn-primary-new-outline">Log in</a>
                     </div>
                     <!-- /Featured Navigation Menu -->
@@ -457,13 +657,13 @@
         <!-- /Header -->
 
         <!-- Hero Section -->
-        <section class="section-hero mb-5">
-            <div class="container h-100">
+        <section class="section-hero mb-5 pb-4">
+            <div class="container h-100 p-0 px-xxl-4">
                 <div class="row h-100">
-                    <div class="col-12 col-md-6 px-5">
-                        <div class="hero-image position-relative h-100">
-                            <img class="img-girl" src="https://gadumi.pl/files/dynamicContent/sites/glcqhy/images/pl/webpage_274/l9cdjs4g/element_24494/ghen-mar-cuano-R6dSBkz32B8-unsplash-removebg-preview.png" alt="">
-                            <img class="img-arrow" src="data:image/svg+xml,%3Csvg%20fill%3D%27rgb%2811%2C%20124%2C%20254%29%27%20id%3D%27ww-location-arrow%27%20version%3D%271.1%27%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27100%25%27%20height%3D%27100%25%27%20viewBox%3D%270%200%2011%2014%27%3E%3Cpath%20d%3D%27M10.945%202.727l-5%2010q-0.133%200.273-0.445%200.273-0.039%200-0.117-0.016-0.172-0.039-0.277-0.176t-0.105-0.309v-4.5h-4.5q-0.172%200-0.309-0.105t-0.176-0.277%200.031-0.328%200.227-0.234l10-5q0.102-0.055%200.227-0.055%200.211%200%200.352%200.148%200.117%200.109%200.145%200.27t-0.051%200.309z%27%3E%3C%2Fpath%3E%3C%2Fsvg%3E" alt="">
+                    <div class="col-12 col-lg-6 px-0 px-xxl-5">
+                        <div class="hero-image position-relative overflow-hidden">
+                            <img class="img-girl" src="{{ asset('images/gadumi-hero-image.png') }}" alt="">
+                            <img class="img-arrow" src="{{ asset('images/hero-img-arrow.svg') }}" alt="">
                             <div class="hollow-el"></div>
                             <div class="text-el text-el-1">Hello</div>
                             <div class="text-el text-el-2">Hi!</div>
@@ -473,12 +673,12 @@
                             <div class="text-el text-el-6">Bye!</div>
                         </div>
                     </div>
-                    <div class="hero-text col-12 col-md-6 d-flex flex-column gap-3 justify-content-center px-5">
+                    <div class="hero-text col-12 col-lg-6 d-flex flex-column gap-3 justify-content-center px-5">
                         <h1>Speak English fluently in no time</h1>
                         <p>
                             <b>Master the English language</b> with a course created by foreign language lovers without having to pay the teacher for each hour of study.
                         </p>
-                        <a href="#" class="btn btn-primary-new btn-lg w-fit-content" style="width: fit-content">Get started now</a>
+                        <a href="{{ url('/listing') }}" class="btn btn-primary-new btn-lg w-fit-content" style="width: fit-content">Get started now</a>
                     </div>
                 </div>
             </div>
@@ -490,21 +690,33 @@
             <div class="container">
                 <h1 class="section-1-title text-center">Meet Gadumi</h1>
                 <h2 class="section-1-desc text-center">a course created with ❤️ just for you</h2>
-                <div class="row mx-auto mt-5" style="width: 80%;">
-                    <div class="col-md-7 d-flex align-items-center">
+                <div class="row mx-auto mt-5">
+                    <div class="col-md-7 d-none d-md-flex align-items-center">
                         <div class="section-1-text d-flex flex-column gap-3 justify-content-center">
                             <h1>It's always a good time to learn</h1>
                             <p>
                                 Thanks to the short lessons of a few minutes, you will always find a moment to develop your language skills.
                             </p>
-                            <a href="#" class="btn btn-success-new btn-lg w-fit-content" style="width: fit-content">Learn English</a>
+                            <a href="{{ url('/listing') }}" class="btn btn-success-new btn-lg w-fit-content" style="width: fit-content">Learn English</a>
                         </div>
                     </div>
                     <div class="col-md-5">
                         <div class="section-1-img d-flex justify-content-center align-items-center">
-                            <img src="https://gadumi.pl/files/dynamicContent/sites/glcqhy/images/pl/webpage_274/l9cdjs4g/element_24503/Vivo-X80-Pro_Screenshot_20220930-151731_Chrome.png" alt="">
+                            <img src="{{ asset('images/gadumi-mobile-app-screenshot.png') }}" alt="">
                         </div>
                     </div>
+
+                    <!-- For Mobile -->
+                    <div class="col-md-7 d-flex d-md-none align-items-center mt-5 text-center">
+                        <div class="section-1-text d-flex flex-column gap-3 justify-content-center">
+                            <h1>It's always a good time to learn</h1>
+                            <p>
+                                Thanks to the short lessons of a few minutes, you will always find a moment to develop your language skills.
+                            </p>
+                            <a href="{{ url('/listing') }}" class="btn btn-success-new btn-lg w-fit-content mx-auto" style="width: fit-content">Learn English</a>
+                        </div>
+                    </div>
+                    <!-- /For Mobile -->
                 </div>
             </div>
         </section>
@@ -513,19 +725,19 @@
         <!-- Section 2 -->
         <section class="section-2 mb-5 pt-5">
             <div class="container">
-                <div class="row mx-auto" style="width: 80%;">
-                    <div class="col-md-6">
+                <div class="row mx-auto">
+                    <div class="col-lg-6">
                         <div class="section-2-img d-flex justify-content-center align-items-center">
                             <img src="{{ asset('images/gadumi-section-2-image.webp') }}" alt="">
                         </div>
                     </div>
-                    <div class="col-md-6 d-flex align-items-center">
+                    <div class="col-lg-6 d-flex align-items-center">
                         <div class="section-2-text d-flex flex-column gap-3 justify-content-center ml-5">
                             <h1>Your development is most important to us</h1>
                             <p>
                                 Every week, the Gadumi team prepares new lessons for you, thanks to which you will learn the English language even better.
                             </p>
-                            <a href="#" class="btn btn-success-new btn-lg w-fit-content" style="width: fit-content">Learn English</a>
+                            <a href="{{ url('/listing') }}" class="btn btn-success-new btn-lg w-fit-content" style="width: fit-content">Learn English</a>
                         </div>
                     </div>
                 </div>
@@ -536,42 +748,55 @@
         <!-- Section 1 -->
         <section class="section-1 mb-5 pt-5">
             <div class="container">
-                <div class="row mx-auto" style="width: 80%;">
-                    <div class="col-md-7 d-flex align-items-center">
+                <div class="row mx-auto">
+                    <div class="col-md-7 d-none d-md-flex align-items-center">
                         <div class="section-1-text d-flex flex-column gap-3 justify-content-center">
                             <h1>Learning feels like fun</h1>
                             <p>
                                 You read, listen, repeat, click. When creating Gadumi, we remembered that learning should not only be effective, but also enjoyable.
                             </p>
-                            <a href="#" class="btn btn-success-new btn-lg w-fit-content" style="width: fit-content">Learn English</a>
+                            <a href="{{ url('/listing') }}" class="btn btn-success-new btn-lg w-fit-content" style="width: fit-content">Learn English</a>
                         </div>
                     </div>
                     <div class="col-md-5">
                         <div class="section-1-img d-flex justify-content-center align-items-center">
-                            <img src="https://gadumi.pl/files/dynamicContent/sites/glcqhy/images/pl/webpage_274/l9cdjs4g/element_24503/Vivo-X80-Pro_Screenshot_20220930-151731_Chrome.png" alt="">
+                            <img src="{{ asset('images/gadumi-mobile-app-screenshot.png') }}" alt="">
                         </div>
                     </div>
+
+                    <!-- For Mobile -->
+                    <div class="col-md-7 d-flex d-md-none align-items-center mt-5 text-center">
+                        <div class="section-1-text d-flex flex-column gap-3 justify-content-center">
+                            <h1>Learning feels like fun</h1>
+                            <p>
+                                You read, listen, repeat, click. When creating Gadumi, we remembered that learning should not only be effective, but also enjoyable.
+                            </p>
+                            <a href="{{ url('/listing') }}" class="btn btn-success-new btn-lg w-fit-content mx-auto" style="width: fit-content">Learn English</a>
+                        </div>
+                    </div>
+                    <!-- /For Mobile -->
                 </div>
             </div>
         </section>
         <!-- /Section 1 -->
 
+        
         <!-- Section 2 -->
         <section class="section-2 mb-5 pt-5">
             <div class="container">
-                <div class="row mx-auto" style="width: 80%;">
-                    <div class="col-md-6">
+                <div class="row mx-auto">
+                    <div class="col-lg-6">
                         <div class="section-2-img d-flex justify-content-center align-items-center">
                             <img src="{{ asset('images/gadumi-section-2-img-2.webp') }}" alt="">
                         </div>
                     </div>
-                    <div class="col-md-6 d-flex align-items-center">
+                    <div class="col-lg-6 d-flex align-items-center">
                         <div class="section-2-text d-flex flex-column gap-3 justify-content-center ml-5">
                             <h1>Open up to new possibilities</h1>
                             <p>
                                 Knowing English you gain access to unlimited knowledge from all over the world. Remember that most books and content on the Internet are written in English!
                             </p>
-                            <a href="#" class="btn btn-success-new btn-lg w-fit-content" style="width: fit-content">Learn English</a>
+                            <a href="{{ url('/listing') }}" class="btn btn-success-new btn-lg w-fit-content" style="width: fit-content">Learn English</a>
                         </div>
                     </div>
                 </div>
@@ -581,8 +806,8 @@
 
         <!-- Section 3 -->
         <section class="section-3 mb-5 pt-5">
-            <div class="container">
-                <h1 class="section-title text-center">Why is it worth learning English with Gadumi?</h1>
+            <div class="container px-4">
+                <h1 class="section-title text-md-center">Why is it worth learning English with Gadumi?</h1>
                 <div class="row mt-5">
                     <div class="box col-12 col-md-6 col-lg-4 d-flex gap-3 mb-4">
                         <div class="image py-2">
@@ -595,7 +820,7 @@
                     </div>
                     <div class="box col-12 col-md-6 col-lg-4 d-flex gap-3 mb-4">
                         <div class="image py-2">
-                            <img src="{{ asset('images/gadumi-hello.svg') }}" alt="">
+                            <img src="{{ asset('images/gadumi-abc.svg') }}" alt="">
                         </div>
                         <div class="text">
                             <h3>Grammar lessons</h3>
@@ -604,7 +829,7 @@
                     </div>
                     <div class="box col-12 col-md-6 col-lg-4 d-flex gap-3 mb-4">
                         <div class="image py-2">
-                            <img src="{{ asset('images/gadumi-hello.svg') }}" alt="">
+                            <img src="{{ asset('images/gadumi-phone.svg') }}" alt="">
                         </div>
                         <div class="text">
                             <h3>Always by your side</h3>
@@ -613,7 +838,7 @@
                     </div>
                     <div class="box col-12 col-md-6 col-lg-4 d-flex gap-3 mb-4">
                         <div class="image py-2">
-                            <img src="{{ asset('images/gadumi-hello.svg') }}" alt="">
+                            <img src="{{ asset('images/gadumi-chat.svg') }}" alt="">
                         </div>
                         <div class="text">
                             <h3>Real-life dialogues</h3>
@@ -622,7 +847,7 @@
                     </div>
                     <div class="box col-12 col-md-6 col-lg-4 d-flex gap-3 mb-4">
                         <div class="image py-2">
-                            <img src="{{ asset('images/gadumi-hello.svg') }}" alt="">
+                            <img src="{{ asset('images/gadumi-card.svg') }}" alt="">
                         </div>
                         <div class="text">
                             <h3>Flashcards</h3>
@@ -631,7 +856,7 @@
                     </div>
                     <div class="box col-12 col-md-6 col-lg-4 d-flex gap-3 mb-4">
                         <div class="image py-2">
-                            <img src="{{ asset('images/gadumi-hello.svg') }}" alt="">
+                            <img src="{{ asset('images/gadumi-time.svg') }}" alt="">
                         </div>
                         <div class="text">
                             <h3>Time doesn't matter</h3>
@@ -641,13 +866,13 @@
                 </div>
             </div>
         </section>
-        <!-- /Section 1 -->
+        <!-- /Section 3 -->
 
         <!-- section-testimonials -->
         <section class="section-testimonials py-5">
             <div class="container">
                 <h1 class="section-title text-center">What do users say about Gadumi?</h1>
-                <div class="d-flex align-items-center justify-content-between mt-5 mx-auto" style="width: 78%;">
+                <div class="boxes d-flex align-items-center mt-5 mx-auto gap-4 flex-wrap">
                     <div class="box d-flex flex-column">
                         <div class="rating d-flex gap-1 align-items-center justify-content-center mb-2">
                             <img src="{{ asset('images/rating-star.svg') }}" alt="">
@@ -737,7 +962,7 @@
             <div class="container text-center">
                 <h1 class="section-title text-center">Try Gadumi absolutely for free</h1>
                 <p class="text-center mb-4">You have nothing to lose. You can only gain.</p>
-                <a href="#" class="btn btn-warning-new btn-lg w-fit-content" style="width: fit-content; border-radius: 5px; padding: 10px 98px;">Try Gadumi for free</a>
+                <a href="{{ url('/listing') }}" class="btn btn-warning-new btn-lg w-fit-content" style="width: fit-content; border-radius: 5px; padding: 10px 87px;">Try Gadumi for free</a>
             </div>
         </section>
         <!-- /section-call-to-action -->
@@ -745,7 +970,7 @@
         <!-- footer -->
         <footer>
             <div class="container py-3">
-                <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex justify-content-center justify-content-sm-between align-items-center flex-wrap">
                     <div style="color:#666e7e; font-size: 14px; line-height: 16px;">© Gadumi Regulations Privacy policy Contact</div>
                     <div style="color: #161823; font-size: 14px; line-height: 16px;">Created with ❤️ by language lovers</div>
                 </div>
