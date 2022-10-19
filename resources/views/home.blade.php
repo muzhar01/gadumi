@@ -131,7 +131,7 @@
                 background-color: white;
                 color: var(--primary-new);
                 border-radius: 8px;
-                padding: 2px 28px;
+                padding: 2px 32px;
                 font-weight: 600;
                 border: 2px solid var(--primary-new);
             }
@@ -149,7 +149,7 @@
                 background-color: white;
                 color: var(--success-new);
                 border-radius: 8px;
-                padding: 2px 28px;
+                padding: 2px 32px;
                 font-weight: 600;
                 border: 2px solid var(--success-new);
             }
@@ -288,10 +288,29 @@
                 font-weight: 700;
             }
 
+            @media (min-width: 992px) {
+                .section-1 .row {
+                    width: 80%;
+                }
+            }
+
             .section-1-text {
-                width: 70%;
+                /* width: 70%;
                 margin-left: 70px;
-                margin-top: -64px;
+                margin-top: -64px; */
+            }
+            @media (min-width: 786px) {
+                .section-1-text {
+                
+                }
+            }
+
+            @media (min-width: 992px) {
+                .section-1-text {
+                    width: 70%;
+                    margin-left: 70px;
+                    margin-top: -64px;
+                }
             }
 
             .section-1-text h1 {
@@ -312,8 +331,14 @@
                 height: 736px;
             }
 
+            @media (min-width: 992px) {
+                .section-2 .row {
+                    width: 80%;
+                }
+            }
+
             .section-2-img {
-                width: 510px;
+                max-width: 510px;
                 height: 322px;
                 overflow: hidden;
                 margin: auto;
@@ -321,13 +346,35 @@
             }
 
             .section-2-img img {
-                width: 510px;
+                max-width: 510px;
                 height: 340px;
             }
 
             .section-2-text {
-                width: 70%;
-                margin-left: 70px;
+                text-align: center;
+                margin-top: 3rem;
+            }
+            .section-2-text .btn {
+                margin: auto;
+            }
+
+            @media (min-width: 992px) {
+                .section-2-text {
+                    text-align: left;
+                    margin-top: 0;
+                    margin-left: 70px;
+                }
+
+                .section-2-text .btn {
+                    margin: 0;
+                }
+            }
+
+            @media (min-width: 1200px) {
+                .section-2-text {
+                    width: 70%;
+                    text-align: left;
+                }
             }
 
             .section-2-text h1 {
@@ -502,7 +549,7 @@
             <div class="container h-100">
                 <div class="row h-100">
                     <div class="col-12 col-md-6 px-5">
-                        <div class="hero-image position-relative h-100">
+                        <div class="hero-image position-relative h-100 overflow-hidden">
                             <img class="img-girl" src="{{ asset('images/gadumi-hero-image.png') }}" alt="">
                             <img class="img-arrow" src="{{ asset('images/hero-img-arrow.svg') }}" alt="">
                             <div class="hollow-el"></div>
@@ -531,8 +578,8 @@
             <div class="container">
                 <h1 class="section-1-title text-center">Meet Gadumi</h1>
                 <h2 class="section-1-desc text-center">a course created with ❤️ just for you</h2>
-                <div class="row mx-auto mt-5" style="width: 80%;">
-                    <div class="col-md-7 d-flex align-items-center">
+                <div class="row mx-auto mt-5">
+                    <div class="col-md-7 d-none d-md-flex align-items-center">
                         <div class="section-1-text d-flex flex-column gap-3 justify-content-center">
                             <h1>It's always a good time to learn</h1>
                             <p>
@@ -546,6 +593,18 @@
                             <img src="{{ asset('images/gadumi-mobile-app-screenshot.png') }}" alt="">
                         </div>
                     </div>
+
+                    <!-- For Mobile -->
+                    <div class="col-md-7 d-flex d-md-none align-items-center mt-5 text-center">
+                        <div class="section-1-text d-flex flex-column gap-3 justify-content-center">
+                            <h1>It's always a good time to learn</h1>
+                            <p>
+                                Thanks to the short lessons of a few minutes, you will always find a moment to develop your language skills.
+                            </p>
+                            <a href="#" class="btn btn-success-new btn-lg w-fit-content mx-auto" style="width: fit-content">Learn English</a>
+                        </div>
+                    </div>
+                    <!-- /For Mobile -->
                 </div>
             </div>
         </section>
@@ -554,13 +613,13 @@
         <!-- Section 2 -->
         <section class="section-2 mb-5 pt-5">
             <div class="container">
-                <div class="row mx-auto" style="width: 80%;">
-                    <div class="col-md-6">
+                <div class="row mx-auto">
+                    <div class="col-lg-6">
                         <div class="section-2-img d-flex justify-content-center align-items-center">
                             <img src="{{ asset('images/gadumi-section-2-image.webp') }}" alt="">
                         </div>
                     </div>
-                    <div class="col-md-6 d-flex align-items-center">
+                    <div class="col-lg-6 d-flex align-items-center">
                         <div class="section-2-text d-flex flex-column gap-3 justify-content-center ml-5">
                             <h1>Your development is most important to us</h1>
                             <p>
@@ -574,6 +633,7 @@
         </section>
         <!-- /Section 2 -->
 
+        @if (false)
         <!-- Section 1 -->
         <section class="section-1 mb-5 pt-5">
             <div class="container">
@@ -793,5 +853,6 @@
             </div>
         </footer>
         <!-- /footer -->
+        @endif
     </body>
 </html>
