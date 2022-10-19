@@ -25,6 +25,9 @@
                 --warning-new: rgb(255, 120, 10);
                 --warning-new-2: rgb(255, 139, 51);
             }
+            html, body {
+                overflow-x: hidden;
+            }
 
             /*---------------Header-----------------*/
             .site-header {
@@ -165,15 +168,58 @@
 
             .section-hero {
                 margin-top: 66px;
-                height: 500px;
+                height: 836px;
+                --left-offset: 0px;
             }
 
+            @media(min-width: 485px) {
+                .section-hero {
+                    --left-offset: 16px;
+                    height: 737px;
+                }
+            }
+
+            @media(min-width: 533px) {
+                .section-hero {
+                    --left-offset: 40px;
+                }
+            }
+
+            @media(min-width: 576px) {
+                .section-hero {
+                    --left-offset: 20px;
+                }
+            }
+
+            @media(min-width: 768px) {
+                .section-hero {
+                    --left-offset: 100px;
+                }
+            }
+
+            @media(min-width: 992px) {
+                .section-hero {
+                    height: 500px;
+                    --left-offset: 0px;
+                }
+            }
+
+            .section-hero .hero-image {
+                height: 457px;
+            }
+
+            @media(min-width: 992px) {
+                .section-hero .hero-image {
+                    height: 100%;
+                }
+            }
             .section-hero .hero-image img.img-girl {
-                width: 248px;
-                height: 330px;
+                width: 100%;
+                max-width: 248px;
+                height: auto;
                 display: block;
                 position: absolute;
-                left: 129px;
+                left: calc(129px + var(--left-offset));
                 top: 42px;
                 z-index: 2;
             }
@@ -183,17 +229,18 @@
                 height: 400px;
                 display: block;
                 position: absolute;
-                left: 85px;
+                left: calc(85px + var(--left-offset));
                 top: 133px;
                 transform: rotate(179deg);
             }
 
             .section-hero .hero-image .hollow-el {
-                width: 428px;
+                max-width: 428px;
+                width: 80%;
                 height: 164px;
                 display: block;
                 position: absolute;
-                left: 59px;
+                left: calc(59px + var(--left-offset));
                 top: 206px;
                 opacity: 1;
                 background-color: var(--primary-new);
@@ -217,7 +264,7 @@
                 height: 90px;
                 display: block;
                 position: absolute;
-                left: 128px;
+                left: calc(128px + var(--left-offset));
                 top: 116px;
             }
             .section-hero .hero-image .text-el.text-el-2 {
@@ -225,7 +272,7 @@
                 height: 53px;
                 display: block;
                 position: absolute;
-                left: 396px;
+                left: calc(396px + var(--left-offset));
                 top: 149px;
             }
 
@@ -234,7 +281,7 @@
                 height: 90px;
                 display: block;
                 position: absolute;
-                left: -15px;
+                left: calc(0px + var(--left-offset)) ;
                 top: 193px;
             }
 
@@ -243,7 +290,7 @@
                 height: 53px;
                 display: block;
                 position: absolute;
-                left: 442px;
+                left: calc(442px + var(--left-offset));
                 top: 228px;
             }
 
@@ -252,7 +299,7 @@
                 height: 53px;
                 display: block;
                 position: absolute;
-                left: 52px;
+                left: calc(52px + var(--left-offset));
                 top: 284px;
             }
 
@@ -261,8 +308,37 @@
                 height: 53px;
                 display: block;
                 position: absolute;
-                left: 406px;
+                left: calc(406px + var(--left-offset));
                 top: 310px;
+            }
+
+            @media (max-width: 486px) {
+                .section-hero .hero-image img.img-girl {
+                    left: calc(60px + var(--left-offset));
+                    top: 40px;
+                }
+
+                .section-hero .hero-image .text-el.text-el-1 {
+                    left: calc(119px + var(--left-offset));
+                    top: 73px;
+                }
+
+                .section-hero .hero-image .text-el.text-el-3 {
+                    left: calc(17px + var(--left-offset));
+                    top: 144px;
+                }
+
+                .section-hero .hero-image .text-el.text-el-4 {
+                    left: calc(342px + var(--left-offset));
+                }
+
+                .section-hero .hero-image .text-el.text-el-2 {
+                    left: calc(317px + var(--left-offset));
+                }
+
+                .section-hero .hero-image .text-el.text-el-6 {
+                    left: calc(324px + var(--left-offset));
+                }
             }
 
             .section-hero .hero-text {
@@ -274,7 +350,7 @@
                 margin-left: auto;
             }
 
-            @media (min-width: 768px) {
+            @media (min-width: 992px) {
                 .section-hero .hero-text {
                     text-align: left;
                 }
@@ -581,11 +657,11 @@
         <!-- /Header -->
 
         <!-- Hero Section -->
-        <section class="section-hero mb-5">
-            <div class="container h-100">
+        <section class="section-hero mb-5 pb-4">
+            <div class="container h-100 p-0 px-xxl-4">
                 <div class="row h-100">
-                    <div class="col-12 col-md-6 px-5">
-                        <div class="hero-image position-relative h-100 overflow-hidden">
+                    <div class="col-12 col-lg-6 px-0 px-xxl-5">
+                        <div class="hero-image position-relative overflow-hidden">
                             <img class="img-girl" src="{{ asset('images/gadumi-hero-image.png') }}" alt="">
                             <img class="img-arrow" src="{{ asset('images/hero-img-arrow.svg') }}" alt="">
                             <div class="hollow-el"></div>
@@ -597,7 +673,7 @@
                             <div class="text-el text-el-6">Bye!</div>
                         </div>
                     </div>
-                    <div class="hero-text col-12 col-md-6 d-flex flex-column gap-3 justify-content-center px-5">
+                    <div class="hero-text col-12 col-lg-6 d-flex flex-column gap-3 justify-content-center px-5">
                         <h1>Speak English fluently in no time</h1>
                         <p>
                             <b>Master the English language</b> with a course created by foreign language lovers without having to pay the teacher for each hour of study.
