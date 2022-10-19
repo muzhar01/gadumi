@@ -26,6 +26,7 @@
                 --warning-new-2: rgb(255, 139, 51);
             }
 
+            /*---------------Header-----------------*/
             .site-header {
                 opacity: 1;
                 background-color: rgb(255, 255, 255);
@@ -74,6 +75,18 @@
             .main-nav-menu li a:hover {
                 color: var(--primary-new-2);
             }
+
+            .featured-menu {
+                width: 100%;
+            }
+
+            @media (min-width: 768px) {
+                .featured-menu {
+                    width: auto;
+                }
+            }
+
+            /*----------------/ Header----------------*/
 
             .btn.btn-primary-new {
                 background-color: var(--primary-new);
@@ -411,11 +424,11 @@
         <!-- Header -->
         <header class="site-header">
             <div class="container">
-                <div class="top-bar d-flex align-items-center py-2 gap-4">
+                <div class="top-bar d-flex align-items-center flex-wrap py-2 gap-4">
                     <!-- Site Logo -->
                     <div class="site-info flex-grow-1 d-flex align-items-center gap-2">
                         <div class="site-logo d-flex align-items-center">
-                            <img src="https://gadumi.pl/lib/glcqhy/united-kingdom-1-l92kgbny.svg" alt="Gadumi">
+                            <img src="{{ asset('images/gadumi-logo.svg') }}" alt="Gadumi">
                         </div>
                         <div class="site-name">
                             <h1 class="m-0">Gadumi</h1>
@@ -426,9 +439,11 @@
 
                     <!-- Main Navigation Menu -->
                     <div class="main-nav-menu navbar navbar-expand-lg">
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mainNavMenuOffCanvas" aria-controls="Toggle Mobile Menu">
                             <span class="navbar-toggler-icon"></span>
                         </button>
+
+                        <!-- Desktop menu -->
                         <nav class="collapse navbar-collapse">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
@@ -442,11 +457,37 @@
                                 </li>
                             </ul>
                         </nav>
+
+                        <!-- Mobile menu -->
+                        <nav class="offcanvas offcanvas-start d-lg-none" id="mainNavMenuOffCanvas" tabindex="-1" aria-labelledby="Mobile Menu">
+                            <div class="offcanvas-body position-relative">
+                                <button class="border-none navbar-toggler position-absolute" style="top: 0px; right: 0px; border: none !important; font-weight: 700; font-size: 2rem; box-shadow: none;" type="button" data-bs-toggle="offcanvas" data-bs-target="#mainNavMenuOffCanvas" aria-controls="Toggle Mobile Menu">
+                                    <span>&times;</span>
+                                </button>
+                                <ul class="navbar-nav">
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link">How it's working</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link">Why is it worth it</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link">Feedback</a>
+                                    </li>
+                                    <li class="mt-4">
+                                        <div class="featured-menu d-flex justify-content-center gap-3 flex-column">
+                                            <a href="#" class="btn btn-primary-new btn-lg">Start now!</a>
+                                            <a href="#" class="btn btn-primary-new-outline btn-lg">Log in</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
                     </div>
                     <!-- /Main Navigation Menu -->
 
                     <!-- Featured Navigation Menu -->
-                    <div class="featured-menu d-flex gap-3">
+                    <div class="featured-menu d-none d-lg-flex justify-content-end gap-3">
                         <a href="#" class="btn btn-primary-new">Start now!</a>
                         <a href="#" class="btn btn-primary-new-outline">Log in</a>
                     </div>
@@ -462,8 +503,8 @@
                 <div class="row h-100">
                     <div class="col-12 col-md-6 px-5">
                         <div class="hero-image position-relative h-100">
-                            <img class="img-girl" src="https://gadumi.pl/files/dynamicContent/sites/glcqhy/images/pl/webpage_274/l9cdjs4g/element_24494/ghen-mar-cuano-R6dSBkz32B8-unsplash-removebg-preview.png" alt="">
-                            <img class="img-arrow" src="data:image/svg+xml,%3Csvg%20fill%3D%27rgb%2811%2C%20124%2C%20254%29%27%20id%3D%27ww-location-arrow%27%20version%3D%271.1%27%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%27100%25%27%20height%3D%27100%25%27%20viewBox%3D%270%200%2011%2014%27%3E%3Cpath%20d%3D%27M10.945%202.727l-5%2010q-0.133%200.273-0.445%200.273-0.039%200-0.117-0.016-0.172-0.039-0.277-0.176t-0.105-0.309v-4.5h-4.5q-0.172%200-0.309-0.105t-0.176-0.277%200.031-0.328%200.227-0.234l10-5q0.102-0.055%200.227-0.055%200.211%200%200.352%200.148%200.117%200.109%200.145%200.27t-0.051%200.309z%27%3E%3C%2Fpath%3E%3C%2Fsvg%3E" alt="">
+                            <img class="img-girl" src="{{ asset('images/gadumi-hero-image.png') }}" alt="">
+                            <img class="img-arrow" src="{{ asset('images/hero-img-arrow.svg') }}" alt="">
                             <div class="hollow-el"></div>
                             <div class="text-el text-el-1">Hello</div>
                             <div class="text-el text-el-2">Hi!</div>
@@ -502,7 +543,7 @@
                     </div>
                     <div class="col-md-5">
                         <div class="section-1-img d-flex justify-content-center align-items-center">
-                            <img src="https://gadumi.pl/files/dynamicContent/sites/glcqhy/images/pl/webpage_274/l9cdjs4g/element_24503/Vivo-X80-Pro_Screenshot_20220930-151731_Chrome.png" alt="">
+                            <img src="{{ asset('images/gadumi-mobile-app-screenshot.png') }}" alt="">
                         </div>
                     </div>
                 </div>
@@ -548,7 +589,7 @@
                     </div>
                     <div class="col-md-5">
                         <div class="section-1-img d-flex justify-content-center align-items-center">
-                            <img src="https://gadumi.pl/files/dynamicContent/sites/glcqhy/images/pl/webpage_274/l9cdjs4g/element_24503/Vivo-X80-Pro_Screenshot_20220930-151731_Chrome.png" alt="">
+                            <img src="{{ asset('images/gadumi-mobile-app-screenshot.png') }}" alt="">
                         </div>
                     </div>
                 </div>
@@ -595,7 +636,7 @@
                     </div>
                     <div class="box col-12 col-md-6 col-lg-4 d-flex gap-3 mb-4">
                         <div class="image py-2">
-                            <img src="{{ asset('images/gadumi-hello.svg') }}" alt="">
+                            <img src="{{ asset('images/gadumi-abc.svg') }}" alt="">
                         </div>
                         <div class="text">
                             <h3>Grammar lessons</h3>
@@ -604,7 +645,7 @@
                     </div>
                     <div class="box col-12 col-md-6 col-lg-4 d-flex gap-3 mb-4">
                         <div class="image py-2">
-                            <img src="{{ asset('images/gadumi-hello.svg') }}" alt="">
+                            <img src="{{ asset('images/gadumi-phone.svg') }}" alt="">
                         </div>
                         <div class="text">
                             <h3>Always by your side</h3>
@@ -613,7 +654,7 @@
                     </div>
                     <div class="box col-12 col-md-6 col-lg-4 d-flex gap-3 mb-4">
                         <div class="image py-2">
-                            <img src="{{ asset('images/gadumi-hello.svg') }}" alt="">
+                            <img src="{{ asset('images/gadumi-chat.svg') }}" alt="">
                         </div>
                         <div class="text">
                             <h3>Real-life dialogues</h3>
@@ -622,7 +663,7 @@
                     </div>
                     <div class="box col-12 col-md-6 col-lg-4 d-flex gap-3 mb-4">
                         <div class="image py-2">
-                            <img src="{{ asset('images/gadumi-hello.svg') }}" alt="">
+                            <img src="{{ asset('images/gadumi-card.svg') }}" alt="">
                         </div>
                         <div class="text">
                             <h3>Flashcards</h3>
@@ -631,7 +672,7 @@
                     </div>
                     <div class="box col-12 col-md-6 col-lg-4 d-flex gap-3 mb-4">
                         <div class="image py-2">
-                            <img src="{{ asset('images/gadumi-hello.svg') }}" alt="">
+                            <img src="{{ asset('images/gadumi-time.svg') }}" alt="">
                         </div>
                         <div class="text">
                             <h3>Time doesn't matter</h3>
