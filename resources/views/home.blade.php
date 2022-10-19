@@ -265,6 +265,26 @@
                 top: 310px;
             }
 
+            .section-hero .hero-text {
+                text-align: center;
+            }
+
+            .section-hero .hero-text .btn {
+                margin-right: auto;
+                margin-left: auto;
+            }
+
+            @media (min-width: 768px) {
+                .section-hero .hero-text {
+                    text-align: left;
+                }
+
+                .section-hero .hero-text .btn {
+                    margin-right: initial;
+                    margin-left: initial;
+                }
+            }
+
             .section-hero .hero-text h1 {
                 font-size: 40px;
                 line-height: 48px;
@@ -633,12 +653,11 @@
         </section>
         <!-- /Section 2 -->
 
-        @if (false)
         <!-- Section 1 -->
         <section class="section-1 mb-5 pt-5">
             <div class="container">
-                <div class="row mx-auto" style="width: 80%;">
-                    <div class="col-md-7 d-flex align-items-center">
+                <div class="row mx-auto">
+                    <div class="col-md-7 d-none d-md-flex align-items-center">
                         <div class="section-1-text d-flex flex-column gap-3 justify-content-center">
                             <h1>Learning feels like fun</h1>
                             <p>
@@ -652,21 +671,34 @@
                             <img src="{{ asset('images/gadumi-mobile-app-screenshot.png') }}" alt="">
                         </div>
                     </div>
+
+                    <!-- For Mobile -->
+                    <div class="col-md-7 d-flex d-md-none align-items-center mt-5 text-center">
+                        <div class="section-1-text d-flex flex-column gap-3 justify-content-center">
+                            <h1>Learning feels like fun</h1>
+                            <p>
+                                You read, listen, repeat, click. When creating Gadumi, we remembered that learning should not only be effective, but also enjoyable.
+                            </p>
+                            <a href="#" class="btn btn-success-new btn-lg w-fit-content mx-auto" style="width: fit-content">Learn English</a>
+                        </div>
+                    </div>
+                    <!-- /For Mobile -->
                 </div>
             </div>
         </section>
         <!-- /Section 1 -->
 
+        
         <!-- Section 2 -->
         <section class="section-2 mb-5 pt-5">
             <div class="container">
-                <div class="row mx-auto" style="width: 80%;">
-                    <div class="col-md-6">
+                <div class="row mx-auto">
+                    <div class="col-lg-6">
                         <div class="section-2-img d-flex justify-content-center align-items-center">
                             <img src="{{ asset('images/gadumi-section-2-img-2.webp') }}" alt="">
                         </div>
                     </div>
-                    <div class="col-md-6 d-flex align-items-center">
+                    <div class="col-lg-6 d-flex align-items-center">
                         <div class="section-2-text d-flex flex-column gap-3 justify-content-center ml-5">
                             <h1>Open up to new possibilities</h1>
                             <p>
@@ -682,8 +714,8 @@
 
         <!-- Section 3 -->
         <section class="section-3 mb-5 pt-5">
-            <div class="container">
-                <h1 class="section-title text-center">Why is it worth learning English with Gadumi?</h1>
+            <div class="container px-4">
+                <h1 class="section-title text-md-center">Why is it worth learning English with Gadumi?</h1>
                 <div class="row mt-5">
                     <div class="box col-12 col-md-6 col-lg-4 d-flex gap-3 mb-4">
                         <div class="image py-2">
@@ -742,8 +774,9 @@
                 </div>
             </div>
         </section>
-        <!-- /Section 1 -->
+        <!-- /Section 3 -->
 
+        @if (false)
         <!-- section-testimonials -->
         <section class="section-testimonials py-5">
             <div class="container">
