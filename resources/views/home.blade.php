@@ -424,6 +424,22 @@
                 padding-bottom: 96px !important;
             }
 
+            .section-testimonials .boxes {
+                justify-content: center
+            }
+
+            @media (min-width: 768px) {
+                .section-testimonials .boxes {
+                    justify-content: space-between;
+                }
+            }
+
+            @media (min-width: 768px) {
+                .section-testimonials .boxes {
+                    width: 78%;
+                }
+            }
+
             .section-testimonials .box {
                 opacity: 1;
                 background-color: rgb(255, 255, 255);
@@ -776,12 +792,11 @@
         </section>
         <!-- /Section 3 -->
 
-        @if (false)
         <!-- section-testimonials -->
         <section class="section-testimonials py-5">
             <div class="container">
                 <h1 class="section-title text-center">What do users say about Gadumi?</h1>
-                <div class="d-flex align-items-center justify-content-between mt-5 mx-auto" style="width: 78%;">
+                <div class="boxes d-flex align-items-center mt-5 mx-auto gap-4 flex-wrap">
                     <div class="box d-flex flex-column">
                         <div class="rating d-flex gap-1 align-items-center justify-content-center mb-2">
                             <img src="{{ asset('images/rating-star.svg') }}" alt="">
@@ -866,6 +881,7 @@
         </section>
         <!-- /section-testimonials -->
 
+        @if (false)
         <!-- section-call-to-action -->
         <section class="section-call-to-action py-5">
             <div class="container text-center">
