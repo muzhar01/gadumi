@@ -12,6 +12,9 @@ class FrontController extends Controller
     public function index(){
         return view('home');
     }
+    public function listing(){
+        return view('listing');
+    }
 
     /**
      * Display Home page.
