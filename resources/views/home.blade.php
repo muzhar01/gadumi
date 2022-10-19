@@ -881,13 +881,12 @@
         </section>
         <!-- /section-testimonials -->
 
-        @if (false)
         <!-- section-call-to-action -->
         <section class="section-call-to-action py-5">
             <div class="container text-center">
                 <h1 class="section-title text-center">Try Gadumi absolutely for free</h1>
                 <p class="text-center mb-4">You have nothing to lose. You can only gain.</p>
-                <a href="#" class="btn btn-warning-new btn-lg w-fit-content" style="width: fit-content; border-radius: 5px; padding: 10px 98px;">Try Gadumi for free</a>
+                <a href="#" class="btn btn-warning-new btn-lg w-fit-content" style="width: fit-content; border-radius: 5px; padding: 10px 87px;">Try Gadumi for free</a>
             </div>
         </section>
         <!-- /section-call-to-action -->
@@ -895,13 +894,12 @@
         <!-- footer -->
         <footer>
             <div class="container py-3">
-                <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex justify-content-center justify-content-sm-between align-items-center flex-wrap">
                     <div style="color:#666e7e; font-size: 14px; line-height: 16px;">© Gadumi Regulations Privacy policy Contact</div>
                     <div style="color: #161823; font-size: 14px; line-height: 16px;">Created with ❤️ by language lovers</div>
                 </div>
             </div>
         </footer>
         <!-- /footer -->
-        @endif
     </body>
 </html>
