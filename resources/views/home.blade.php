@@ -191,7 +191,7 @@
             .section-hero {
                 margin-top: 79px;
                 /* height: 836px; */
-                height: 615px;
+                height: 572px;
                 --left-offset: 0px;
             }
 
@@ -400,8 +400,14 @@
             }
 
             .section-hero .hero-text p {
-                font-size: 18px;
+                font-size: 16px;
                 line-height: 30px;
+            }
+
+            @media (min-width: 992px) {
+                .section-hero .hero-text p {
+                    font-size: 18px;
+                }
             }
 
             .section-1 {
