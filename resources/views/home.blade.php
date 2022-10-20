@@ -17,6 +17,9 @@
         <!-- Outfit font -->
         <link href='https://fonts.googleapis.com/css?family=Outfit' rel='stylesheet'>
 
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
         <style>
             :root {
                 --primary-new: #0b7cfe;
@@ -186,21 +189,24 @@
             }
 
             .section-hero {
-                margin-top: 66px;
-                height: 836px;
+                margin-top: 79px;
+                /* height: 836px; */
+                height: 572px;
                 --left-offset: 0px;
             }
 
             @media(min-width: 485px) {
                 .section-hero {
                     --left-offset: 16px;
-                    height: 737px;
+                    /* height: 737px; */
+                    height: 600px;
                 }
             }
 
             @media(min-width: 533px) {
                 .section-hero {
                     --left-offset: 40px;
+                    height: 643px;
                 }
             }
 
@@ -213,6 +219,7 @@
             @media(min-width: 768px) {
                 .section-hero {
                     --left-offset: 100px;
+                    height: 677px;
                 }
             }
 
@@ -381,14 +388,26 @@
             }
 
             .section-hero .hero-text h1 {
-                font-size: 40px;
+                font-size: 29px;
                 line-height: 48px;
                 font-weight: 700;
             }
 
+            @media (min-width: 992px) {
+                .section-hero .hero-text h1 {
+                    font-size: 40px;
+                }
+            }
+
             .section-hero .hero-text p {
-                font-size: 18px;
+                font-size: 16px;
                 line-height: 30px;
+            }
+
+            @media (min-width: 992px) {
+                .section-hero .hero-text p {
+                    font-size: 18px;
+                }
             }
 
             .section-1 {
@@ -454,7 +473,8 @@
 
             .section-2-img {
                 max-width: 510px;
-                height: 322px;
+                height: auto;
+                width: 100%;
                 overflow: hidden;
                 margin: auto;
                 border-radius: 20px;
@@ -462,7 +482,8 @@
 
             .section-2-img img {
                 max-width: 510px;
-                height: 340px;
+                height: auto;
+                width: 100%;
             }
 
             .section-2-text {
@@ -595,6 +616,21 @@
                 padding-bottom: 96px !important;
             }
 
+            .offcanvas.offcanvas-start {
+                width: 100%;
+                transform: translateY(-100%);
+                transition: none;
+                border-right: none;
+            }
+
+            .navbar-toggler-new {
+                background-color: rgba(236,244,255,255);
+                border: none;
+                padding: 10px 14px;
+                border-radius: 14px;
+                color: var(--primary-new);
+            }
+
         </style>
     </head>
     <body>
@@ -619,8 +655,8 @@
 
                     <!-- Main Navigation Menu -->
                     <div class="main-nav-menu navbar navbar-expand-lg">
-                        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mainNavMenuOffCanvas" aria-controls="Toggle Mobile Menu">
-                            <span class="navbar-toggler-icon"></span>
+                        <button class="navbar-toggler-new d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mainNavMenuOffCanvas" aria-controls="Toggle Mobile Menu">
+                            <span class="fa fa-bars"></span>
                         </button>
 
                         <!-- Desktop menu -->
@@ -640,27 +676,50 @@
 
                         <!-- Mobile menu -->
                         <nav class="offcanvas offcanvas-start d-lg-none" id="mainNavMenuOffCanvas" tabindex="-1" aria-labelledby="Mobile Menu">
-                            <div class="offcanvas-body position-relative">
-                                <button class="border-none navbar-toggler position-absolute" style="top: 0px; right: 0px; border: none !important; font-weight: 700; font-size: 2rem; box-shadow: none;" type="button" data-bs-toggle="offcanvas" data-bs-target="#mainNavMenuOffCanvas" aria-controls="Toggle Mobile Menu">
-                                    <span>&times;</span>
-                                </button>
-                                <ul class="navbar-nav">
-                                    <li class="nav-item">
-                                        <a href="javascript:void(0)" class="nav-link" onclick="$('#mainNavMenuOffCanvas').offcanvas('hide'); setTimeout(() => document.querySelector('#howItsWorking').scrollIntoView({behavior: 'smooth'}), 1000);">How it's working</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="javascript:void(0)" class="nav-link" onclick="$('#mainNavMenuOffCanvas').offcanvas('hide'); setTimeout(() => document.querySelector('#whyIsItWorth').scrollIntoView({behavior: 'smooth'}), 1000);">Why is it worth it</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="javascript:void(0)" class="nav-link" onclick="$('#mainNavMenuOffCanvas').offcanvas('hide'); setTimeout(() => document.querySelector('#testimonials').scrollIntoView({behavior: 'smooth'}), 1000);">Feedback</a>
-                                    </li>
-                                    <li class="mt-4">
-                                        <div class="featured-menu d-flex justify-content-center gap-3 flex-column">
-                                            <a href="{{ url('/listing') }}" class="btn btn-primary-new btn-lg btn-cta">Start now!</a>
-                                            <a href="#" class="btn btn-primary-new-outline btn-lg btn-cta">Log in</a>
+                            <div class="offcanvas-header p-0">
+                                <header class="site-header">
+                                    <div class="container">
+                                        <div class="top-bar position-static w-100 d-flex align-items-center flex-wrap gap-4 align-items-center" style="padding-top: 1rem; padding-bottom: 1rem;">
+                                            <!-- Site Logo -->
+                                            <a href="{{ url('/') }}" class="flex-grow-1 text-decoration-none d-block">
+                                                <div class="site-info d-flex h-100 align-items-center gap-2">
+                                                    <div class="site-logo d-flex align-items-center">
+                                                        <img src="{{ asset('images/gadumi-logo.svg') }}" alt="Gadumi" style="margin-bottom: 1px;">
+                                                    </div>
+                                                    <div class="site-name">
+                                                        <h1 class="m-0">Gadumi</h1>
+                                                        <p class="m-0">Your English language course</p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <!-- /Site Logo -->
+                                            <button class="navbar-toggler-new" type="button" data-bs-toggle="offcanvas" data-bs-target="#mainNavMenuOffCanvas" aria-controls="Toggle Mobile Menu" style="padding: 10px 16px;">
+                                                <span class="fa fa-times"></span>
+                                            </button>
                                         </div>
-                                    </li>
-                                </ul>
+                                    </div>
+                                </header>
+                            </div>
+                            <div class="offcanvas-body position-relative pt-1 pl-0" style="margin-top: 79px;">
+                                <div class="container">
+                                    <ul class="navbar-nav">
+                                        <li class="nav-item">
+                                            <a href="javascript:void(0)" class="nav-link" onclick="$('#mainNavMenuOffCanvas').offcanvas('hide'); setTimeout(() => document.querySelector('#howItsWorking').scrollIntoView({behavior: 'smooth'}), 1000);">How it's working</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="javascript:void(0)" class="nav-link" onclick="$('#mainNavMenuOffCanvas').offcanvas('hide'); setTimeout(() => document.querySelector('#whyIsItWorth').scrollIntoView({behavior: 'smooth'}), 1000);">Why is it worth it</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="javascript:void(0)" class="nav-link" onclick="$('#mainNavMenuOffCanvas').offcanvas('hide'); setTimeout(() => document.querySelector('#testimonials').scrollIntoView({behavior: 'smooth'}), 1000);">Feedback</a>
+                                        </li>
+                                        <li class="mt-4">
+                                            <div class="featured-menu d-flex justify-content-center gap-3 flex-column">
+                                                <a href="{{ url('/listing') }}" class="btn btn-primary-new btn-lg btn-cta">Start now!</a>
+                                                <a href="#" class="btn btn-primary-new-outline btn-lg btn-cta">Log in</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </nav>
                     </div>
@@ -681,7 +740,7 @@
         <section class="section-hero mb-5 pb-4">
             <div class="container h-100 p-0 px-xxl-4">
                 <div class="row h-100">
-                    <div class="col-12 col-lg-6 px-0 px-xxl-5">
+                    <div class="col-12 col-lg-6 px-0 px-xxl-5 d-none d-lg-block">
                         <div class="hero-image position-relative overflow-hidden">
                             <img class="img-girl" src="{{ asset('images/gadumi-hero-image.png') }}" alt="">
                             <img class="img-arrow" src="{{ asset('images/hero-img-arrow.svg') }}" alt="">
@@ -694,8 +753,9 @@
                             <div class="text-el text-el-6">Bye!</div>
                         </div>
                     </div>
-                    <div class="hero-text col-12 col-lg-6 d-flex flex-column gap-3 justify-content-center px-5">
+                    <div class="hero-text col-12 col-lg-6 d-flex flex-column gap-3 justify-content-center px-4 px-sm-5">
                         <h1>Speak English fluently in no time</h1>
+                        <img src="{{ asset('images/gadumi-mobile-hero.jpg') }}" class="d-lg-none" alt="">
                         <p>
                             <b>Master the English language</b> with a course created by foreign language lovers without having to pay the teacher for each hour of study.
                         </p>
@@ -828,7 +888,7 @@
         <!-- Section 3 -->
         <section id="whyIsItWorth" class="section-3 mb-5 pt-5">
             <div class="container px-4">
-                <h1 class="section-title text-md-center">Why is it worth learning English with Gadumi?</h1>
+                <h1 class="section-title text-center">Why is it worth learning English with Gadumi?</h1>
                 <div class="row mt-5">
                     <div class="box col-12 col-md-6 col-lg-4 d-flex gap-3 mb-4">
                         <div class="image py-2">
