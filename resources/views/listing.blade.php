@@ -22,7 +22,7 @@
             <div class="logo">
               <img src="{{ asset('images/logo.svg') }}" alt="">
             </div>
-            <a class="navbar-brand nav-title" href="#">
+            <a class="navbar-brand nav-title" href="{{ url('/') }}">
               <h1 class="nav-h1">Gadumi</h1>
               <p>Your English language course</p>
             </a>
