@@ -13,6 +13,10 @@
 
         <!-- Latest compiled JavaScript -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Outfit font -->
+        <link href='https://fonts.googleapis.com/css?family=Outfit' rel='stylesheet'>
+
         <style>
             :root {
                 --primary-new: #0b7cfe;
@@ -56,16 +60,20 @@
             }
 
             .site-info .site-name h1 {
-                    font-size: 29px;
-                    line-height: 29px;
-                    color: var(--primary-new);
-                    font-weight: 700;
+                font-size: 32px;
+                line-height: 29px;
+                color: var(--primary-new);
+                font-weight: 800;
+                user-select: none;
+                font-family: outfit;
             }
 
             .site-info .site-name p {
                 color: var(--primary-new-lite);
                 font-size: 14px;
                 line-height: 16px;
+                user-select: none;
+                font-family: outfit;
             }
 
             .main-nav-menu li a {
@@ -106,7 +114,7 @@
 
             .btn.btn-success-new {
                 background-color: var(--success-new);
-                color: black;
+                color: #161823;
                 border-radius: 8px;
                 padding: 3px 32px;
                 font-weight: 600;
@@ -114,7 +122,7 @@
 
             .btn.btn-success-new:hover {
                 background-color: var(--success-new-2);
-                color: black;
+                color: #161823;
             }
 
             .btn.btn-warning-new {
@@ -164,6 +172,17 @@
                 padding: 2px 32px;
                 font-weight: 600;
                 border: 2px solid var(--success-new);
+            }
+
+            .btn.btn-cta {
+                font-size: 17px;
+                line-height: 20px;
+                padding: 11px 38px;
+            }
+            .btn.btn-cta:hover {
+                font-size: 17px;
+                line-height: 20px;
+                padding: 11px 38px
             }
 
             .section-hero {
@@ -585,15 +604,17 @@
             <div class="container">
                 <div class="top-bar d-flex align-items-center flex-wrap py-2 gap-4">
                     <!-- Site Logo -->
-                    <div class="site-info flex-grow-1 d-flex align-items-center gap-2">
-                        <div class="site-logo d-flex align-items-center">
-                            <img src="{{ asset('images/gadumi-logo.svg') }}" alt="Gadumi">
+                    <a href="{{ url('/') }}" class="flex-grow-1 text-decoration-none d-block">
+                        <div class="site-info d-flex h-100 align-items-center gap-2">
+                            <div class="site-logo d-flex align-items-center">
+                                <img src="{{ asset('images/gadumi-logo.svg') }}" alt="Gadumi">
+                            </div>
+                            <div class="site-name">
+                                <h1 class="m-0">Gadumi</h1>
+                                <p class="m-0">Your English language course</p>
+                            </div>
                         </div>
-                        <div class="site-name">
-                            <h1 class="m-0">Gadumi</h1>
-                            <p class="m-0">Your English language course</p>
-                        </div>
-                    </div>
+                    </a>
                     <!-- /Site Logo -->
 
                     <!-- Main Navigation Menu -->
@@ -606,13 +627,13 @@
                         <nav class="collapse navbar-collapse">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">How it's working</a>
+                                    <a href="#howItsWorking" class="nav-link">How it's working</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">Why is it worth it</a>
+                                    <a href="#whyIsItWorth" class="nav-link">Why is it worth it</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">Feedback</a>
+                                    <a href="#testimonials" class="nav-link">Feedback</a>
                                 </li>
                             </ul>
                         </nav>
@@ -625,18 +646,18 @@
                                 </button>
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link">How it's working</a>
+                                        <a href="javascript:void(0)" class="nav-link" onclick="$('#mainNavMenuOffCanvas').offcanvas('hide'); setTimeout(() => document.querySelector('#howItsWorking').scrollIntoView({behavior: 'smooth'}), 1000);">How it's working</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link">Why is it worth it</a>
+                                        <a href="javascript:void(0)" class="nav-link" onclick="$('#mainNavMenuOffCanvas').offcanvas('hide'); setTimeout(() => document.querySelector('#whyIsItWorth').scrollIntoView({behavior: 'smooth'}), 1000);">Why is it worth it</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link">Feedback</a>
+                                        <a href="javascript:void(0)" class="nav-link" onclick="$('#mainNavMenuOffCanvas').offcanvas('hide'); setTimeout(() => document.querySelector('#testimonials').scrollIntoView({behavior: 'smooth'}), 1000);">Feedback</a>
                                     </li>
                                     <li class="mt-4">
                                         <div class="featured-menu d-flex justify-content-center gap-3 flex-column">
-                                            <a href="{{ url('/listing') }}" class="btn btn-primary-new btn-lg">Start now!</a>
-                                            <a href="#" class="btn btn-primary-new-outline btn-lg">Log in</a>
+                                            <a href="{{ url('/listing') }}" class="btn btn-primary-new btn-lg btn-cta">Start now!</a>
+                                            <a href="#" class="btn btn-primary-new-outline btn-lg btn-cta">Log in</a>
                                         </div>
                                     </li>
                                 </ul>
@@ -678,7 +699,7 @@
                         <p>
                             <b>Master the English language</b> with a course created by foreign language lovers without having to pay the teacher for each hour of study.
                         </p>
-                        <a href="{{ url('/listing') }}" class="btn btn-primary-new btn-lg w-fit-content" style="width: fit-content">Get started now</a>
+                        <a href="{{ url('/listing') }}" class="btn btn-primary-new btn-cta btn-lg w-fit-content" style="width: fit-content">Get started now</a>
                     </div>
                 </div>
             </div>
@@ -686,7 +707,7 @@
         <!-- /Hero Section -->
 
         <!-- Section 1 -->
-        <section class="section-1 mb-5">
+        <section id="howItsWorking" class="section-1 mb-5">
             <div class="container">
                 <h1 class="section-1-title text-center">Meet Gadumi</h1>
                 <h2 class="section-1-desc text-center">a course created with ❤️ just for you</h2>
@@ -697,7 +718,7 @@
                             <p>
                                 Thanks to the short lessons of a few minutes, you will always find a moment to develop your language skills.
                             </p>
-                            <a href="{{ url('/listing') }}" class="btn btn-success-new btn-lg w-fit-content" style="width: fit-content">Learn English</a>
+                            <a href="{{ url('/listing') }}" class="btn btn-success-new btn-lg w-fit-content btn-cta" style="width: fit-content">Learn English</a>
                         </div>
                     </div>
                     <div class="col-md-5">
@@ -713,7 +734,7 @@
                             <p>
                                 Thanks to the short lessons of a few minutes, you will always find a moment to develop your language skills.
                             </p>
-                            <a href="{{ url('/listing') }}" class="btn btn-success-new btn-lg w-fit-content mx-auto" style="width: fit-content">Learn English</a>
+                            <a href="{{ url('/listing') }}" class="btn btn-success-new btn-lg w-fit-content mx-auto btn-cta" style="width: fit-content">Learn English</a>
                         </div>
                     </div>
                     <!-- /For Mobile -->
@@ -737,7 +758,7 @@
                             <p>
                                 Every week, the Gadumi team prepares new lessons for you, thanks to which you will learn the English language even better.
                             </p>
-                            <a href="{{ url('/listing') }}" class="btn btn-success-new btn-lg w-fit-content" style="width: fit-content">Learn English</a>
+                            <a href="{{ url('/listing') }}" class="btn btn-success-new btn-lg w-fit-content btn-cta" style="width: fit-content">Learn English</a>
                         </div>
                     </div>
                 </div>
@@ -755,7 +776,7 @@
                             <p>
                                 You read, listen, repeat, click. When creating Gadumi, we remembered that learning should not only be effective, but also enjoyable.
                             </p>
-                            <a href="{{ url('/listing') }}" class="btn btn-success-new btn-lg w-fit-content" style="width: fit-content">Learn English</a>
+                            <a href="{{ url('/listing') }}" class="btn btn-success-new btn-lg w-fit-content btn-cta" style="width: fit-content">Learn English</a>
                         </div>
                     </div>
                     <div class="col-md-5">
@@ -771,7 +792,7 @@
                             <p>
                                 You read, listen, repeat, click. When creating Gadumi, we remembered that learning should not only be effective, but also enjoyable.
                             </p>
-                            <a href="{{ url('/listing') }}" class="btn btn-success-new btn-lg w-fit-content mx-auto" style="width: fit-content">Learn English</a>
+                            <a href="{{ url('/listing') }}" class="btn btn-success-new btn-lg w-fit-content mx-auto btn-cta" style="width: fit-content">Learn English</a>
                         </div>
                     </div>
                     <!-- /For Mobile -->
@@ -796,7 +817,7 @@
                             <p>
                                 Knowing English you gain access to unlimited knowledge from all over the world. Remember that most books and content on the Internet are written in English!
                             </p>
-                            <a href="{{ url('/listing') }}" class="btn btn-success-new btn-lg w-fit-content" style="width: fit-content">Learn English</a>
+                            <a href="{{ url('/listing') }}" class="btn btn-success-new btn-lg w-fit-content btn-cta" style="width: fit-content">Learn English</a>
                         </div>
                     </div>
                 </div>
@@ -805,7 +826,7 @@
         <!-- /Section 2 -->
 
         <!-- Section 3 -->
-        <section class="section-3 mb-5 pt-5">
+        <section id="whyIsItWorth" class="section-3 mb-5 pt-5">
             <div class="container px-4">
                 <h1 class="section-title text-md-center">Why is it worth learning English with Gadumi?</h1>
                 <div class="row mt-5">
@@ -869,7 +890,7 @@
         <!-- /Section 3 -->
 
         <!-- section-testimonials -->
-        <section class="section-testimonials py-5">
+        <section id="testimonials" class="section-testimonials py-5">
             <div class="container">
                 <h1 class="section-title text-center">What do users say about Gadumi?</h1>
                 <div class="boxes d-flex align-items-center mt-5 mx-auto gap-4 flex-wrap">
@@ -962,7 +983,7 @@
             <div class="container text-center">
                 <h1 class="section-title text-center">Try Gadumi absolutely for free</h1>
                 <p class="text-center mb-4">You have nothing to lose. You can only gain.</p>
-                <a href="{{ url('/listing') }}" class="btn btn-warning-new btn-lg w-fit-content" style="width: fit-content; border-radius: 5px; padding: 10px 87px;">Try Gadumi for free</a>
+                <a href="{{ url('/listing') }}" class="btn btn-warning-new btn-cta btn-lg w-fit-content" style="width: fit-content; border-radius: 5px; padding: 16px 84px; border: 1px solid rgb(0, 115, 255); text-shadow: rgb(0 0 0) 0px 1px 1px;">Try Gadumi for free</a>
             </div>
         </section>
         <!-- /section-call-to-action -->
