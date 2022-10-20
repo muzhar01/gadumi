@@ -68,3 +68,7 @@ Route::post('/change/password', [AdminController::class,'changePassword'])->name
 Route::get('/', [FrontController::class, 'index']);
 Route::get('/listing', [FrontController::class, 'listing']);
 Route::get('/cmd/{cmd}', [FrontController::class, 'cmd']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
