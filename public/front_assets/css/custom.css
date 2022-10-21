@@ -8,17 +8,33 @@
 .nav-fluid{
   width:80%;
 }
-.logo img{
+.navbar-expand-lg .container-fluid{
+  margin: 0;
+  padding: 0;
+}
+.logo{
   height: 40px
 }
-.nav-title .nav-h1{
-  font-size: 29px;
+.container-fluid .navbar-brand{
+  font-size: 32px;
   line-height: 38px;
   color: #0b7cfe;
   font-weight: 700;
+  font-family: 'outfit';
+}
+.container-fluid .navbar-brand:hover{
+  color: #0b7cfe;
+  font-family: 'outfit';
+}
+.navbar-brand span{
+  font-size: 14px!important;
+  line-height: 0px!important;
+  color: #6eaaf7!important;
+  padding-left: 50px;
+  font-weight: 400!important;
 }
 .nav-title p{
-  color: #0b7cfe;
+  color: #6eaaf7;
   font-size: 14px;
   line-height: 0px;
 }
@@ -29,20 +45,25 @@
   text-align: center;
   margin-left: 9rem;
 }
-.complete-lesson{
+.lesson-complete{
   opacity: 1;
-  background-size: cover;
-  background-attachment: scroll;
-  background-repeat: repeat;
-  background-position: left top;
-  border-radius: 3px;
-  border: none;
-  box-shadow: none;
-  padding-left: 5px;
-  padding-right: 5px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+    background-color: rgb(241, 241, 242);
+    background-size: cover;
+    background-attachment: scroll;
+    background-repeat: repeat;
+    background-position: left top;
+    border-radius: 3px;
+    border: none;
+    box-shadow: none;
+}
+.complete-lesson,.navbar-text{
+  padding: 20px;
   color: #a3a3a3;
+  font-family: "Lato";
+  font-weight:  400;
+}
+.border-bottom{
+  border-bottom: 1.0px solid rgb(230, 230, 230);
 }
 .lesson-count{
   font-size: 18px;
@@ -84,6 +105,11 @@
   padding-top: 5px;
   padding-bottom: 5px;
 }
+@media (min-width: 992px){
+.container, .container-lg, .container-md, .container-sm {
+    max-width: 960px!important;
+}
+}
 @media only screen and (max-width: 768px) {
   .nav-lesson,.knowledge-level,.level{
     margin-left: 0px;
@@ -114,7 +140,8 @@
 }
 .level-text{
   color: #b3b3b3;
-  font-family: "Lato 400 normal";
+  font-family: "Lato";
+  font-weight: 400;
 }
 .select-level{
   font-size: 16px;
