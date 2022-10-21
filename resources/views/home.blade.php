@@ -735,14 +735,14 @@
                             </div>
                             <div class="offcanvas-body position-relative pt-1 pl-0" style="margin-top: 79px;">
                                 <div class="container">
-                                    <ul class="navbar-nav">
-                                        <li class="nav-item">
+                                    <ul class="navbar-nav pt-4">
+                                        <li class="nav-item mb-2">
                                             <a href="javascript:void(0)" class="nav-link" onclick="$('#mainNavMenuOffCanvas').offcanvas('hide'); setTimeout(() => document.querySelector('#howItsWorking').scrollIntoView({behavior: 'smooth'}), 1000);">How it's working</a>
                                         </li>
-                                        <li class="nav-item">
+                                        <li class="nav-item mb-2">
                                             <a href="javascript:void(0)" class="nav-link" onclick="$('#mainNavMenuOffCanvas').offcanvas('hide'); setTimeout(() => document.querySelector('#whyIsItWorth').scrollIntoView({behavior: 'smooth'}), 1000);">Why is it worth it</a>
                                         </li>
-                                        <li class="nav-item">
+                                        <li class="nav-item mb-2">
                                             <a href="javascript:void(0)" class="nav-link" onclick="$('#mainNavMenuOffCanvas').offcanvas('hide'); setTimeout(() => document.querySelector('#testimonials').scrollIntoView({behavior: 'smooth'}), 1000);">Feedback</a>
                                         </li>
                                         <li class="mt-4">
