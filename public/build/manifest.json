@@ -4,6 +4,11 @@
     "src": "resources/js/app.js",
     "isEntry": true
   },
+  "resources/css/app.css": {
+    "file": "assets/app.7c3c19f82.js",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
   "resources/css/login-page/js/jquery-3.js": {
     "file": "assets/jquery-3.b6044078.js",
     "src": "resources/css/login-page/js/jquery-3.js",
@@ -24,14 +29,14 @@
     "src": "resources/css/login-page/js/validator.js",
     "isEntry": true
   },
-  "resources/css/login-page/css/bootstrap.css": {
-    "file": "assets/bootstrap.df9343e5.css",
-    "src": "resources/css/login-page/css/bootstrap.css",
-    "isEntry": true
-  },
   "resources/sass/app.scss": {
     "file": "assets/app.525f5899.css",
     "src": "resources/sass/app.scss",
+    "isEntry": true
+  },
+  "resources/css/login-page/css/bootstrap.css": {
+    "file": "assets/bootstrap.df9343e5.css",
+    "src": "resources/css/login-page/css/bootstrap.css",
     "isEntry": true
   },
   "resources/css/login-page/css/stylee.css": {
