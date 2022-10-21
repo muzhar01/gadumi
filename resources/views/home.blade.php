@@ -664,6 +664,10 @@
                 color: var(--primary-new);
             }
 
+            .divider {
+                background-color: rgba(236,244,255,255);
+                height: 30px;
+            }
         </style>
     </head>
     <body>
@@ -770,7 +774,7 @@
         <!-- /Header -->
 
         <!-- Hero Section -->
-        <section class="section-hero mb-5 pb-4">
+        <section class="section-hero mb-0 mb-sm-5 pb-4">
             <div class="container h-100 p-0 px-xxl-4">
                 <div class="row h-100">
                     <div class="col-12 col-lg-6 px-0 px-xxl-5 d-none d-lg-block">
@@ -798,6 +802,8 @@
             </div>
         </section>
         <!-- /Hero Section -->
+
+        <div class="divider d-sm-none mb-4"></div>
 
         <!-- Section 1 -->
         <section id="howItsWorking" class="section-1 mb-5">
