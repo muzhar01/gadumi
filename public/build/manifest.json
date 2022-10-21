@@ -4,9 +4,39 @@
     "src": "resources/js/app.js",
     "isEntry": true
   },
+  "resources/css/login-page/js/jquery-3.js": {
+    "file": "assets/jquery-3.b6044078.js",
+    "src": "resources/css/login-page/js/jquery-3.js",
+    "isEntry": true
+  },
+  "resources/css/login-page/js/main.js": {
+    "file": "assets/main.b788c60c.js",
+    "src": "resources/css/login-page/js/main.js",
+    "isEntry": true
+  },
+  "resources/css/login-page/js/imagesloaded.js": {
+    "file": "assets/imagesloaded.14fd9082.js",
+    "src": "resources/css/login-page/js/imagesloaded.js",
+    "isEntry": true
+  },
+  "resources/css/login-page/js/validator.js": {
+    "file": "assets/validator.12ad1f76.js",
+    "src": "resources/css/login-page/js/validator.js",
+    "isEntry": true
+  },
+  "resources/css/login-page/css/bootstrap.css": {
+    "file": "assets/bootstrap.df9343e5.css",
+    "src": "resources/css/login-page/css/bootstrap.css",
+    "isEntry": true
+  },
   "resources/sass/app.scss": {
     "file": "assets/app.525f5899.css",
     "src": "resources/sass/app.scss",
+    "isEntry": true
+  },
+  "resources/css/login-page/css/stylee.css": {
+    "file": "assets/stylee.071e8da1.css",
+    "src": "resources/css/login-page/css/stylee.css",
     "isEntry": true
   }
 }
