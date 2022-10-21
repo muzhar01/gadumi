@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::get('/hello', [FrontController::class,'welcome']);
 Route::get('/admin',[AdminController::class,'index'])->name('admin.login');
 Route::post('/admin/login',[AdminController::class,'login'])->name('admin.login.submit');
 //Admin Routes
