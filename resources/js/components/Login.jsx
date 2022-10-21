@@ -1,9 +1,11 @@
 import React, {useState} from 'react'
 import { Link } from 'react-router-dom';
 
+import { ToastContainer, toast } from 'react-toastify';
 export default function Login() {
     const [email,setEmail]=useState("")
     const [password,setPassword]=useState("")
+    var [errors,setErrors]=useState("")
     async function login(){
         let item={email,password}
         let result = await fetch("http://localhost:8000/api/login",{
@@ -20,7 +22,10 @@ export default function Login() {
             let token = result.token.split("|");
             localStorage.setItem('token', token[1]);
             console.log(result.token);
-          }else{
+          }else if(result.errors){
+            setErrors(result.errors)
+        }else{
+            toast.error(result.message);
             console.log(result);
           }
     }
@@ -42,8 +47,8 @@ export default function Login() {
                 <div className="fxt-page-switcher">
                     <h2 className="fxt-page-title mr-3">Login</h2>
                     <ul className="fxt-switcher-wrap">
-                        <li><Link to="/login" className="fxt-switcher-btn active">Login</Link></li>
-                        <li><Link to="/register" className="fxt-switcher-btn">Register</Link></li>
+                            {/* <li><Link to="/login" className="fxt-switcher-btn active">Login</Link></li>
+                            <li><Link to="/register" className="fxt-switcher-btn">Register</Link></li> */}
                     </ul>
                 </div>
                 <div className="fxt-main-form">
@@ -52,13 +57,17 @@ export default function Login() {
                             <div className="row">
                                 <div className="col-12">
                                     <div className="form-group">
-                                        <input type="email" id="email" onChange={(e)=>setEmail(e.target.value)} className="form-control" name="email" placeholder="Email" required="required" />
+                                        <input type="email" id="email" onChange={(e)=>setEmail(e.target.value)} className={`form-control ${!! errors.email && "border-danger"}`} name="email" placeholder="Email" required="required" />
+                                        <span className='text-danger'>{errors.email}</span>
                                     </div>
                                 </div>
                                 <div className="col-12">
                                     <div className="form-group">
-                                        <input id="password" onChange={(e)=>setPassword(e.target.value)} type="password" className="form-control" name="password" placeholder="Password" required="required" />
+                                        <div className="input-group">
+                                        <input id="password" type="password" value={password} onChange={(e)=>setPassword(e.target.value)} className={`form-control ${!! errors.password && "border-danger"}`} name="password" placeholder="Enter Password" required="required" />
                                         <i toggle="#password" className="fa fa-fw fa-eye toggle-password field-icon"></i>
+                                        </div>
+                                        <span className='text-danger'>{errors.password}</span>
                                     </div>
                                 </div>
                                 <div className="col-12">
@@ -83,6 +92,9 @@ export default function Login() {
                 </div>
             </div>
         </div>
+        
+        <ToastContainer />
       </section>
+      
   );
 }
