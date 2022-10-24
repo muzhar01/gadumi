@@ -12,7 +12,11 @@ class CourseController extends Controller
      */
     public function index()
     {
-        $courses = Course::all();
+        $courses = Course::where('status',1)->get();
+        $courses->map(function($q){
+            $q->image=url($q->image);
+            return $q;
+        });
         if($courses->count() > 0){
             return $this->success($courses, "Courses data!");
         }else{

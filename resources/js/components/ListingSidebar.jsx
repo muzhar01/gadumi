@@ -15,11 +15,11 @@ export default function ListingSidebar() {
       <div className="col-lg-4 mr-5 d-none d-md-block">
         <ul className="list-group">
           <li className="list-group-item">
-            <img src="../images/lesson.svg" alt="" srcset=""/>
+            <img src="../images/lesson.svg" alt="" srcSet=""/>
             <a href="#" className="active">Lesson</a>
           </li>
           <li className="list-group-item">
-            <img src="../images/replay.svg" alt="" srcset=""/>
+            <img src="../images/replay.svg" alt="" srcSet=""/>
             <a href="#">Replays</a>
           </li>
           <hr/>
@@ -33,19 +33,19 @@ export default function ListingSidebar() {
           </li>
           <hr/>
           <li className="list-group-item">
-            <img src="../images/settings.svg" alt="" srcset=""/>
+            <img src="../images/settings.svg" alt="" srcSet=""/>
             <a href="#" className="settings">Settings</a>
           </li>
           <li className="list-group-item">
-            <img src="../images/prime_account.svg" alt="" srcset=""/>
+            <img src="../images/prime_account.svg" alt="" srcSet=""/>
             <a href="#" className="prime_account">Premium Account</a>
           </li>
           <li className="list-group-item">
-            <img src="../images/contact_us.svg" alt="" srcset=""/>
+            <img src="../images/contact_us.svg" alt="" srcSet=""/>
             <a href="#" className="contact_us">Contact Us</a>
           </li>
           <li className="list-group-item">
-            <img src="../images/logout.svg" alt="" srcset=""/>
+            <img src="../images/logout.svg" alt="" srcSet=""/>
             <a href="#" className="logout">Logout</a>
           </li>
         </ul>

@@ -158,9 +158,10 @@
   margin-bottom: 0;
 }
 .course-list img{
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
+  width: 70px!important;
+  height: 70px!important;
+  border-radius: 50%!important;
+  max-width: 70px;
 }
 .course-list .lesson-heading{
   font-weight: bold;
