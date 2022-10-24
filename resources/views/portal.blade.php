@@ -11,11 +11,10 @@
     @vite('resources/css/login-page/css/bootstrap.css')
     @vite('resources/css/login-page/css/stylee.css')
     
-    {{-- @vite('resources/css/listing/bootstrap.css')
-    @vite('resources/css/listing/custom.css') --}}
+    {{-- @vite('resources/css/listing/bootstrap.css') --}}
+    @vite('resources/css/listing/custom.css')
     <link href='https://fonts.googleapis.com/css?family=Outfit' rel='stylesheet'>
 
-    {{-- @vite("resources/scripts/App.tsx"); --}}
 
 </head>
 <body>

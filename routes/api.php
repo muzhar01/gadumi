@@ -51,3 +51,6 @@ Route::group(['prefix'=>'admin'], function(){
     Route::resource('/plan', PlanController::class);
     
 });
+
+Route::get('courses',[CourseController::class,'index']);
+Route::get('lessons',[LessonController::class,'index']);

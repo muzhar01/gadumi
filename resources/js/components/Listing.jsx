@@ -1,8 +1,16 @@
 import React from 'react'
+import axios from "axios";
 import HeaderListing from './HeaderListing'
 import ListingSidebar from './ListingSidebar'
-import style from './listing/custom.css';
 export default function Listing() {
+  const [lessons, setPost] = React.useState([]);
+
+  React.useEffect(() => {
+    axios.get('http://localhost:8000/api/lessons').then((response) => {
+      setPost(response.data.data);
+    });
+  }, []);
+
   return (
     <>
       <HeaderListing/>
@@ -13,34 +21,38 @@ export default function Listing() {
             <div className="col-lg-8">
               <div className="overflow-auto">
                 <ul className="list-group">
-                  <li className="list-group-item course-listing">
-                    <div className="row border-bottom pb-2">
-                      <div className="col-9 course-list">
+                  {
+                    lessons.map((lesson)=>{
+                   return <li key={lesson.id} className="list-group-item course-listing">
+                    <div className="row border-bottom">
+                      <div className="col-9 course-list"> 
                         <div className="row">
                           <div className="col-4 col-md-2 col-lg-2">
                             
-                            <img src="../images/profile1.png" alt="" srcset=""/>
+                            <img src={lesson.image} alt="" srcSet=""/>
                           </div>
                           <div className="col-6 col-md-9 col-lg-9 ms-4">
                             
-                            <a href="#" className="lesson-heading">1. Hello!</a>
+                            <a href="#" className="lesson-heading"><h1>{lesson.title}</h1></a>
                             <span className="d-block text-muted">lesson time: 7 min</span><br/>
                           </div>
                         </div>
-                        <p>Greetings in English</p>
+                        <p>{lesson.overview}</p>
                       </div>
                       <div className="col-3 d-block check-image">
                         <img src="../images/check.svg" alt=""/>
                       </div>
                     </div>
                   </li>
-                  <li className="list-group-item course-listing">
-                    <div className="row border-bottom pb-2">
+                })
+                  }
+                  {/* <li className="list-group-item course-listing">
+                    <div className="row border-bottom">
                       <div className="col-9 course-list">
                         <div className="row">
                           <div className="col-4 col-md-2 col-lg-2">
                             
-                            <img src="../images/profile2.png" alt="" srcset=""/>
+                            <img src="../images/profile2.png" alt="" srcSet=""/>
                           </div>
                           <div className="col-6 col-md-9 col-lg-9 ms-4">
                             
@@ -54,7 +66,7 @@ export default function Listing() {
                         <img src="../images/check.svg" alt=""/>
                       </div>
                     </div>
-                  </li>
+                  </li> */}
                 </ul>
               </div>
             </div>

@@ -9,11 +9,20 @@ function App() {
         <BrowserRouter >
           <Routes>
             <Route path="/portal">
-              <Route exact index element={<Register/>} />
-              <Route exact path="portal" element={<Register/>}/>
-              <Route exact path="register" element={<Register/>}/>
-              <Route exact path="login" element={<Login/>}/>
-              <Route exact path="courses" element={<Listing/>}/>
+              {
+                localStorage.getItem('token') ?(
+                <>
+                  <Route exact path="portal" element={<Listing/>}/>
+                  <Route exact path="courses" element={<Listing/>}/>
+                </>
+                ):(
+                <>
+                  <Route exact index element={<Register/>} />
+                  <Route exact path="portal" element={<Register/>}/>
+                  <Route exact path="register" element={<Register/>}/>
+                  <Route exact path="login" element={<Login/>}/>
+                </>)
+              }
             </Route>
           </Routes>
         </BrowserRouter>

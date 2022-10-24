@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState,useEffect} from 'react'
 import { Link,useNavigate  } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -9,6 +9,11 @@ export default function Login() {
     var [errors,setErrors]=useState("")
     const navigate =useNavigate();
     async function login(){
+        useEffect(() => {
+            if(localStorage.getItem('token')){
+                navigate("/portal/courses")
+            }
+        },[])
         let item={email,password}
         let result = await fetch("http://localhost:8000/api/login",{
             method:"POST",
@@ -24,7 +29,7 @@ export default function Login() {
             let token = result.token.split("|");
             localStorage.setItem('token', token[1]);
             console.log(result.token);
-            setTimeout(() => navigate("/courses"), 1000);
+            setTimeout(() => navigate("/portal/courses"), 1000);
           }else if(result.errors){
             setErrors(result.errors)
         }else{
