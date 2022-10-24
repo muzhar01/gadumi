@@ -45,28 +45,7 @@ export default function Listing() {
                     </div>
                   </li>
                 })
-                  }
-                  {/* <li className="list-group-item course-listing">
-                    <div className="row border-bottom">
-                      <div className="col-9 course-list">
-                        <div className="row">
-                          <div className="col-4 col-md-2 col-lg-2">
-                            
-                            <img src="../images/profile2.png" alt="" srcSet=""/>
-                          </div>
-                          <div className="col-6 col-md-9 col-lg-9 ms-4">
-                            
-                            <a href="#" className="lesson-heading">2. How are you?</a>
-                            <span className="d-block text-muted">lesson time: 7 min</span><br/>
-                          </div>
-                        </div>
-                        <p>Questions about well-being</p>
-                      </div>
-                      <div className="col-3 d-block check-image">
-                        <img src="../images/check.svg" alt=""/>
-                      </div>
-                    </div>
-                  </li> */}
+                }
                 </ul>
               </div>
             </div>
