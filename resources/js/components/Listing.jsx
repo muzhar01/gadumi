@@ -1,7 +1,7 @@
 import React from 'react'
 import HeaderListing from './HeaderListing'
 import ListingSidebar from './ListingSidebar'
-
+import style from './listing/custom.css';
 export default function Listing() {
   return (
     <>
