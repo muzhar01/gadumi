@@ -35,7 +35,7 @@ export default function Listing() {
                           </div>
                           <div className="col-6 col-md-9 col-lg-9 ms-4">
                             
-                            <a href="#" className="lesson-heading"><h1>{lesson.title}</h1></a>
+                            <a href="#" className="lesson-heading">{lesson.title}</a>
                             <span className="d-block text-muted">lesson time: 7 min</span><br/>
                           </div>
                         </div>
