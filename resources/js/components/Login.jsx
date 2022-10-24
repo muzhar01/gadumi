@@ -50,8 +50,8 @@ export default function Login() {
                 <div className="fxt-page-switcher">
                     <h2 className="fxt-page-title mr-3">Login</h2>
                     <ul className="fxt-switcher-wrap">
-                            <li><Link to="/login" className="fxt-switcher-btn active">Login</Link></li>
-                            <li><Link to="/register" className="fxt-switcher-btn">Register</Link></li>
+                            <li><Link to="/portal/login" className="fxt-switcher-btn active">Login</Link></li>
+                            <li><Link to="/portal/register" className="fxt-switcher-btn">Register</Link></li>
                     </ul>
                 </div>
                 <div className="fxt-main-form">
