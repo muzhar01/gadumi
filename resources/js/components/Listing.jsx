@@ -19,7 +19,7 @@ export default function Listing() {
                         <div className="row">
                           <div className="col-4 col-md-2 col-lg-2">
                             
-                            <img src="/images/profile1.png" alt="" srcset=""/>
+                            <img src="../images/profile1.png" alt="" srcset=""/>
                           </div>
                           <div className="col-6 col-md-9 col-lg-9 ms-4">
                             
@@ -30,7 +30,7 @@ export default function Listing() {
                         <p>Greetings in English</p>
                       </div>
                       <div className="col-3 d-block check-image">
-                        <img src="images/check.svg" alt=""/>
+                        <img src="../images/check.svg" alt=""/>
                       </div>
                     </div>
                   </li>
@@ -40,7 +40,7 @@ export default function Listing() {
                         <div className="row">
                           <div className="col-4 col-md-2 col-lg-2">
                             
-                            <img src="images/profile2.png" alt="" srcset=""/>
+                            <img src="../images/profile2.png" alt="" srcset=""/>
                           </div>
                           <div className="col-6 col-md-9 col-lg-9 ms-4">
                             
@@ -51,7 +51,7 @@ export default function Listing() {
                         <p>Questions about well-being</p>
                       </div>
                       <div className="col-3 d-block check-image">
-                        <img src="images/check.svg" alt=""/>
+                        <img src="../images/check.svg" alt=""/>
                       </div>
                     </div>
                   </li>

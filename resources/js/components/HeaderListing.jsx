@@ -7,7 +7,7 @@ export default function HeaderListing() {
       <nav className="navbar navbar-expand-lg">
         <div className="container-fluid">
           <a className="navbar-brand" href="/">
-            <img src="images/logo.svg" className="logo" alt=""/>
+            <img src="../images/logo.svg" className="logo" alt=""/>
             Gadumi
             <span className="d-block text-muted">Your English language course</span>
           </a>
