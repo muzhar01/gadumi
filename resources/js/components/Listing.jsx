@@ -21,7 +21,7 @@ export default function Listing() {
           <div className="row">
             <ListingSidebar/>
             <div className="col-lg-8">
-              <div className="overflow-auto">
+              <div className="overflow-auto h-75">
                 <ul className="list-group">
                   {
                     lessons.map((lesson)=>{
