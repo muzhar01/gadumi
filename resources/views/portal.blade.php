@@ -10,7 +10,11 @@
     @vite('resources/js/app.js')
     @vite('resources/css/login-page/css/bootstrap.css')
     @vite('resources/css/login-page/css/stylee.css')
-    {{-- @vite("resources/scripts/App.tsx"); --}}
+    
+    {{-- @vite('resources/css/listing/bootstrap.css') --}}
+    @vite('resources/css/listing/custom.css')
+    <link href='https://fonts.googleapis.com/css?family=Outfit' rel='stylesheet'>
+
 
 </head>
 <body>
@@ -20,5 +24,6 @@
     @vite('resources/css/login-page/js/main.js')
     @vite('resources/css/login-page/js/imagesloaded.js')
     @vite('resources/css/login-page/js/validator.js')
+    @vite('resources/css/listing/bootstrap.js')
 </body>
 </html>
