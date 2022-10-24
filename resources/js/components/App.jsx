@@ -7,9 +7,11 @@ function App() {
     return (
         <BrowserRouter >
           <Routes>
-            <Route exact path="/portal" element={<Register/>}/>
-            <Route exact path="/register" element={<Register/>}/>
-            <Route exact path="/login" element={<Login/>}/>
+            <Route path="/portal">
+              <Route exact index element={<Register/>} />
+              <Route exact path="register" element={<Register/>}/>
+              <Route exact path="login" element={<Login/>}/>
+            </Route>
           </Routes>
         </BrowserRouter>
     );
