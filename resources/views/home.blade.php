@@ -751,8 +751,8 @@
                                         </li>
                                         <li class="mt-4">
                                             <div class="featured-menu d-flex justify-content-center gap-3 flex-column">
-                                                <a href="{{ url('/portal') }}" class="btn btn-primary-new btn-lg btn-cta">Start now!</a>
-                                                <a href="{{ url('/portal') }}" class="btn btn-primary-new-outline btn-lg btn-cta">Log in</a>
+                                                <a href="{{ url('/portal/register') }}" class="btn btn-primary-new btn-lg btn-cta">Start now!</a>
+                                                <a href="{{ url('/portal/register') }}" class="btn btn-primary-new-outline btn-lg btn-cta">Log in</a>
                                             </div>
                                         </li>
                                     </ul>
@@ -764,8 +764,8 @@
 
                     <!-- Featured Navigation Menu -->
                     <div class="featured-menu d-none d-lg-flex justify-content-end gap-3">
-                        <a href="{{ url('/portal') }}" class="btn btn-primary-new">Start now!</a>
-                        <a href="{{ url('/portal') }}" class="btn btn-primary-new-outline">Log in</a>
+                        <a href="{{ url('/portal/register') }}" class="btn btn-primary-new">Start now!</a>
+                        <a href="{{ url('/portal/login') }}" class="btn btn-primary-new-outline">Log in</a>
                     </div>
                     <!-- /Featured Navigation Menu -->
                 </div>
@@ -796,7 +796,7 @@
                         <p>
                             <b>Master the English language</b> with a course created by foreign language lovers without having to pay the teacher for each hour of study.
                         </p>
-                        <a href="{{ url('/portal') }}" class="btn btn-primary-new btn-cta btn-lg w-fit-content" style="width: fit-content">Get started now</a>
+                        <a href="{{ url('/portal/register') }}" class="btn btn-primary-new btn-cta btn-lg w-fit-content" style="width: fit-content">Get started now</a>
                     </div>
                 </div>
             </div>
@@ -817,7 +817,7 @@
                             <p>
                                 Thanks to the short lessons of a few minutes, you will always find a moment to develop your language skills.
                             </p>
-                            <a href="{{ url('/portal') }}" class="btn btn-success-new btn-lg w-fit-content btn-cta" style="width: fit-content">Learn English</a>
+                            <a href="{{ url('/portal/register') }}" class="btn btn-success-new btn-lg w-fit-content btn-cta" style="width: fit-content">Learn English</a>
                         </div>
                     </div>
                     <div class="col-md-5">
@@ -833,7 +833,7 @@
                             <p>
                                 Thanks to the short lessons of a few minutes, you will always find a moment to develop your language skills.
                             </p>
-                            <a href="{{ url('/portal') }}" class="btn btn-success-new btn-lg w-fit-content mx-auto btn-cta" style="width: fit-content">Learn English</a>
+                            <a href="{{ url('/portal/register') }}" class="btn btn-success-new btn-lg w-fit-content mx-auto btn-cta" style="width: fit-content">Learn English</a>
                         </div>
                     </div>
                     <!-- /For Mobile -->
@@ -857,7 +857,7 @@
                             <p>
                                 Every week, the Gadumi team prepares new lessons for you, thanks to which you will learn the English language even better.
                             </p>
-                            <a href="{{ url('/portal') }}" class="btn btn-success-new btn-lg w-fit-content btn-cta mt-2 mt-sm-0" style="width: fit-content">Learn English</a>
+                            <a href="{{ url('/portal/register') }}" class="btn btn-success-new btn-lg w-fit-content btn-cta mt-2 mt-sm-0" style="width: fit-content">Learn English</a>
                         </div>
                     </div>
                 </div>
@@ -875,7 +875,7 @@
                             <p>
                                 You read, listen, repeat, click. When creating Gadumi, we remembered that learning should not only be effective, but also enjoyable.
                             </p>
-                            <a href="{{ url('/portal') }}" class="btn btn-success-new btn-lg w-fit-content btn-cta" style="width: fit-content">Learn English</a>
+                            <a href="{{ url('/portal/register') }}" class="btn btn-success-new btn-lg w-fit-content btn-cta" style="width: fit-content">Learn English</a>
                         </div>
                     </div>
                     <div class="col-md-5">
@@ -891,7 +891,7 @@
                             <p>
                                 You read, listen, repeat, click. When creating Gadumi, we remembered that learning should not only be effective, but also enjoyable.
                             </p>
-                            <a href="{{ url('/portal') }}" class="btn btn-success-new btn-lg w-fit-content mx-auto btn-cta" style="width: fit-content">Learn English</a>
+                            <a href="{{ url('/portal/register') }}" class="btn btn-success-new btn-lg w-fit-content mx-auto btn-cta" style="width: fit-content">Learn English</a>
                         </div>
                     </div>
                     <!-- /For Mobile -->
@@ -916,7 +916,7 @@
                             <p>
                                 Knowing English you gain access to unlimited knowledge from all over the world. Remember that most books and content on the Internet are written in English!
                             </p>
-                            <a href="{{ url('/portal') }}" class="btn btn-success-new btn-lg w-fit-content btn-cta mt-2 mt-sm-0" style="width: fit-content">Learn English</a>
+                            <a href="{{ url('/portal/register') }}" class="btn btn-success-new btn-lg w-fit-content btn-cta mt-2 mt-sm-0" style="width: fit-content">Learn English</a>
                         </div>
                     </div>
                 </div>
@@ -1089,7 +1089,7 @@
 
                 <h1 class="section-title text-center">Try Gadumi absolutely for free</h1>
                 <p class="text-center mb-4">You have nothing to lose. You can only gain.</p>
-                <a href="{{ url('/portal') }}" class="btn btn-warning-new btn-cta btn-lg w-fit-content" style="width: fit-content; border-radius: 5px; padding: 16px 84px; border: 1px solid rgb(0, 115, 255); text-shadow: rgb(0 0 0) 0px 1px 1px;">Try Gadumi for free</a>
+                <a href="{{ url('/portal/register') }}" class="btn btn-warning-new btn-cta btn-lg w-fit-content" style="width: fit-content; border-radius: 5px; padding: 16px 84px; border: 1px solid rgb(0, 115, 255); text-shadow: rgb(0 0 0) 0px 1px 1px;">Try Gadumi for free</a>
             </div>
         </section>
         <!-- /section-call-to-action -->

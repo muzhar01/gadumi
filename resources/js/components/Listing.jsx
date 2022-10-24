@@ -2,6 +2,8 @@ import React from 'react'
 import axios from "axios";
 import HeaderListing from './HeaderListing'
 import ListingSidebar from './ListingSidebar'
+import style from './../../css/listing/custom.css';
+
 export default function Listing() {
   const [lessons, setPost] = React.useState([]);
 
