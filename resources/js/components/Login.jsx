@@ -3,7 +3,7 @@ import { Link,useNavigate  } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-export default function Login() {
+export default function Login({setToken}) {
     const [email,setEmail]=useState("")
     const [password,setPassword]=useState("")
     var [errors,setErrors]=useState("")
@@ -24,7 +24,9 @@ export default function Login() {
             let token = result.token.split("|");
             localStorage.setItem('token', token[1]);
             console.log(result.token);
-            setTimeout(() => navigate("/courses"), 1000);
+            setToken(token[1]);
+            navigate('/portal');
+            //setTimeout(() => navigate("/portal/courses"), 1000);
           }else if(result.errors){
             setErrors(result.errors)
         }else{
