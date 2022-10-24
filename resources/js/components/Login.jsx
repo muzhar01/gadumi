@@ -9,11 +9,11 @@ export default function Login({setToken}) {
     var [errors,setErrors]=useState("")
     const navigate =useNavigate();
     async function login(){
-        useEffect(() => {
-            if(localStorage.getItem('token')){
-                navigate("/portal/courses")
-            }
-        },[])
+        // useEffect(() => {
+        //     if(localStorage.getItem('token')){
+        //         navigate("/portal/courses")
+        //     }
+        // },[])
         let item={email,password}
         let result = await fetch("http://localhost:8000/api/login",{
             method:"POST",
