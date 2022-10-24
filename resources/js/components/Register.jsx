@@ -13,12 +13,12 @@ export default function Register() {
   async function signUp(){
     let item={name,email,password,password_confirmation}
     let result = await fetch("http://localhost:8000/api/register",{
-      method:"POST",
-      body:JSON.stringify(item),
-      headers:{
+        method:"POST",
+        body:JSON.stringify(item),
+        headers:{
         "Content-Type":'application/json',
         "Accept":'application/json'
-      }
+        }
     })
     result = await result.json()
     
