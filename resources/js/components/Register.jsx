@@ -13,12 +13,12 @@ export default function Register() {
   async function signUp(){
     let item={name,email,password,password_confirmation}
     let result = await fetch("http://localhost:8000/api/register",{
-      method:"POST",
-      body:JSON.stringify(item),
-      headers:{
+        method:"POST",
+        body:JSON.stringify(item),
+        headers:{
         "Content-Type":'application/json',
         "Accept":'application/json'
-      }
+        }
     })
     result = await result.json()
     
@@ -52,8 +52,8 @@ export default function Register() {
                 <div className="fxt-page-switcher">
                     <h2 className="fxt-page-title mr-3">Register</h2>
                     <ul className="fxt-switcher-wrap">
-                        <li><Link to="/login" className="fxt-switcher-btn">Login</Link></li>
-                        <li><Link to="/register" className="fxt-switcher-btn active">Register</Link></li>
+                        <li><Link to="/portal/login" className="fxt-switcher-btn">Login</Link></li>
+                        <li><Link to="/portal/register" className="fxt-switcher-btn active">Register</Link></li>
                     </ul>
                 </div>
                 <div className="fxt-main-form">

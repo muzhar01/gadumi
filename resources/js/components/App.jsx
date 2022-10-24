@@ -1,10 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login from './Login';
-
+import Register from './Register';
 function App() {
     return (
-        <Login></Login>
+        <BrowserRouter >
+          <Routes>
+            <Route path="/portal">
+              <Route exact index element={<Register/>} />
+              <Route exact path="register" element={<Register/>}/>
+              <Route exact path="login" element={<Login/>}/>
+            </Route>
+          </Routes>
+        </BrowserRouter>
     );
 }
 
