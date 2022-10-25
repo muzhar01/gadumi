@@ -7,6 +7,7 @@ import Register from './Register';
 import NotFound from './NotFound';
 import LessonDetail from './LessonDetail';
 import Exercise from './Exercise';
+import Logout from './Logout';
 function App() {
   const [token, setToken] = useState(localStorage.getItem('token'));
   
@@ -32,6 +33,8 @@ function App() {
 
               <Route path="*" element={<NotFound />} />
             </Route>
+            
+            <Route exact path="/logout" element={<Logout/>}/>
           </Routes>
         </BrowserRouter>
     );
