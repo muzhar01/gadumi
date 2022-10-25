@@ -47,7 +47,7 @@ export default function ListingSidebar() {
           </li>
           <li className="list-group-item">
             <img src="/images/logout.svg" alt="" srcSet=""/>
-            <a href="#" className="logout">Logout</a>
+            <Link to="/logout" className="logout">Logout</Link>
           </li>
         </ul>
       </div>
