@@ -1,6 +1,12 @@
 import React from 'react'
 
 export default function HeaderListing() {
+  const [lesson, setPost] = React.useState([]);
+  React.useEffect(() => {
+    axios.get("http://localhost:8000/api/lessons/").then((response) => {
+      setPost(response.data.data);
+    });
+  }, []);
   return (
     <>
     <div className="container">
@@ -20,7 +26,7 @@ export default function HeaderListing() {
             </div>
             <div className="lesson-complete me-4">
               <span className="complete-lesson">completed lessons</span>
-              <span className="lesson-count">0 of 70</span>
+              <span className="lesson-count">0 of {lesson.length}</span>
             </div>
             <span className="navbar-text">
               Your knowledge of this level

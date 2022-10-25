@@ -1,8 +1,11 @@
 {
   "resources/js/app.js": {
-    "file": "assets/app.cd7c3fee.js",
+    "file": "assets/app.c41da6a2.js",
     "src": "resources/js/app.js",
-    "isEntry": true
+    "isEntry": true,
+    "css": [
+      "assets/app.8c957a3f.css"
+    ]
   },
   "resources/css/app.css": {
     "file": "assets/app.7c3c19f82.js",
@@ -15,7 +18,7 @@
     "isEntry": true
   },
   "resources/css/login-page/js/main.js": {
-    "file": "assets/main.b788c60c.js",
+    "file": "assets/main.3f4cb067.js",
     "src": "resources/css/login-page/js/main.js",
     "isEntry": true
   },
@@ -29,9 +32,13 @@
     "src": "resources/css/login-page/js/validator.js",
     "isEntry": true
   },
-  "resources/sass/app.scss": {
-    "file": "assets/app.525f5899.css",
-    "src": "resources/sass/app.scss",
+  "resources/js/app.css": {
+    "file": "assets/app.8c957a3f.css",
+    "src": "resources/js/app.css"
+  },
+  "resources/css/listing/custom.css": {
+    "file": "assets/custom.65b27025.css",
+    "src": "resources/css/listing/custom.css",
     "isEntry": true
   },
   "resources/css/login-page/css/bootstrap.css": {
@@ -42,6 +49,11 @@
   "resources/css/login-page/css/stylee.css": {
     "file": "assets/stylee.071e8da1.css",
     "src": "resources/css/login-page/css/stylee.css",
+    "isEntry": true
+  },
+  "resources/sass/app.scss": {
+    "file": "assets/app.525f5899.css",
+    "src": "resources/sass/app.scss",
     "isEntry": true
   }
 }
