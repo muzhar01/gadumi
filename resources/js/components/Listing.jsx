@@ -3,6 +3,7 @@ import axios from "axios";
 import HeaderListing from './HeaderListing'
 import ListingSidebar from './ListingSidebar'
 import style from './../../css/listing/custom.css';
+import { Link } from 'react-router-dom';
 
 export default function Listing() {
   const [lessons, setPost] = React.useState([]);
@@ -21,7 +22,7 @@ export default function Listing() {
           <div className="row">
             <ListingSidebar/>
             <div className="col-lg-8">
-              <div className="overflow-auto">
+              <div className="overflow-auto h-75">
                 <ul className="list-group">
                   {
                     lessons.map((lesson)=>{
@@ -35,7 +36,7 @@ export default function Listing() {
                           </div>
                           <div className="col-6 col-md-9 col-lg-9 ms-4">
                             
-                            <a href="#" className="lesson-heading"><h1>{lesson.title}</h1></a>
+                            <Link to={`lessonDetail/${lesson.id}`} className="lesson-heading">{lesson.title}</Link>
                             <span className="d-block text-muted">lesson time: 7 min</span><br/>
                           </div>
                         </div>

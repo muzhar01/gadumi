@@ -182,3 +182,9 @@
 .list-group-item .settings,.list-group-item .prime_account,.list-group-item .contact_us,.list-group-item .logout{
   font-size: 14px;
 }
+.hide-scroll-bar{
+  height: 500px;
+}
+::-webkit-scrollbar{
+  display: none;
+}

@@ -179,6 +179,19 @@ class ExerciseController extends Controller
         $lessons = Lesson::where('status', '1')->get();
         return view('admin.exercise.edit', compact('lessons', 'exercise'));
     }
+    public function exercise($id)
+    {
+        $exercise = Exercise::where('lesson_id',$id)->get();
+        $exercise->map(function($q){
+        $q->image=url($q->image);
+            return $q;
+        });
+        if($exercise->count() > 0){
+            return $this->success($exercise, "Exercise List!");
+        }else{
+            return $this->error("Not Found!");
+        }
+    }
     public function updateExercise(Request $request,$id)
     {
         $data = $request->validate([
