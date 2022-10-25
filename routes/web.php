@@ -23,7 +23,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::view('/portal/{params?}', 'portal');
+Route::view('/portal/{params?}{params1?}/{params2?}/{params3?}/{params4?}', 'portal');
 
 Route::get('/admin',[AdminController::class,'index'])->name('admin.login');
 Route::post('/admin/login',[AdminController::class,'login'])->name('admin.login.submit');
