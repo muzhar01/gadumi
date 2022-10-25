@@ -1,17 +1,31 @@
-import React from 'react'
+import {React,useState,useEffect} from 'react'
 import axios from "axios";
 import HeaderListing from './HeaderListing'
 import ListingSidebar from './ListingSidebar'
 import {Link, useParams } from 'react-router-dom';
+import PostExercise from './PostExercise';
+import Pagination from './Pagination';
 
 export default function Exercise() {
   let param = useParams()
-  const [exercises, setPost] = React.useState([]);
-  React.useEffect(() => {
-    axios.get("http://localhost:8000/api/exercise/"+param.id).then((response) => {
-      setPost(response.data.data);
-    });
+  const [exercises, setExercises] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [exercisePerPage] = useState(1);
+  useEffect(() => {
+    const fatchExercises = async()=>{
+      setLoading(true)
+      const res= await axios.get("http://localhost:8000/api/exercise/"+param.id);
+      setExercises(res.data.data);
+      setLoading(false);
+    };
+    fatchExercises();
   }, []);
+  const indexOfLastExercise=currentPage * exercisePerPage;
+  const indexOfFirstExercise=indexOfLastExercise - exercisePerPage;
+  const currentExercise=exercises.slice(indexOfFirstExercise,indexOfLastExercise)
+
+  const paginate= pageNumber => setCurrentPage(pageNumber)
   return (
     <>
     <HeaderListing/>
@@ -20,32 +34,8 @@ export default function Exercise() {
         <div className="row">
           <ListingSidebar/>
           <div className="col-lg-8">
-          <div className="overflow-auto h-100">
-                <ul className="list-group">
-                  {
-                    exercises.map((exercise)=>{
-                   return <li key={exercise.id} className="list-group-item course-listing">
-                    <div className="row border-bottom">
-                      <div className="col-12 course-list"> 
-                        <div className="row">
-                          <div className="col-12 col-md-12 col-lg-12">
-                            <img src={exercise.image} alt="" srcSet=""/>
-                          </div>
-                          <div className="col-12 col-md-12 col-lg-12 ms-4">
-                            
-                            <p className="lesson-heading">{exercise.title}</p>
-                            <p className="text-left">{exercise.description}</p>
-                          </div>
-                        </div>
-                        <p>{exercise.content}</p>
-                        <button className="btn btn-outline-primary mb-3" to="">Next</button>
-                      </div>
-                    </div>
-                  </li>
-                })
-                }
-                </ul>
-              </div>
+            <PostExercise exercises={currentExercise} loading={loading}/>
+            <Pagination exercisePerPage={exercisePerPage} totalExercise={exercises.length} paginate={paginate}/>
           </div>
         </div>
       </div>
