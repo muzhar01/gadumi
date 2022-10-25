@@ -54,3 +54,5 @@ Route::group(['prefix'=>'admin'], function(){
 
 Route::get('courses',[CourseController::class,'index']);
 Route::get('lessons',[LessonController::class,'index']);
+Route::get('lesson/{id}',[LessonController::class,'detail']);
+Route::get('exercise/{id}',[ExerciseController::class,'exercise']);

@@ -24,6 +24,16 @@ class LessonController extends Controller
             return $this->error("Not Found!");
         }
     }
+    public function detail($id)
+    {
+        $lessons = Lesson::findOrFail($id);
+        $lessons->image=url($lessons->image);
+        if($lessons->count() > 0){
+            return $this->success($lessons, "Lesson data!");
+        }else{
+            return $this->error("Not Found!");
+        }
+    }
     public function lessonList()
     {
         $lessons = Lesson::orderBy('id', 'DESC')->get();
