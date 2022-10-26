@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Exercise;
 use App\Models\Lesson;
+use App\Models\Option;
+use App\Models\Question;
 use Illuminate\Http\Request;
 
 class ExerciseController extends Controller
@@ -148,7 +150,39 @@ class ExerciseController extends Controller
         $exercise->lesson_id=$request->lesson_id;
         $exercise->content=$request->content;
         $exercise->description=$request->description;
-        if ($exercise->save()) {
+        $status = $exercise->save();
+
+        // Store Questions
+        $questions = $request->questions;
+        if (is_array($questions)) {
+            foreach ($questions as $q) {
+                $question = Question::create([
+                    'lesson_id' => $request->lesson_id,
+                    'content' => $q['question'],
+                    'translation' => $q['translation'],
+                ]);
+
+                if (!isset($q['options']))
+                    continue;
+
+                // Store options
+                $options = $q['options'];
+                if (is_array($options)) {
+                    foreach ($options as $o) {
+                        $option = Option::create([
+                            'question_id' => $question->id,
+                            'content' => $o['option'],
+                            'translation' => $o['translation']
+                        ]);
+                        if (isset($o['correct']) && $o['correct'] == 'on')
+                            $option->correct = 1;
+                    }
+                }
+            }
+        }
+
+
+        if ($status) {
             return redirect('/admin/exercise')->with('success', "Exercise Added Successfully!");
         } else {
             return redirect('/admin/exercise')->with('error', "Exercise not added");
