@@ -27,54 +27,46 @@
         <div class="card mb-4">
           <h5 class="card-header">Update Settings</h5>
           <div class="card-body">
-            <form action="{{ route('submit-lesson') }}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('update-setting') }}" method="post" enctype="multipart/form-data">
               @csrf
               <div class="row">
                 <div class="col-lg-6">
                   <label for="" class="mt-3">Font Size</label>
-                  <input type="text" name="font_size" placeholder="Enter Font Size" class="form-control">
+                  <input type="text" name="font_size" placeholder="Enter Font Size" class="form-control" value="{{ $setting->font_size ?? '' }}">
                    @error('font_size')
                   <span class="text-danger">{{ $message }}</span>
                   @enderror
                 </div>
                 <div class="col-lg-6">
                   <label for="color" class="mt-3">Color</label>
-                  <input type="text" name="color" placeholder="Enter Color" class="form-control">
-                   @error('color')
+                  <input type="text" name="color" placeholder="Enter Color" value="{{ $setting->color ?? '' }}" class="form-control">
+                  @error('color')
                   <span class="text-danger">{{ $message }}</span>
                   @enderror
                 </div>
                 <div class="col-lg-6">
-                  <label for="" class="mt-3">Is Recommended</label>
-                  <select name="recomended"  class="form-control">
-                    <option value="1">Yes</option>
-                    <option value="0">No</option>
+                  <label for="line_spacing" class="mt-3">Line Spacing</label>
+                  <input type="number" name="line_spacing" value="{{ $setting->line_spacing ?? '' }}" placeholder="Enter Line Spacing" class="form-control">
+                  @error('line_spacing')
+                  <span class="text-danger">{{ $message }}</span>
+                  @enderror
+                </div>
+                <div class="col-lg-6">
+                  <label for="" class="mt-3">Font Weight</label>
+                  <select name="font_weight"  class="form-control">
+                    <option value="100" @php if($setting->font_weight ?? '' ==100){echo "selected";} @endphp >100</option>
+                    <option value="200" @php if($setting->font_weight ?? '' ==200){echo "selected";} @endphp >200</option>
+                    <option value="300" @php if($setting->font_weight ?? '' ==300){echo "selected";} @endphp >300</option>
+                    <option value="400" @php if($setting->font_weight ?? '' ==400){echo "selected";} @endphp >400</option>
+                    <option value="500" @php if($setting->font_weight ?? '' ==500){echo "selected";} @endphp >500</option>
+                    <option value="600" @php if($setting->font_weight ?? '' ==600){echo "selected";} @endphp >600</option>
+                    <option value="700" @php if($setting->font_weight ?? '' ==700){echo "selected";} @endphp >700</option>
+                    <option value="800" @php if($setting->font_weight ?? '' ==800){echo "selected";} @endphp >800</option>
+                    <option value="900" @php if($setting->font_weight ?? '' ==900){echo "selected";} @endphp >900</option>
                   </select>
-                </div>
-                <div class="col-lg-6">
-                  <label for="" class="mt-3">Level</label>
-                  <select name="level"  class="form-control">
-                    <option value="Beginner">Beginner</option>
-                    <option value="Intermediate">Intermediate</option>
-                    <option value="Advanced">Advanced</option>
-                  </select>
-                </div>
-                <div class="col-lg-6">
-                  <label for="" class="mt-3">Image</label>
-                  <br>
-                  <img src="{{ asset('images/imageperview.png') }}" id="output" alt="" style="height: 100px" width="100px">
-                  <input type="file" name="image" class="form-control"  onchange="loadFile(event)">
-                </div>
-                <div class="col-lg-6">
-                  <label for="" class="mt-3">Overview</label>
-                  <input type="text" name="overview" class="form-control" placeholder="Enter overview">
-                </div>
-                <div class="col-lg-6">
-                  <label for="" class="mt-3">Description</label>
-                  <textarea name="description" class="form-control" placeholder="Enter description"></textarea>
                 </div>
                 <div class="col-lg-12">
-                  <button type="submit" class="btn btn-outline-primary mt-4">Add</button>
+                  <button type="submit" class="btn btn-outline-primary mt-4">Update</button>
                 </div>
               </div>
             </form>

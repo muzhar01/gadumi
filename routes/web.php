@@ -63,6 +63,7 @@ Route::post('/exercise/update/{id}', [ExerciseController::class,'updateExercise'
 
 //Exercise Route
 Route::get('/setting',[SettingController::class,'index'])->name('setting-index');
+Route::post('/update/setting',[SettingController::class,'update'])->name('update-setting');
 
 
 

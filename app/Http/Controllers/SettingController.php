@@ -14,7 +14,12 @@ class SettingController extends Controller
      */
     public function index()
     {
-        return view('admin.settings.index');
+        $setting=Setting::first();
+        return view('admin.settings.index',compact('setting'));
+    }
+    public function indexjson()
+    {
+        return Setting::first();
     }
 
     /**
@@ -69,7 +74,16 @@ class SettingController extends Controller
      */
     public function update(Request $request, Setting $setting)
     {
-        //
+        $model=Setting::firstOrCreate();
+        $model->color= $request->color;
+        $model->font_size= $request->font_size;
+        $model->line_spacing= $request->line_spacing;
+        $model->font_weight= $request->font_weight;
+        if($model->update()){
+            return redirect()->back()->with('success','Setting updated successfully');
+        }else{
+            return redirect()->back()->with('error','Failed to update setting');
+        }
     }
 
     /**

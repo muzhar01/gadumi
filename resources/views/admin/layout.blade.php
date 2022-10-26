@@ -42,6 +42,7 @@
       <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
       <script src="{{ asset('admin_assets/js/config.js')}}"></script>
       <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+      <script src="https://cdn.ckeditor.com/4.20.0/standard/ckeditor.js"></script>
    </head>
    <body>
       <!-- Layout wrapper -->

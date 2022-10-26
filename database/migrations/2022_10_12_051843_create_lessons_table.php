@@ -18,7 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('course_id');
             $table->string('title');
             $table->text('overview')->nullable();
-            $table->text('description')->nullable();
+            $table->longText('description')->nullable();
             $table->boolean('status')->default(true);
             $table->string('image')->nullable();
             $table->integer('index')->default(0);
