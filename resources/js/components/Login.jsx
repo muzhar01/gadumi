@@ -36,7 +36,6 @@ export default function Login({setToken}) {
             setErrors(result.errors)
         }else{
             toast.error(result.message);
-            console.log(result);
           }
     }
   return (

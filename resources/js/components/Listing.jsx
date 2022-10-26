@@ -26,7 +26,8 @@ export default function Listing() {
                 <ul className="list-group">
                   {
                     lessons.map((lesson)=>{
-                   return <li key={lesson.id} className="list-group-item course-listing">
+                   return <Link to={`lessonDetail/${lesson.id}`} className="lesson-heading">
+                   <li key={lesson.id} className="list-group-item course-listing">
                     <div className="row border-bottom">
                       <div className="col-9 course-list"> 
                         <div className="row">
@@ -36,7 +37,7 @@ export default function Listing() {
                           </div>
                           <div className="col-6 col-md-9 col-lg-9 ms-4">
                             
-                            <Link to={`lessonDetail/${lesson.id}`} className="lesson-heading">{lesson.title}</Link>
+                            <h2 className="lesson-heading">{lesson.title}</h2>
                             <span className="d-block text-muted">lesson time: 7 min</span><br/>
                           </div>
                         </div>
@@ -46,7 +47,7 @@ export default function Listing() {
                         <img src="../images/check.svg" alt=""/>
                       </div>
                     </div>
-                  </li>
+                  </li></Link>
                 })
                 }
                 </ul>

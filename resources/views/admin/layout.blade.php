@@ -87,6 +87,12 @@
                         <div data-i18n="Misc">Exercise</div>
                      </a>
                   </li>
+                  <li class="menu-item">
+                     <a href="{{ route('setting-index') }}" class="menu-link">
+                        <i class="menu-icon tf-icons bx bx-cube-alt"></i>
+                        <div data-i18n="Misc">Settings</div>
+                     </a>
+                  </li>
                </ul>
             </aside>
             <!-- / Menu -->
