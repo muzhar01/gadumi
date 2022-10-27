@@ -35,7 +35,7 @@ export default function ListingSidebar() {
           <hr/>
           <li className="list-group-item">
             <img src="/images/settings.svg" alt="" srcSet=""/>
-            <Link to="setting" className="settings">Settings</Link>
+            <Link to="/portal/setting" className="settings">Settings</Link>
           </li>
           <li className="list-group-item">
             <img src="/images/prime_account.svg" alt="" srcSet=""/>

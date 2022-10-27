@@ -27,9 +27,9 @@ function App() {
                 <>
                   <Route exact index element={<Listing/>} />
                   <Route exact path="courses" element={<Listing/>}/>
+                  <Route exact path="setting" element={<Setting/>}/>
                   <Route  path="lessonDetail/:id" element={<LessonDetail/>}/>
                   <Route exact path="exercise/:id" element={<Exercise/>}/>
-                  <Route exact path="setting" element={<Setting/>}/>
                 </>
               }
 
