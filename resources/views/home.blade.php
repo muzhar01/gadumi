@@ -106,8 +106,9 @@
                 background-color: var(--primary-new);
                 color: white;
                 border-radius: 8px;
-                padding: 3px 32px;
+                padding: 3px 5px;
                 font-weight: 600;
+                width: 200px !important;
             }
 
             .btn.btn-primary-new:hover {
@@ -119,8 +120,9 @@
                 background-color: var(--success-new);
                 color: #161823;
                 border-radius: 8px;
-                padding: 3px 32px;
+                padding: 3px 5px;
                 font-weight: 600;
+                width: 200px !important;
             }
 
             .btn.btn-success-new:hover {
@@ -180,12 +182,12 @@
             .btn.btn-cta {
                 font-size: 17px;
                 line-height: 20px;
-                padding: 11px 38px;
+                padding: 11px 5px;
             }
             .btn.btn-cta:hover {
                 font-size: 17px;
                 line-height: 20px;
-                padding: 11px 38px
+                padding: 11px 5px
             }
 
             .section-hero {
@@ -531,8 +533,12 @@
             .section-3 .box .text h3 {
                 color: #161823;
                 font-size: 18px;
-                line-height: 21px;
+                line-height: 18px;
                 font-weight: 700;
+            }
+
+            .section-3 .box .text p {
+                line-height: 16px;
             }
 
             .section-testimonials {
