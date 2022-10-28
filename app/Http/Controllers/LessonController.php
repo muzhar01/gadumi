@@ -13,9 +13,23 @@ class LessonController extends Controller
      */
     public function index()
     {
-        $lesson = Lesson::all();
-        if($lesson->count() > 0){
-            return $this->success($lesson, "Lesson data!");
+        $lessons = Lesson::where('status',1)->get();
+        $lessons->map(function($q){
+            $q->image=url($q->image);
+            return $q;
+        });
+        if($lessons->count() > 0){
+            return $this->success($lessons, "Lesson data!");
+        }else{
+            return $this->error("Not Found!");
+        }
+    }
+    public function detail($id)
+    {
+        $lessons = Lesson::findOrFail($id);
+        $lessons->image=url($lessons->image);
+        if($lessons->count() > 0){
+            return $this->success($lessons, "Lesson data!");
         }else{
             return $this->error("Not Found!");
         }

@@ -450,9 +450,16 @@
             }
 
             .section-1-text h1 {
-                font-size: 32px;
-                line-height: 38px;
+                font-size: 19px;
                 font-weight: 700;
+                margin-bottom: 0;
+            }
+
+            @media (min-width: 992px) {
+                .section-1-text h1 {
+                    font-size: 32px;
+                    line-height: 38px;
+                }
             }
 
             .section-1-img {
@@ -490,8 +497,15 @@
 
             .section-2-text {
                 text-align: center;
-                margin-top: 3rem;
+                margin-top: 1rem;
             }
+
+            @media (min-width: 576px) {
+                .section-2-text {
+                    margin-top: 3rem;
+                }
+            }
+
             .section-2-text .btn {
                 margin: auto;
             }
@@ -516,9 +530,16 @@
             }
 
             .section-2-text h1 {
-                font-size: 32px;
-                line-height: 38px;
+                font-size: 19px;
                 font-weight: 700;
+                margin-bottom: 0px;
+            }
+
+            @media (min-width: 576px) {
+                .section-2-text h1 {
+                    font-size: 32px;
+                    line-height: 38px;
+                }
             }
 
             .section-3 .image img {
@@ -527,7 +548,13 @@
             }
 
             .section-3 .box .text {
-                margin-right: 48px;
+                
+            }
+
+            @media (min-width: 576px) {
+                .section-3 .box .text {
+                    margin-right: 48px;
+                }
             }
 
             .section-3 .box .text h3 {
@@ -575,9 +602,15 @@
                 border-top: 1px solid rgb(225, 225, 225);
                 border-bottom: 1px solid rgb(225, 225, 225);
                 box-shadow: 0px 2px 10px rgb(215 215 215);
-                width: 220px;
+                width: 170px;
                 height: 296px;
                 padding: 16px 16px 8px;
+            }
+
+            @media (min-width: 576px) {
+                .section-testimonials .box {
+                    width: 220px;
+                }
             }
 
             .section-testimonials .box .rating img {
@@ -637,6 +670,10 @@
                 color: var(--primary-new);
             }
 
+            .divider {
+                background-color: rgba(236,244,255,255);
+                height: 30px;
+            }
         </style>
     </head>
     <body>
@@ -708,20 +745,20 @@
                             </div>
                             <div class="offcanvas-body position-relative pt-1 pl-0" style="margin-top: 79px;">
                                 <div class="container">
-                                    <ul class="navbar-nav">
-                                        <li class="nav-item">
+                                    <ul class="navbar-nav pt-4">
+                                        <li class="nav-item mb-2">
                                             <a href="javascript:void(0)" class="nav-link" onclick="$('#mainNavMenuOffCanvas').offcanvas('hide'); setTimeout(() => document.querySelector('#howItsWorking').scrollIntoView({behavior: 'smooth'}), 1000);">How it's working</a>
                                         </li>
-                                        <li class="nav-item">
+                                        <li class="nav-item mb-2">
                                             <a href="javascript:void(0)" class="nav-link" onclick="$('#mainNavMenuOffCanvas').offcanvas('hide'); setTimeout(() => document.querySelector('#whyIsItWorth').scrollIntoView({behavior: 'smooth'}), 1000);">Why is it worth it</a>
                                         </li>
-                                        <li class="nav-item">
+                                        <li class="nav-item mb-2">
                                             <a href="javascript:void(0)" class="nav-link" onclick="$('#mainNavMenuOffCanvas').offcanvas('hide'); setTimeout(() => document.querySelector('#testimonials').scrollIntoView({behavior: 'smooth'}), 1000);">Feedback</a>
                                         </li>
                                         <li class="mt-4">
                                             <div class="featured-menu d-flex justify-content-center gap-3 flex-column">
-                                                <a href="{{ url('/listing') }}" class="btn btn-primary-new btn-lg btn-cta">Start now!</a>
-                                                <a href="#" class="btn btn-primary-new-outline btn-lg btn-cta">Log in</a>
+                                                <a href="{{ url('/portal/register') }}" class="btn btn-primary-new btn-lg btn-cta">Start now!</a>
+                                                <a href="{{ url('/portal/register') }}" class="btn btn-primary-new-outline btn-lg btn-cta">Log in</a>
                                             </div>
                                         </li>
                                     </ul>
@@ -733,8 +770,8 @@
 
                     <!-- Featured Navigation Menu -->
                     <div class="featured-menu d-none d-lg-flex justify-content-end gap-3">
-                        <a href="{{ url('/listing') }}" class="btn btn-primary-new">Start now!</a>
-                        <a href="#" class="btn btn-primary-new-outline">Log in</a>
+                        <a href="{{ url('/portal/register') }}" class="btn btn-primary-new">Start now!</a>
+                        <a href="{{ url('/portal/login') }}" class="btn btn-primary-new-outline">Log in</a>
                     </div>
                     <!-- /Featured Navigation Menu -->
                 </div>
@@ -743,7 +780,7 @@
         <!-- /Header -->
 
         <!-- Hero Section -->
-        <section class="section-hero mb-5 pb-4">
+        <section class="section-hero mb-0 mb-sm-5 pb-4">
             <div class="container h-100 p-0 px-xxl-4">
                 <div class="row h-100">
                     <div class="col-12 col-lg-6 px-0 px-xxl-5 d-none d-lg-block">
@@ -765,12 +802,14 @@
                         <p>
                             <b>Master the English language</b> with a course created by foreign language lovers without having to pay the teacher for each hour of study.
                         </p>
-                        <a href="{{ url('/listing') }}" class="btn btn-primary-new btn-cta btn-lg w-fit-content" style="width: fit-content">Get started now</a>
+                        <a href="{{ url('/portal/register') }}" class="btn btn-primary-new btn-cta btn-lg w-fit-content" style="width: fit-content">Get started now</a>
                     </div>
                 </div>
             </div>
         </section>
         <!-- /Hero Section -->
+
+        <div class="divider d-sm-none mb-4"></div>
 
         <!-- Section 1 -->
         <section id="howItsWorking" class="section-1 mb-5">
@@ -784,7 +823,7 @@
                             <p>
                                 Thanks to the short lessons of a few minutes, you will always find a moment to develop your language skills.
                             </p>
-                            <a href="{{ url('/listing') }}" class="btn btn-success-new btn-lg w-fit-content btn-cta" style="width: fit-content">Learn English</a>
+                            <a href="{{ url('/portal/register') }}" class="btn btn-success-new btn-lg w-fit-content btn-cta" style="width: fit-content">Learn English</a>
                         </div>
                     </div>
                     <div class="col-md-5">
@@ -795,12 +834,12 @@
 
                     <!-- For Mobile -->
                     <div class="col-md-7 d-flex d-md-none align-items-center mt-5 text-center">
-                        <div class="section-1-text d-flex flex-column gap-3 justify-content-center">
+                        <div class="section-1-text d-flex flex-column gap-2 gap-sm-3 justify-content-center">
                             <h1>It's always a good time to learn</h1>
                             <p>
                                 Thanks to the short lessons of a few minutes, you will always find a moment to develop your language skills.
                             </p>
-                            <a href="{{ url('/listing') }}" class="btn btn-success-new btn-lg w-fit-content mx-auto btn-cta" style="width: fit-content">Learn English</a>
+                            <a href="{{ url('/portal/register') }}" class="btn btn-success-new btn-lg w-fit-content mx-auto btn-cta" style="width: fit-content">Learn English</a>
                         </div>
                     </div>
                     <!-- /For Mobile -->
@@ -819,12 +858,12 @@
                         </div>
                     </div>
                     <div class="col-lg-6 d-flex align-items-center">
-                        <div class="section-2-text d-flex flex-column gap-3 justify-content-center ml-5">
+                        <div class="section-2-text d-flex flex-column gap-2 gap-sm-3 justify-content-center ml-5">
                             <h1>Your development is most important to us</h1>
                             <p>
                                 Every week, the Gadumi team prepares new lessons for you, thanks to which you will learn the English language even better.
                             </p>
-                            <a href="{{ url('/listing') }}" class="btn btn-success-new btn-lg w-fit-content btn-cta" style="width: fit-content">Learn English</a>
+                            <a href="{{ url('/portal/register') }}" class="btn btn-success-new btn-lg w-fit-content btn-cta mt-2 mt-sm-0" style="width: fit-content">Learn English</a>
                         </div>
                     </div>
                 </div>
@@ -842,7 +881,7 @@
                             <p>
                                 You read, listen, repeat, click. When creating Gadumi, we remembered that learning should not only be effective, but also enjoyable.
                             </p>
-                            <a href="{{ url('/listing') }}" class="btn btn-success-new btn-lg w-fit-content btn-cta" style="width: fit-content">Learn English</a>
+                            <a href="{{ url('/portal/register') }}" class="btn btn-success-new btn-lg w-fit-content btn-cta" style="width: fit-content">Learn English</a>
                         </div>
                     </div>
                     <div class="col-md-5">
@@ -853,12 +892,12 @@
 
                     <!-- For Mobile -->
                     <div class="col-md-7 d-flex d-md-none align-items-center mt-5 text-center">
-                        <div class="section-1-text d-flex flex-column gap-3 justify-content-center">
+                        <div class="section-1-text d-flex flex-column gap-2 gap-sm-3 justify-content-center">
                             <h1>Learning feels like fun</h1>
                             <p>
                                 You read, listen, repeat, click. When creating Gadumi, we remembered that learning should not only be effective, but also enjoyable.
                             </p>
-                            <a href="{{ url('/listing') }}" class="btn btn-success-new btn-lg w-fit-content mx-auto btn-cta" style="width: fit-content">Learn English</a>
+                            <a href="{{ url('/portal/register') }}" class="btn btn-success-new btn-lg w-fit-content mx-auto btn-cta" style="width: fit-content">Learn English</a>
                         </div>
                     </div>
                     <!-- /For Mobile -->
@@ -878,12 +917,12 @@
                         </div>
                     </div>
                     <div class="col-lg-6 d-flex align-items-center">
-                        <div class="section-2-text d-flex flex-column gap-3 justify-content-center ml-5">
+                        <div class="section-2-text d-flex flex-column gap-2 gap-sm-3 justify-content-center ml-5">
                             <h1>Open up to new possibilities</h1>
                             <p>
                                 Knowing English you gain access to unlimited knowledge from all over the world. Remember that most books and content on the Internet are written in English!
                             </p>
-                            <a href="{{ url('/listing') }}" class="btn btn-success-new btn-lg w-fit-content btn-cta" style="width: fit-content">Learn English</a>
+                            <a href="{{ url('/portal/register') }}" class="btn btn-success-new btn-lg w-fit-content btn-cta mt-2 mt-sm-0" style="width: fit-content">Learn English</a>
                         </div>
                     </div>
                 </div>
@@ -959,7 +998,7 @@
         <section id="testimonials" class="section-testimonials py-5">
             <div class="container">
                 <h1 class="section-title text-center">What do users say about Gadumi?</h1>
-                <div class="boxes d-flex align-items-center mt-5 mx-auto gap-4 flex-wrap">
+                <div class="boxes d-flex align-items-center mt-5 mx-auto gap-2 gap-sm-2 gap-md-3 gap-lg-4 flex-wrap">
                     <div class="box d-flex flex-column">
                         <div class="rating d-flex gap-1 align-items-center justify-content-center mb-2">
                             <img src="{{ asset('images/rating-star.svg') }}" alt="">
@@ -1045,11 +1084,18 @@
         <!-- /section-testimonials -->
 
         <!-- section-call-to-action -->
-        <section class="section-call-to-action py-5">
+        <section class="section-call-to-action py-5 position-relative">
+            <div class="site-logo d-flex align-items-center position-absolute" style="top: calc(0px - (70px / 2)); left: calc(50% - (70px / 2)); width: 70px; height: 70px; border: 3px solid #fff; border-radius: 100%;">
+                <img src="{{ asset('images/gadumi-logo.svg') }}" alt="Gadumi" class="w-100">
+            </div>
             <div class="container text-center">
+                <h1 class="mb-1" style="font-family: outfit; font-weight: 800;">Gadumi</h1>
+                <p style="font-size: 18px;">Kurs dla wszystkich, co chcą osiągnąć płynność w mówieniu po angielsku bez obowiązku płacenia nauczycielowi za każdą godzinę zajęć.</p>
+                <div class="mb-4" style="font-size: 1.5rem;"><i class="fa fa-angle-double-down" aria-hidden="true"></i></div>
+
                 <h1 class="section-title text-center">Try Gadumi absolutely for free</h1>
                 <p class="text-center mb-4">You have nothing to lose. You can only gain.</p>
-                <a href="{{ url('/listing') }}" class="btn btn-warning-new btn-cta btn-lg w-fit-content" style="width: fit-content; border-radius: 5px; padding: 16px 84px; border: 1px solid rgb(0, 115, 255); text-shadow: rgb(0 0 0) 0px 1px 1px;">Try Gadumi for free</a>
+                <a href="{{ url('/portal/register') }}" class="btn btn-warning-new btn-cta btn-lg w-fit-content" style="width: fit-content; border-radius: 5px; padding: 16px 84px; border: 1px solid rgb(0, 115, 255); text-shadow: rgb(0 0 0) 0px 1px 1px;">Try Gadumi for free</a>
             </div>
         </section>
         <!-- /section-call-to-action -->
