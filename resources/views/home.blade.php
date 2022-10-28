@@ -48,7 +48,7 @@
                 border-left: 1px solid rgb(235, 235, 235);
                 border-right: 1px solid rgb(235, 235, 235);
                 border-top: 1px solid rgb(235, 235, 235);
-                border-bottom: 1px solid rgb(235, 235, 235);
+                /* border-bottom: 1px solid rgb(235, 235, 235); */
                 box-shadow: none;
                 position: fixed;
                 top: 0;
