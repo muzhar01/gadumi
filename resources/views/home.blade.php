@@ -841,18 +841,18 @@
                         <nav class="offcanvas offcanvas-start d-lg-none" id="mainNavMenuOffCanvas" tabindex="-1" aria-labelledby="Mobile Menu">
                             <div class="offcanvas-header p-0">
                                 <header class="site-header">
-                                    <div class="container">
+                                    <div class="container py-2">
                                         <div class="top-bar position-static w-100 d-flex align-items-center flex-wrap gap-4 align-items-center" style="padding-top: 1rem; padding-bottom: 1rem;">
                                             <!-- Site Logo -->
                                             <a href="{{ url('/') }}" class="flex-grow-1 text-decoration-none d-block">
                                                 <div class="site-info d-flex h-100 align-items-center gap-2">
                                                     <div class="site-logo d-flex align-items-center">
-                                                        <img src="{{ asset('images/gadumi-logo.svg') }}" alt="Gadumi" style="margin-bottom: 1px;">
+                                                        <img src="{{ asset('images/gadumi-logo-new.svg') }}" alt="Gadumi" style="margin-bottom: 1px;">
                                                     </div>
-                                                    <div class="site-name">
+                                                    {{-- <div class="site-name">
                                                         <h1 class="m-0">Gadumi</h1>
                                                         <p class="m-0">Your English language course</p>
-                                                    </div>
+                                                    </div> --}}
                                                 </div>
                                             </a>
                                             <!-- /Site Logo -->
@@ -929,10 +929,10 @@
         </section>
         <!-- /Hero Section -->
 
-        <div class="divider d-sm-none mb-4"></div>
+        <div id="howItsWorking" class="divider d-sm-none mb-4"></div>
 
         <!-- Section 1 -->
-        <section id="howItsWorking" class="section-1 mb-5">
+        <section class="section-1 mb-5">
             <div class="container">
                 <h1 class="section-1-title text-center font-weight-bolder" style="font-family:'Lato 900 normal';">Meet Gadumi</h1>
                 <h2 class="section-1-desc text-center">a course created with ❤️ just for you</h2>
@@ -1138,7 +1138,7 @@
             <div class="container">
                 <h1 class="section-title text-center">What do users say about Gadumi?</h1>
                 <div class="boxes d-flex align-items-center mt-5 mx-auto gap-2 gap-sm-2 gap-md-3 gap-lg-4 flex-wrap">
-                    <div class="box d-flex flex-column">
+                    <div class="box d-flex flex-column mb-3">
                         <div class="rating d-flex gap-1 align-items-center justify-content-center mb-2">
                             <img src="{{ asset('images/rating-star.svg') }}" alt="">
                             <img src="{{ asset('images/rating-star.svg') }}" alt="">
@@ -1146,7 +1146,7 @@
                             <img src="{{ asset('images/rating-star.svg') }}" alt="">
                             <img src="{{ asset('images/rating-star.svg') }}" alt="">
                         </div>
-                        <h3 class="name">Adam K.</h3>
+                        <h3 class="name">Kasia G.</h3>
                         <p class="comment flex-grow-1">
                             Sample text, example text, example text, example text, sample text, sample text, sample text, sample text 
                         </p>
@@ -1158,7 +1158,7 @@
                         </div>
                     </div>
 
-                    <div class="box d-flex flex-column">
+                    <div class="box d-flex flex-column mb-3">
                         <div class="rating d-flex gap-1 align-items-center justify-content-center mb-2">
                             <img src="{{ asset('images/rating-star.svg') }}" alt="">
                             <img src="{{ asset('images/rating-star.svg') }}" alt="">
@@ -1178,7 +1178,7 @@
                         </div>
                     </div>
 
-                    <div class="box d-flex flex-column">
+                    <div class="box d-flex flex-column mb-3">
                         <div class="rating d-flex gap-1 align-items-center justify-content-center mb-2">
                             <img src="{{ asset('images/rating-star.svg') }}" alt="">
                             <img src="{{ asset('images/rating-star.svg') }}" alt="">
@@ -1186,7 +1186,7 @@
                             <img src="{{ asset('images/rating-star.svg') }}" alt="">
                             <img src="{{ asset('images/rating-star.svg') }}" alt="">
                         </div>
-                        <h3 class="name">Adam K.</h3>
+                        <h3 class="name">Dawid J.</h3>
                         <p class="comment flex-grow-1">
                             Sample text, example text, example text, example text, sample text, sample text, sample text, sample text 
                         </p>
@@ -1198,7 +1198,7 @@
                         </div>
                     </div>
 
-                    <div class="box d-flex flex-column">
+                    <div class="box d-flex flex-column mb-3">
                         <div class="rating d-flex gap-1 align-items-center justify-content-center mb-2">
                             <img src="{{ asset('images/rating-star.svg') }}" alt="">
                             <img src="{{ asset('images/rating-star.svg') }}" alt="">
@@ -1206,7 +1206,7 @@
                             <img src="{{ asset('images/rating-star.svg') }}" alt="">
                             <img src="{{ asset('images/rating-star.svg') }}" alt="">
                         </div>
-                        <h3 class="name">Adam K.</h3>
+                        <h3 class="name">Jan C.</h3>
                         <p class="comment flex-grow-1">
                             Sample text, text also sample testk testk text Sample text, sample, text, test, text, sample
                         </p>
