@@ -826,13 +826,13 @@
                         <nav class="collapse navbar-collapse">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a href="#howItsWorking" class="nav-link">How it's working</a>
+                                    <a href="#howItsWorking" onclick="setTimeout(() => scrollIntoViewWithOffset('#howItsWorking', 77), 10);" class="nav-link">How it's working</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#whyIsItWorth" class="nav-link">Why is it worth it</a>
+                                    <a href="#whyIsItWorth" onclick="setTimeout(() => scrollIntoViewWithOffset('#whyIsItWorth', 77), 10);" class="nav-link">Why is it worth it</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#testimonials" class="nav-link">Feedback</a>
+                                    <a href="#testimonials" onclick="setTimeout(() => scrollIntoViewWithOffset('#testimonials', 77), 10);" class="nav-link">Feedback</a>
                                 </li>
                             </ul>
                         </nav>
@@ -867,13 +867,13 @@
                                 <div class="container">
                                     <ul class="navbar-nav pt-4">
                                         <li class="nav-item mb-2">
-                                            <a href="javascript:void(0)" class="nav-link" onclick="$('#mainNavMenuOffCanvas').offcanvas('hide'); setTimeout(() => {document.querySelector('#howItsWorking').scrollIntoView({behavior: 'smooth'});window.scrollBy(0,-77);}, 1000);">How it's working</a>
+                                            <a href="javascript:void(0)" class="nav-link" onclick="$('#mainNavMenuOffCanvas').offcanvas('hide'); setTimeout(() => scrollIntoViewWithOffset('#howItsWorking', 77), 1000);">How it's working</a>
                                         </li>
                                         <li class="nav-item mb-2">
-                                            <a href="javascript:void(0)" class="nav-link" onclick="$('#mainNavMenuOffCanvas').offcanvas('hide'); setTimeout(() => document.querySelector('#whyIsItWorth').scrollIntoView({behavior: 'smooth'});scrollBy(0,-77), 1000);">Why is it worth it</a>
+                                            <a href="javascript:void(0)" class="nav-link" onclick="$('#mainNavMenuOffCanvas').offcanvas('hide'); setTimeout(() => scrollIntoViewWithOffset('#whyIsItWorth',77), 1000);">Why is it worth it</a>
                                         </li>
                                         <li class="nav-item mb-2">
-                                            <a href="javascript:void(0)" class="nav-link" onclick="$('#mainNavMenuOffCanvas').offcanvas('hide'); setTimeout(() => document.querySelector('#testimonials').scrollIntoView({behavior: 'smooth'});scrollBy(0,-77), 1000);">Feedback</a>
+                                            <a href="javascript:void(0)" class="nav-link" onclick="$('#mainNavMenuOffCanvas').offcanvas('hide'); setTimeout(() => scrollIntoViewWithOffset('#testimonials',77), 1000)">Feedback</a>
                                         </li>
                                         <li class="mt-4">
                                             <div class="featured-menu d-flex justify-content-center gap-3 flex-column">
@@ -1249,5 +1249,19 @@
             </div>
         </footer>
         <!-- /footer -->
+
+        <script>
+        const scrollIntoViewWithOffset = (selector, offset=0) => {
+            console.log('selector :: ', selector);
+            console.log('offset :: ', offset);
+            console.log(' === \n');
+            window.scrollTo({
+                behavior: 'smooth',
+                top:
+                document.querySelector(selector).getBoundingClientRect().top -
+                document.body.getBoundingClientRect().top - offset,
+            })
+        } 
+        </script>
     </body>
 </html>
