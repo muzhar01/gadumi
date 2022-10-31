@@ -61,6 +61,9 @@
                 height: 40px;
                 display: block;
             }
+            h1,h2 {
+                font-family: 'Lato 900 normal' !important;
+            }
 
             .site-info .site-name h1 {
                 font-size: 32px;
@@ -675,6 +678,104 @@
                 height: 30px;
             }
         </style>
+        
+        <!-- styles for font -->
+
+        <style>
+            @font-face {
+                font-family: 'Lato 100 normal';
+                font-style: normal;
+                font-weight: 100;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/lato/v23/S6u8w4BMUTPHh30AUi-qJCY.woff2) format('woff2');
+                unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+            }
+
+            @font-face {
+                font-family: 'Lato 100 normal';
+                font-style: normal;
+                font-weight: 100;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/lato/v23/S6u8w4BMUTPHh30AXC-q.woff2) format('woff2');
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+            }
+
+            @font-face {
+                font-family: 'Lato 300 normal';
+                font-style: normal;
+                font-weight: 300;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/lato/v23/S6u9w4BMUTPHh7USSwaPGR_p.woff2) format('woff2');
+                unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+            }
+
+            @font-face {
+                font-family: 'Lato 300 normal';
+                font-style: normal;
+                font-weight: 300;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/lato/v23/S6u9w4BMUTPHh7USSwiPGQ.woff2) format('woff2');
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+            }
+
+            @font-face {
+                font-family: 'Lato 400 normal';
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/lato/v23/S6uyw4BMUTPHjxAwXjeu.woff2) format('woff2');
+                unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+            }
+
+            @font-face {
+                font-family: 'Lato 400 normal';
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/lato/v23/S6uyw4BMUTPHjx4wXg.woff2) format('woff2');
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+            }
+
+            @font-face {
+                font-family: 'Lato 700 normal';
+                font-style: normal;
+                font-weight: 700;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/lato/v23/S6u9w4BMUTPHh6UVSwaPGR_p.woff2) format('woff2');
+                unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+            }
+
+            @font-face {
+                font-family: 'Lato 700 normal';
+                font-style: normal;
+                font-weight: 700;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/lato/v23/S6u9w4BMUTPHh6UVSwiPGQ.woff2) format('woff2');
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+            }
+
+            @font-face {
+                font-family: 'Lato 900 normal';
+                font-style: normal;
+                font-weight: 900;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/lato/v23/S6u9w4BMUTPHh50XSwaPGR_p.woff2) format('woff2');
+                unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+            }
+
+            @font-face {
+                font-family: 'Lato 900 normal';
+                font-style: normal;
+                font-weight: 900;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/lato/v23/S6u9w4BMUTPHh50XSwiPGQ.woff2) format('woff2');
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+            }
+
+        </style>
+
+
+
     </head>
     <body>
 
@@ -685,12 +786,15 @@
                     <!-- Site Logo -->
                     <a href="{{ url('/') }}" class="flex-grow-1 text-decoration-none d-block">
                         <div class="site-info d-flex h-100 align-items-center gap-2">
-                            <div class="site-logo d-flex align-items-center">
+                            {{-- <div class="site-logo d-flex align-items-center">
                                 <img src="{{ asset('images/gadumi-logo.svg') }}" alt="Gadumi">
                             </div>
                             <div class="site-name">
                                 <h1 class="m-0">Gadumi</h1>
                                 <p class="m-0">Your English language course</p>
+                            </div> --}}
+                            <div class="site-logo">
+                                <img src="{{ asset('images/gadumi-logo-new.svg') }}" alt="Gadumi">
                             </div>
                         </div>
                     </a>
@@ -780,7 +884,7 @@
         <!-- /Header -->
 
         <!-- Hero Section -->
-        <section class="section-hero mb-0 mb-sm-5 pb-4">
+        <section class="section-hero mb-0 mb-sm-5 pb-3">
             <div class="container h-100 p-0 px-xxl-4">
                 <div class="row h-100">
                     <div class="col-12 col-lg-6 px-0 px-xxl-5 d-none d-lg-block">
@@ -814,7 +918,7 @@
         <!-- Section 1 -->
         <section id="howItsWorking" class="section-1 mb-5">
             <div class="container">
-                <h1 class="section-1-title text-center">Meet Gadumi</h1>
+                <h1 class="section-1-title text-center font-weight-bolder" style="font-family:'Lato 900 normal';">Meet Gadumi</h1>
                 <h2 class="section-1-desc text-center">a course created with ❤️ just for you</h2>
                 <div class="row mx-auto mt-5">
                     <div class="col-md-7 d-none d-md-flex align-items-center">
@@ -1104,8 +1208,8 @@
         <footer>
             <div class="container py-3">
                 <div class="d-flex justify-content-center justify-content-sm-between align-items-center flex-wrap">
-                    <div style="color:#666e7e; font-size: 14px; line-height: 16px;">© Gadumi Regulations Privacy policy Contact</div>
-                    <div style="color: #161823; font-size: 14px; line-height: 16px;">Created with ❤️ by language lovers</div>
+                    <div style="color: #161823; font-size: 14px; line-height: 16px; margin-bottom:10px;" >Created with ❤️ by language lovers</div>
+                    <div style="color:#666e7e; font-size: 14px; line-height: 16px; margin-bottom:10px;" >© Gadumi Regulations Privacy policy Contact</div>
                 </div>
             </div>
         </footer>
