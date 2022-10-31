@@ -826,13 +826,13 @@
                         <nav class="collapse navbar-collapse">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a href="#howItsWorking" class="nav-link">How it's working</a>
+                                    <a href="#howItsWorking" onclick="setTimeout(() => scrollIntoViewWithOffset('#howItsWorking', 77), 10);" class="nav-link">How it's working</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#whyIsItWorth" class="nav-link">Why is it worth it</a>
+                                    <a href="#whyIsItWorth" onclick="setTimeout(() => scrollIntoViewWithOffset('#whyIsItWorth', 77), 10);" class="nav-link">Why is it worth it</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#testimonials" class="nav-link">Feedback</a>
+                                    <a href="#testimonials" onclick="setTimeout(() => scrollIntoViewWithOffset('#testimonials', 77), 10);" class="nav-link">Feedback</a>
                                 </li>
                             </ul>
                         </nav>
@@ -867,13 +867,13 @@
                                 <div class="container">
                                     <ul class="navbar-nav pt-4">
                                         <li class="nav-item mb-2">
-                                            <a href="javascript:void(0)" class="nav-link" onclick="$('#mainNavMenuOffCanvas').offcanvas('hide'); setTimeout(() => document.querySelector('#howItsWorking').scrollIntoView({behavior: 'smooth'}), 1000);">How it's working</a>
+                                            <a href="javascript:void(0)" class="nav-link" onclick="$('#mainNavMenuOffCanvas').offcanvas('hide'); setTimeout(() => scrollIntoViewWithOffset('#howItsWorking', 77), 1000);">How it's working</a>
                                         </li>
                                         <li class="nav-item mb-2">
-                                            <a href="javascript:void(0)" class="nav-link" onclick="$('#mainNavMenuOffCanvas').offcanvas('hide'); setTimeout(() => document.querySelector('#whyIsItWorth').scrollIntoView({behavior: 'smooth'}), 1000);">Why is it worth it</a>
+                                            <a href="javascript:void(0)" class="nav-link" onclick="$('#mainNavMenuOffCanvas').offcanvas('hide'); setTimeout(() => scrollIntoViewWithOffset('#whyIsItWorth',77), 1000);">Why is it worth it</a>
                                         </li>
                                         <li class="nav-item mb-2">
-                                            <a href="javascript:void(0)" class="nav-link" onclick="$('#mainNavMenuOffCanvas').offcanvas('hide'); setTimeout(() => document.querySelector('#testimonials').scrollIntoView({behavior: 'smooth'}), 1000);">Feedback</a>
+                                            <a href="javascript:void(0)" class="nav-link" onclick="$('#mainNavMenuOffCanvas').offcanvas('hide'); setTimeout(() => scrollIntoViewWithOffset('#testimonials',77), 1000)">Feedback</a>
                                         </li>
                                         <li class="mt-4">
                                             <div class="featured-menu d-flex justify-content-center gap-3 flex-column">
@@ -929,10 +929,10 @@
         </section>
         <!-- /Hero Section -->
 
-        <div id="howItsWorking" class="divider d-sm-none mb-4"></div>
+        <div class="divider d-sm-none mb-4"></div>
 
         <!-- Section 1 -->
-        <section class="section-1 mb-5">
+        <section id="howItsWorking" class="section-1 mb-5">
             <div class="container">
                 <h1 class="section-1-title text-center font-weight-bolder" style="font-family:'Lato 900 normal';">Meet Gadumi</h1>
                 <h2 class="section-1-desc text-center">a course created with ❤️ just for you</h2>
@@ -1228,8 +1228,8 @@
                 <img src="{{ asset('images/gadumi-logo.svg') }}" alt="Gadumi" class="w-100">
             </div>
             <div class="container text-center">
-                <h1 class="mb-1" style="font-family: outfit; font-weight: 800;">Gadumi</h1>
-                <p style="font-size: 18px;" class="last_para_text">Kurs dla wszystkich, co chcą osiągnąć płynność w mówieniu po angielsku bez obowiązku płacenia nauczycielowi za każdą godzinę zajęć.</p>
+                <h1 class="mb-1" style="font-family: outfit !important; font-weight: 800;font-size:22px;">Gadumi</h1>
+                <p style="font-size: 16px;" class="last_para_text">Kurs dla wszystkich, co chcą osiągnąć płynność w mówieniu po angielsku bez obowiązku płacenia nauczycielowi za każdą godzinę zajęć.</p>
                 <div class="mb-4" style="font-size: 1.5rem;"><i class="fa fa-angle-double-down" aria-hidden="true"></i></div>
 
                 <h1 class="section-title text-center">Try Gadumi absolutely for free</h1>
@@ -1243,11 +1243,25 @@
         <footer>
             <div class="container py-3">
                 <div class="d-flex justify-content-center justify-content-sm-between align-items-center flex-wrap">
-                    <div style="color: #161823; font-size: 14px; line-height: 16px; margin-bottom:10px;" >Created with ❤️ by language lovers</div>
-                    <div style="color:#666e7e; font-size: 14px; line-height: 16px; margin-bottom:10px;" >© Gadumi Regulations Privacy policy Contact</div>
+                    <div style="color:#666e7e; font-size: 14px; line-height: 16px; margin-bottom:10px;" class="order-2 order-md-1">© Gadumi Regulations Privacy policy Contact</div>
+                    <div style="color: #161823; font-size: 14px; line-height: 16px; margin-bottom:10px;" class="order-1 order-md-2">Created with ❤️ by language lovers</div>
                 </div>
             </div>
         </footer>
         <!-- /footer -->
+
+        <script>
+        const scrollIntoViewWithOffset = (selector, offset=0) => {
+            console.log('selector :: ', selector);
+            console.log('offset :: ', offset);
+            console.log(' === \n');
+            window.scrollTo({
+                behavior: 'smooth',
+                top:
+                document.querySelector(selector).getBoundingClientRect().top -
+                document.body.getBoundingClientRect().top - offset,
+            })
+        } 
+        </script>
     </body>
 </html>
