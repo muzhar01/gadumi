@@ -507,6 +507,22 @@
                 .section-2-text {
                     margin-top: 3rem;
                 }
+
+                p.last_para_text {
+                    max-width: 600px;
+                    margin: auto;
+                }
+            }
+
+            @media (max-width: 576px) {
+                .section-2-text {
+                    margin-top: 3rem;
+                }
+
+                p.last_para_text {
+                    font-size: 16px !important;
+                }
+
             }
 
             .section-2-text .btn {
@@ -1039,58 +1055,77 @@
             <div class="container px-4">
                 <h1 class="section-title text-center">Why is it worth learning English with Gadumi?</h1>
                 <div class="row mt-5">
-                    <div class="box col-12 col-md-6 col-lg-4 d-flex gap-3 mb-4">
-                        <div class="image py-2">
-                            <img src="{{ asset('images/gadumi-hello.svg') }}" alt="">
+                    <!-- 1st col -->
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="row">
+                            <div class="box col-12 d-flex gap-3 mb-4">
+                                <div class="image py-2">
+                                    <img src="{{ asset('images/gadumi-hello.svg') }}" alt="">
+                                </div>
+                                <div class="text">
+                                    <h3>The most commonly used words</h3>
+                                    <p>along with photos and examples to help you remember them faster and better</p>
+                                </div>
+                            </div>
+
+                            <div class="box col-12 d-flex gap-3 mb-4">
+                                <div class="image py-2">
+                                    <img src="{{ asset('images/gadumi-chat.svg') }}" alt="">
+                                </div>
+                                <div class="text">
+                                    <h3>Real-life dialogues</h3>
+                                    <p>based on everyday situations such as shopping in a store or booking a ticket</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="text">
-                            <h3>The most commonly used words</h3>
-                            <p>along with photos and examples to help you remember them faster and better</p>
+
+                    </div>
+                    <!-- 2nd col -->
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="row">
+                            <div class="box col-12 d-flex gap-3 mb-4">
+                                <div class="image py-2">
+                                    <img src="{{ asset('images/gadumi-abc.svg') }}" alt="">
+                                </div>
+                                <div class="text">
+                                    <h3>Grammar lessons</h3>
+                                    <p>explaining how to build statements correctly</p>
+                                </div>
+                            </div>
+
+                            <div class="box col-12 d-flex gap-3 mb-4">
+                                <div class="image py-2">
+                                    <img src="{{ asset('images/gadumi-card.svg') }}" alt="">
+                                </div>
+                                <div class="text">
+                                    <h3>Flashcards</h3>
+                                    <p>which is one of the most popular methods for learning foreign languages</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="box col-12 col-md-6 col-lg-4 d-flex gap-3 mb-4">
-                        <div class="image py-2">
-                            <img src="{{ asset('images/gadumi-abc.svg') }}" alt="">
-                        </div>
-                        <div class="text">
-                            <h3>Grammar lessons</h3>
-                            <p>explaining how to build statements correctly</p>
-                        </div>
-                    </div>
-                    <div class="box col-12 col-md-6 col-lg-4 d-flex gap-3 mb-4">
-                        <div class="image py-2">
-                            <img src="{{ asset('images/gadumi-phone.svg') }}" alt="">
-                        </div>
-                        <div class="text">
-                            <h3>Always by your side</h3>
-                            <p>course available on any device. Phone, tablet, laptop? You choose!</p>
-                        </div>
-                    </div>
-                    <div class="box col-12 col-md-6 col-lg-4 d-flex gap-3 mb-4">
-                        <div class="image py-2">
-                            <img src="{{ asset('images/gadumi-chat.svg') }}" alt="">
-                        </div>
-                        <div class="text">
-                            <h3>Real-life dialogues</h3>
-                            <p>based on everyday situations such as shopping in a store or booking a ticket</p>
-                        </div>
-                    </div>
-                    <div class="box col-12 col-md-6 col-lg-4 d-flex gap-3 mb-4">
-                        <div class="image py-2">
-                            <img src="{{ asset('images/gadumi-card.svg') }}" alt="">
-                        </div>
-                        <div class="text">
-                            <h3>Flashcards</h3>
-                            <p>which is one of the most popular methods for learning foreign languages</p>
-                        </div>
-                    </div>
-                    <div class="box col-12 col-md-6 col-lg-4 d-flex gap-3 mb-4">
-                        <div class="image py-2">
-                            <img src="{{ asset('images/gadumi-time.svg') }}" alt="">
-                        </div>
-                        <div class="text">
-                            <h3>Time doesn't matter</h3>
-                            <p>learn English wherever you want, when you want and for as long as you want, 24/7</p>
+                    <!-- 3rd col -->
+                    <div class="col-12 col-md-12 col-lg-4">
+                        <div class="row">
+                            <div class="box col-12 col-md-6 col-lg-12 d-flex gap-3 mb-4">
+                                <div class="image py-2">
+                                    <img src="{{ asset('images/gadumi-phone.svg') }}" alt="">
+                                </div>
+                                <div class="text">
+                                    <h3>Always by your side</h3>
+                                    <p>course available on any device. Phone, tablet, laptop? You choose!</p>
+                                </div>
+                            </div>
+
+                            <div class="box col-12 col-md-6 col-lg-12 d-flex gap-3 mb-4">
+                                <div class="image py-2">
+                                    <img src="{{ asset('images/gadumi-time.svg') }}" alt="">
+                                </div>
+                                <div class="text">
+                                    <h3>Time doesn't matter</h3>
+                                    <p>learn English wherever you want, when you want and for as long as you want, 24/7</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1194,7 +1229,7 @@
             </div>
             <div class="container text-center">
                 <h1 class="mb-1" style="font-family: outfit; font-weight: 800;">Gadumi</h1>
-                <p style="font-size: 18px;">Kurs dla wszystkich, co chcą osiągnąć płynność w mówieniu po angielsku bez obowiązku płacenia nauczycielowi za każdą godzinę zajęć.</p>
+                <p style="font-size: 18px;" class="last_para_text">Kurs dla wszystkich, co chcą osiągnąć płynność w mówieniu po angielsku bez obowiązku płacenia nauczycielowi za każdą godzinę zajęć.</p>
                 <div class="mb-4" style="font-size: 1.5rem;"><i class="fa fa-angle-double-down" aria-hidden="true"></i></div>
 
                 <h1 class="section-title text-center">Try Gadumi absolutely for free</h1>
