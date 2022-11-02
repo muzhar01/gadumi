@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function HeaderListing() {
   const [lesson, setPost] = React.useState([]);
@@ -18,9 +19,23 @@ export default function HeaderListing() {
             <span className="d-block text-muted">Your English language course</span>
           </a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
+          <iconify-icon icon="bx:dots-vertical-rounded"></iconify-icon>
           </button>
           <div className="collapse navbar-collapse" id="navbarText">
+            <ul className="navbar-nav d-block d-md-none">
+              <li className="nav-item">
+                <Link to="/setting" className="nav-link settings">Settings</Link>  
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#">Price</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#">Contact</a>
+              </li>
+              <li className="nav-item">
+                <Link to="/logout" className="nav-link logout">Logout</Link>
+              </li>
+            </ul>
             <div className="navbar-text me-auto">
               
             </div>

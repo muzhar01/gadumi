@@ -8,6 +8,7 @@ import NotFound from './NotFound';
 import LessonDetail from './LessonDetail';
 import Exercise from './Exercise';
 import Logout from './Logout';
+import Setting from './Setting';
 function App() {
   const [token, setToken] = useState(localStorage.getItem('token'));
   
@@ -26,6 +27,7 @@ function App() {
                 <>
                   <Route exact index element={<Listing/>} />
                   <Route exact path="courses" element={<Listing/>}/>
+                  <Route exact path="setting" element={<Setting/>}/>
                   <Route  path="lessonDetail/:id" element={<LessonDetail/>}/>
                   <Route exact path="exercise/:id" element={<Exercise/>}/>
                 </>

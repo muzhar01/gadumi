@@ -3,6 +3,7 @@ import axios from "axios";
 import HeaderListing from './HeaderListing'
 import ListingSidebar from './ListingSidebar'
 import {Link, useParams } from 'react-router-dom';
+import ReactHtmlParser from 'react-html-parser';
 export default function LessonDetail() {
   let param = useParams()
   const [lesson, setPost] = React.useState([]);
@@ -35,7 +36,7 @@ export default function LessonDetail() {
                   </>
                 }
                 <div className="text-justify mb-5">
-                  {lesson.description}
+                  {ReactHtmlParser(lesson.description)}
                 </div>
                 <Link className="btn btn-outline-primary" to={`/portal/exercise/${lesson.id}`}>Continue</Link>
             </div>

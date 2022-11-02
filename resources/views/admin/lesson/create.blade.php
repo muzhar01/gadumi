@@ -74,9 +74,10 @@
                   <label for="" class="mt-3">Overview</label>
                   <input type="text" name="overview" class="form-control" placeholder="Enter overview">
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-12">
                   <label for="" class="mt-3">Description</label>
-                  <textarea name="description" class="form-control" placeholder="Enter description"></textarea>
+                  <textarea name="description" ></textarea>
+                  
                 </div>
                 <div class="col-lg-12">
                   <button type="submit" class="btn btn-outline-primary mt-4">Add</button>
@@ -106,5 +107,8 @@
       URL.revokeObjectURL(output.src) // free memory
     }
   };
+</script>
+<script>
+  CKEDITOR.replace( 'description' );
 </script>
 @endsection
