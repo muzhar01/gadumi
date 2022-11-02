@@ -111,7 +111,7 @@
                 border-radius: 8px;
                 padding: 3px 5px;
                 font-weight: 600;
-                width: 200px !important;
+                /* width: 200px !important; */
             }
 
             .btn.btn-primary-new:hover {
@@ -584,7 +584,7 @@
             }
 
             .section-3 .box .text p {
-                line-height: 16px;
+                line-height: 24px;
             }
 
             .section-testimonials {
