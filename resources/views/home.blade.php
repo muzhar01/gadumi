@@ -111,7 +111,7 @@
                 border-radius: 8px;
                 padding: 3px 5px;
                 font-weight: 600;
-                /* width: 200px !important; */
+                
             }
 
             .btn.btn-primary-new:hover {
@@ -787,6 +787,9 @@
                 src: url(https://fonts.gstatic.com/s/lato/v23/S6u9w4BMUTPHh50XSwiPGQ.woff2) format('woff2');
                 unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
             }
+            .site-logo .site-img{
+                height: 40px;
+            }
 
         </style>
 
@@ -810,7 +813,7 @@
                                 <p class="m-0">Your English language course</p>
                             </div> --}}
                             <div class="site-logo">
-                                <img src="{{ asset('images/gadumi-logo-new.svg') }}" alt="Gadumi">
+                                <img src="{{ asset('images/gadumi-logo-new.svg') }}" alt="Gadumi" class="site-img">
                             </div>
                         </div>
                     </a>
@@ -890,7 +893,7 @@
 
                     <!-- Featured Navigation Menu -->
                     <div class="featured-menu d-none d-lg-flex justify-content-end gap-3">
-                        <a href="{{ url('/portal/register') }}" class="btn btn-primary-new">Start now!</a>
+                        <a href="{{ url('/portal/register') }}" class="btn btn-primary-new" style="width: 136px !important;">Start now!</a>
                         <a href="{{ url('/portal/login') }}" class="btn btn-primary-new-outline">Log in</a>
                     </div>
                     <!-- /Featured Navigation Menu -->
