@@ -930,7 +930,7 @@
                         <p>
                             <b>Master the English language</b> with a course created by foreign language lovers without having to pay the teacher for each hour of study.
                         </p>
-                        <a href="{{ url('/portal/register') }}" class="btn btn-primary-new btn-cta btn-lg w-fit-content" style="width: fit-content">Get started now</a>
+                        <a href="{{ url('/portal/register') }}" class="btn btn-primary-new btn-cta btn-lg w-fit-content" style="width: 200px !important;">Get started now</a>
                     </div>
                 </div>
             </div>
