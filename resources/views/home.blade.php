@@ -790,11 +790,7 @@
             .site-logo .site-img{
                 height: 40px;
             }
-            @media (min-width: 320px) and (max-width: 1024px) {
-            .site-logo .site-img{
-                height: 30px;
-            }
-            }
+            
             .mobile-logo{
                 height: 30px; 
             }
