@@ -795,6 +795,9 @@
                 height: 30px;
             }
             }
+            .mobile-logo{
+                height: 40px; 
+            }
 
         </style>
 
@@ -855,7 +858,7 @@
                                             <a href="{{ url('/') }}" class="flex-grow-1 text-decoration-none d-block">
                                                 <div class="site-info d-flex h-100 align-items-center gap-2">
                                                     <div class="site-logo d-flex align-items-center">
-                                                        <img src="{{ asset('images/gadumi-logo-new.svg') }}" alt="Gadumi" style="margin-bottom: 1px;">
+                                                        <img src="{{ asset('images/gadumi-logo-new.svg') }}" class="mobile-logo" alt="Gadumi" style="margin-bottom: 1px;">
                                                     </div>
                                                     {{-- <div class="site-name">
                                                         <h1 class="m-0">Gadumi</h1>
