@@ -852,7 +852,7 @@
                         <nav class="offcanvas offcanvas-start d-lg-none" id="mainNavMenuOffCanvas" tabindex="-1" aria-labelledby="Mobile Menu">
                             <div class="offcanvas-header p-0">
                                 <header class="site-header">
-                                    <div class="container py-2">
+                                    <div class="container">
                                         <div class="top-bar position-static w-100 d-flex align-items-center flex-wrap gap-4 align-items-center" style="padding-top: 1rem; padding-bottom: 1rem;">
                                             <!-- Site Logo -->
                                             <a href="{{ url('/') }}" class="flex-grow-1 text-decoration-none d-block">
