@@ -5,6 +5,7 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\ExerciseController;
 use App\Http\Controllers\LessonController;
 use App\Http\Controllers\FrontController;
+use App\Http\Controllers\SettingController;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -59,6 +60,12 @@ Route::get('/exercise/delete/{id}', [ExerciseController::class,'deleteExercise']
 Route::get('/exercise/{id}/{status}', [ExerciseController::class,'changeExercise'])->name('exercise-status');
 Route::get('/exercise/{id}', [ExerciseController::class,'editExercise'])->name('exercise-edit');
 Route::post('/exercise/update/{id}', [ExerciseController::class,'updateExercise'])->name('update-exercise');
+
+//Exercise Route
+Route::get('/setting',[SettingController::class,'index'])->name('setting-index');
+Route::post('/update/setting',[SettingController::class,'update'])->name('update-setting');
+
+
 
 //Admin Profile
 Route::get('/profile', [AdminController::class,'profile'])->name('admin-profile');

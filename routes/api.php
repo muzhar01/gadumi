@@ -8,6 +8,8 @@ use App\Http\Controllers\LessonController;
 use App\Http\Controllers\OptionController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\PlanController;
+use App\Http\Controllers\SettingController;
+use App\Http\Controllers\UserController;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -56,3 +58,11 @@ Route::get('courses',[CourseController::class,'index']);
 Route::get('lessons',[LessonController::class,'index']);
 Route::get('lesson/{id}',[LessonController::class,'detail']);
 Route::get('exercise/{id}',[ExerciseController::class,'exercise']);
+Route::group(['middleware' => 'auth:sanctum'], function() {
+    Route::get('userData',[UserController::class,'index']);
+    Route::post('updateProfile',[UserController::class,'update']);
+    Route::post('changePassword',[UserController::class,'changePassword']);
+    Route::post('deleteAccount',[UserController::class,'deleteAccount']);
+
+});
+Route::get('/setting',[SettingController::class,'indexjson']);
