@@ -795,9 +795,9 @@
                 height: 30px;
             }
             } */
-            .mobile-logo{
+            /* .mobile-logo{
                 height: 30px; 
-            }
+            } */
 
         </style>
 
