@@ -5,9 +5,9 @@
   padding-top: 0!important;
   padding-bottom: 0!important;
 }
-.nav-fluid{
+/* .nav-fluid{
   width:80%;
-}
+} */
 .navbar-expand-lg .container-fluid{
   margin: 0;
   padding: 0;
@@ -180,4 +180,8 @@
 }
 .list-group-item .settings,.list-group-item .prime_account,.list-group-item .contact_us,.list-group-item .logout{
   font-size: 14px;
+}
+.hidden_sidebar{
+  flex-direction: row!important;
+  border-radius: 0.25rem;
 }
