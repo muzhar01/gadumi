@@ -157,7 +157,7 @@ class ExerciseController extends Controller
         if (is_array($questions)) {
             foreach ($questions as $q) {
                 $question = Question::create([
-                    'lesson_id' => $request->lesson_id,
+                    'exercise_id' => $exercise->id,
                     'content' => $q['question'],
                     'translation' => $q['translation'],
                 ]);
@@ -176,6 +176,7 @@ class ExerciseController extends Controller
                         ]);
                         if (isset($o['correct']) && $o['correct'] == 'on')
                             $option->correct = 1;
+                        $option->save();
                     }
                 }
             }
@@ -211,7 +212,8 @@ class ExerciseController extends Controller
     {
         $exercise = Exercise::find($id);
         $lessons = Lesson::where('status', '1')->get();
-        return view('admin.exercise.edit', compact('lessons', 'exercise'));
+        $questions = Question::where('exercise_id', $exercise->id)->get();
+        return view('admin.exercise.edit', compact('lessons', 'exercise', 'questions'));
     }
     public function exercise($id)
     {
@@ -253,8 +255,92 @@ class ExerciseController extends Controller
         $exercise->title=$request->title;
         $exercise->content=$request->content;
         $exercise->description=$request->description;
+        $status = $exercise->save();
 
-        if ($exercise->save()) {
+        $questions = $request->questions;
+
+        //Update Questions
+        if (is_array($questions)) {
+            foreach ($exercise->questions as $question) {
+                $questionExists = false;
+                foreach ($questions as $q) {
+                    if (array_key_exists('id', $q) && (int) $q['id'] === $question->id) {
+                        $questionExists = true;
+                        $question->content = $q['question'];
+                        $question->translation = $q['translation'];
+                        $question->save();
+
+                        if (isset($q['options'])) {
+                            foreach ($question->options as $option) {
+                                $optionExists = false;
+                                foreach ($q['options'] as $o) {
+                                    if (array_key_exists('id', $o) && (int) $o['id'] === $option->id) {
+                                        $optionExists = true;
+                                        $option->content = $o['option'];
+                                        $option->translation = $o['translation'];
+                                        if (isset($o['correct']) && $o['correct'] == 'on')
+                                            $option->correct = 1;
+                                        $option->save();
+                                    }
+                                }
+
+                                if (!$optionExists) {
+                                    $option->delete();
+                                }
+                            }
+                        } else {
+                            $question->options()->delete();
+                        }
+                    }
+                }
+
+                if (!$questionExists) {
+                    $question->options()->delete();
+                    $question->delete();
+                }
+            }
+        } else {
+            if ($exercise->questions) {
+                $exercise->questions()->delete();
+            }
+        }
+
+        // Store Questions
+        if (is_array($questions)) {
+            foreach ($questions as $q) {
+                if (array_key_exists('id', $q))
+                    continue;
+
+                $question = Question::create([
+                    'exercise_id' => $exercise->id,
+                    'content' => $q['question'],
+                    'translation' => $q['translation'],
+                ]);
+
+                if (!isset($q['options']))
+                continue;
+
+                // Store options
+                $options = $q['options'];
+                if (is_array($options)) {
+                    foreach ($options as $o) {
+                        if (array_key_exists('id', $o))
+                            continue;
+
+                        $option = Option::create([
+                            'question_id' => $question->id,
+                            'content' => $o['option'],
+                            'translation' => $o['translation']
+                        ]);
+                        if (isset($o['correct']) && $o['correct'] == 'on')
+                            $option->correct = 1;
+                        $option->save();
+                    }
+                }
+            }
+        }
+
+        if ($status) {
             return redirect('/admin/exercise')->with('success', "Exercise Updated Successfully!");
         } else {
             return redirect('/admin/exercise')->with('error', "Failed to Update Exercise");
