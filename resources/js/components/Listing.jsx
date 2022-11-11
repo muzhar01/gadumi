@@ -4,6 +4,7 @@ import HeaderListing from './HeaderListing'
 import ListingSidebar from './ListingSidebar'
 import style from './../../css/listing/custom.css';
 import { Link } from 'react-router-dom';
+import MobileBottomSidebar from './MobileBottomSidebar';
 
 export default function Listing() {
   const [lessons, setPost] = React.useState([]);
@@ -62,6 +63,7 @@ export default function Listing() {
           </div>
         </div>
       </div>
+      <MobileBottomSidebar/>
     </>
   )
 }

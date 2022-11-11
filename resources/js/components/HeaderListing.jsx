@@ -14,9 +14,7 @@ export default function HeaderListing() {
       <nav className="navbar navbar-expand-lg">
         <div className="container-fluid">
           <a className="navbar-brand" href="/">
-            <img src="/images/logo.svg" className="logo" alt=""/>
-            Gadumi
-            <span className="d-block text-muted">Your English language course</span>
+            <img src="/images/gadumi-logo-new.svg" className="logo" alt=""/>
           </a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
           <iconify-icon icon="bx:dots-vertical-rounded"></iconify-icon>
