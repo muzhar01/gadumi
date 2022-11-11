@@ -240,7 +240,7 @@
     ++optionsCount[questionId];
     const optionsContainer = document.querySelector('#q'+questionId+' .options');
     let optionsHTML = `
-    <button type="button" class="deleteQuestion btn btn-danger btn-sm position-absolute" onclick="deleteOption(\'${'q'+questionId+'o'+optionsCount[questionsCount]}\')" style="top:3px; right:3px; font-weight: 800;">X</button>
+    <button type="button" class="deleteQuestion btn btn-danger btn-sm position-absolute" onclick="deleteOption(\'${'q'+questionId+'o'+optionsCount[questionId]}\')" style="top:3px; right:3px; font-weight: 800;">X</button>
     <div class="row">
         <div class="col-md-6">
           <label>Option</label>
@@ -258,7 +258,7 @@
         </div>
         <div class="col-lg-6 d-flex align-items-end justify-content-center">
           <div class="form-check">
-            <input type="checkbox" name="questions[${questionId}][options][${optionsCount[questionId]}][correct]" class="form-check-input" id="${'q'+questionId+'o'+optionsCount[questionsCount]+'c'}"> <label for="${'q'+questionId+'o'+optionsCount[questionsCount]+'c'}">Correct</label>
+            <input type="checkbox" name="questions[${questionId}][options][${optionsCount[questionId]}][correct]" class="form-check-input" id="${'q'+questionId+'o'+optionsCount[questionId]+'c'}"> <label for="${'q'+questionId+'o'+optionsCount[questionId]+'c'}">Correct</label>
           </div>
         </div>
     </div>
@@ -269,7 +269,7 @@
     }
 
     const optionEl = document.createElement('div');
-    optionEl.id = 'q'+questionId+'o'+optionsCount[questionsCount];
+    optionEl.id = 'q'+questionId+'o'+optionsCount[questionId];
     optionEl.setAttribute('class', 'option border p-4 position-relative mb-3');
     optionEl.innerHTML = optionsHTML;
     $(optionEl).hide();
