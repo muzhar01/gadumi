@@ -2,17 +2,19 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 export default function ListingSidebar() {
+  let pathname = window.location.pathname;
+
   return (
     <>
       <div className="col-lg-4 mr-5 d-none d-md-block">
         <ul className="list-group desktop-sidebar">
           <li className="list-group-item">
             <img src="/images/lesson.svg" alt="" srcSet=""/>
-            <Link to="/portal" className="active">Lekcja</Link>
+            <Link to="/portal" className={'' + (pathname === '/portal'? 'active': '')}>Lesson</Link>
           </li>
           <li className="list-group-item">
             <img src="/images/replay.svg" alt="" srcSet=""/>
-            <Link to="/portal/replay">Powtórki</Link>
+            <Link to="/portal/replays" className={'' + (pathname === '/portal/replays'? 'active': '')}>Replays</Link>
           </li>
           <hr/>
           <li className="list-group-item d-none d-md-block">
