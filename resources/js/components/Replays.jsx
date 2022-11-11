@@ -1,7 +1,10 @@
+import { useState } from "react";
 import HeaderListing from "./HeaderListing";
 import ListingSidebar from "./ListingSidebar";
+import ProgressBar from "./ProgressBar";
 
 function Replays() {
+    const [progress, setProgress] = useState(0)
     return (
         <>
             <HeaderListing/>
@@ -10,6 +13,7 @@ function Replays() {
                     <div className="row">
                         <ListingSidebar/>
                         <div className="col-lg-8 px-5">
+                            
                             <div className="mb-5">
                                 <h3 className="text-center">W jaki sposób chcesz powtarzać?</h3>
                                 <div className="d-flex gap-5 justify-content-center align-items-center">
