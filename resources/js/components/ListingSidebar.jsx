@@ -14,7 +14,7 @@ export default function ListingSidebar() {
           </li>
           <li className="list-group-item">
             <img src="/images/replay.svg" alt="" srcSet=""/>
-            <Link to="/portal/replays" className={'' + (pathname === '/portal/replays'? 'active': '')}>Replays</Link>
+            <Link to="/portal/replay" className={'' + (pathname === '/portal/replay'? 'active': '')}>Replays</Link>
           </li>
           <hr/>
           <li className="list-group-item d-none d-md-block">

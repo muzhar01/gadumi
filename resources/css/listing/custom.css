@@ -271,3 +271,11 @@ a{
 .replay-listing-img img{
   height: 30px;
 }
+.mobile-footer-nav{
+  z-index: 10;
+}
+@media (max-width:768px)  {
+  .hide-mobile{
+    display: none;
+  }
+}
