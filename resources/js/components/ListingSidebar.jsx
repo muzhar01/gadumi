@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 export default function ListingSidebar() {
+  let pathname = window.location.pathname;
+
   return (
     <>
       <div className="col-lg-12 d-block d-md-none">
@@ -17,11 +19,11 @@ export default function ListingSidebar() {
         <ul className="list-group">
           <li className="list-group-item">
             <img src="/images/lesson.svg" alt="" srcSet=""/>
-            <Link to="/portal" className="active">Lesson</Link>
+            <Link to="/portal" className={'' + (pathname === '/portal'? 'active': '')}>Lesson</Link>
           </li>
           <li className="list-group-item">
             <img src="/images/replay.svg" alt="" srcSet=""/>
-            <a href="#">Replays</a>
+            <Link to="/portal/replays" className={'' + (pathname === '/portal/replays'? 'active': '')}>Replays</Link>
           </li>
           <hr/>
           <li className="list-group-item d-none d-md-block">
