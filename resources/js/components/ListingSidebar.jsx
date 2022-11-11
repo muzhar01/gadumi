@@ -6,24 +6,15 @@ export default function ListingSidebar() {
 
   return (
     <>
-      <div className="col-lg-12 d-block d-md-none">
-          <div className="input-group">
-            <select className="form-select d-block w-100">
-              <option value="">Beginner A1</option>
-              <option value="">Intermediate A2</option> 
-              <option value="">Advanced A3</option>
-            </select>
-          </div>
-      </div>
       <div className="col-lg-4 mr-5 d-none d-md-block">
-        <ul className="list-group">
+        <ul className="list-group desktop-sidebar">
           <li className="list-group-item">
             <img src="/images/lesson.svg" alt="" srcSet=""/>
             <Link to="/portal" className={'' + (pathname === '/portal'? 'active': '')}>Lesson</Link>
           </li>
           <li className="list-group-item">
             <img src="/images/replay.svg" alt="" srcSet=""/>
-            <Link to="/portal/replays" className={'' + (pathname === '/portal/replays'? 'active': '')}>Replays</Link>
+            <Link to="/portal/replay" className={'' + (pathname === '/portal/replay'? 'active': '')}>Replays</Link>
           </li>
           <hr/>
           <li className="list-group-item d-none d-md-block">

@@ -2,7 +2,6 @@ import React from 'react'
 import axios from "axios";
 import HeaderListing from './HeaderListing'
 import ListingSidebar from './ListingSidebar'
-import style from './../../css/listing/custom.css';
 import { Link } from 'react-router-dom';
 import MobileBottomSidebar from './MobileBottomSidebar';
 
@@ -27,9 +26,18 @@ export default function Listing() {
       <div className="container">
         <div className="container-fluid mt-5">
           <div className="row">
+            <div className="col-lg-12 d-block d-md-none">
+                <div className="input-group">
+                  <select className="form-select d-block w-100">
+                    <option value="">Beginner A1</option>
+                    <option value="">Intermediate A2</option> 
+                    <option value="">Advanced A3</option>
+                  </select>
+                </div>
+            </div>
             <ListingSidebar/>
             <div className="col-lg-8">
-              <div className="overflow-auto h-75">
+              <div className="overflow-auto h-100">
                 <ul className="list-group">
                   {
                     lessons.map((lesson)=>{
@@ -44,7 +52,7 @@ export default function Listing() {
                           </div>
                           <div className="col-6 col-md-9 col-lg-9 ms-4">
                             
-                            <h2 className="lesson-heading" style={{'color':`${setting.color}`,';font_size':`${setting.color}`,';line_spacing':`${setting.color}`,';font_weight':`${setting.color}`}}>{lesson.title}</h2>
+                            <h2 className="lesson-heading" style={{';font_size':`${setting.color}`,';line_spacing':`${setting.color}`,';font_weight':`${setting.color}`}}>{lesson.title}</h2>
                             <span className="d-block text-muted">lesson time: 7 min</span><br/>
                           </div>
                         </div>

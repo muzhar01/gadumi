@@ -1,3 +1,6 @@
+a{
+  text-decoration: none;
+}
 .top-header{
   border-bottom: 1px solid rgb(230, 230, 230);
 }
@@ -13,7 +16,7 @@
   padding: 0;
 }
 .logo{
-  height: 40px
+  height: 43px
 }
 .container-fluid .navbar-brand{
   font-size: 32px;
@@ -61,6 +64,8 @@
   color: #a3a3a3;
   font-family: "Lato";
   font-weight:  400;
+  font-size: 16px;
+  line-height: 19px;
 }
 .border-bottom{
   border-bottom: 1.0px solid rgb(230, 230, 230);
@@ -79,6 +84,8 @@
   border: none;
   box-shadow: none;
   font-family: "Lato 700 normal";
+  font-size: 24px;
+  line-height: 28px;
 }
 .knowledge-level{
   font-size: 16px;
@@ -104,10 +111,15 @@
   padding-right: 5px;
   padding-top: 5px;
   padding-bottom: 5px;
+  font-size: 17px;
+  line-height: 20px;
+  font-family: "Lato 700 normal";
+  font-size: 24px;
+  line-height: 28px;
 }
 @media (min-width: 992px){
 .container, .container-lg, .container-md, .container-sm {
-    max-width: 960px!important;
+    max-width: 1154px!important;
 }
 }
 @media only screen and (max-width: 768px) {
@@ -123,17 +135,25 @@
   padding-bottom: 0;
   margin-bottom: 0;
 }
+.desktop-sidebar, .lesson-heading{
+  padding-left: 20px;
+  padding-right: 20px;
+}
 .list-group-item img{
-  width: 30px;
-  height: 50px;
+  width: 35px;
+  height: 60px;
 }
 .list-group-item a{
-  font-size: 16px;
+  font-size: 20px;
   line-height: 24px;
   color: #000000;
-  font-family: "Lato 900 normal";
+  font-family: "Lato";
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 900;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 .list-group-item .active{
   color: #0073ff;
@@ -164,6 +184,7 @@
   max-width: 70px;
 }
 .course-list .lesson-heading{
+  color: #333333;
   font-weight: bold;
   font-family: "Lato 900 normal";
   font-size: 24px;
@@ -180,11 +201,81 @@
   right: 0;
 }
 .list-group-item .settings,.list-group-item .prime_account,.list-group-item .contact_us,.list-group-item .logout{
-  font-size: 14px;
+  font-size: 16px;
 }
 .hide-scroll-bar{
   height: 500px;
 }
 ::-webkit-scrollbar{
   display: none;
+}
+.replay-heading{
+  font-size: 18px;
+  color: #161823;
+  font-family: "Lato";
+  line-height: 21px;
+  font-weight: 700;
+}
+.replay-image{
+  opacity: 1;
+  background-color: rgb(255, 255, 255);
+  background-size: cover;
+  background-attachment: scroll;
+  background-repeat: repeat;
+  background-position: 50% 50%;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0px 9px 19px rgb(156 156 156 / 60%);
+  width: 115px!important;
+  height: 200px!important;
+}
+.replay-img-text{
+  position: absolute;
+  bottom: 5px;
+  z-index: 5;
+  right: 50px;
+  opacity: 1;
+  background-color: rgb(11, 124, 254);
+  background-size: cover;
+  background-attachment: scroll;
+  background-repeat: repeat;
+  background-position: left top;
+  border-radius: 3px;
+  border: none;
+  box-shadow: none;
+  width: 64px;
+  height: 24px;
+  color: #fff;
+}
+.replay-listing-heading{
+  padding-left: 10px;
+  padding-right: 5px;
+}
+.replay-listing-heading p,.replay-listing-heading ul li p{
+  font-size: 17px;
+  line-height: 20px;
+  color: black;
+  font-family: "Latol";
+  font-weight: 700;
+}
+.replay-listing-heading p{
+  padding: 5px;
+}
+.replay-listing-heading ul li p{
+  padding: 0px;
+}
+.replay-listing-img{
+  position: absolute;
+  right: 0;
+}
+.replay-listing-img img{
+  height: 30px;
+}
+.mobile-footer-nav{
+  z-index: 10;
+}
+@media (max-width:768px)  {
+  .hide-mobile{
+    display: none;
+  }
 }
