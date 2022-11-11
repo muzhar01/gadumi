@@ -1,3 +1,6 @@
+a{
+  text-decoration: none!important;
+}
 .top-header{
   border-bottom: 1px solid rgb(230, 230, 230);
 }
@@ -107,7 +110,7 @@
 }
 @media (min-width: 992px){
 .container, .container-lg, .container-md, .container-sm {
-    max-width: 960px!important;
+    max-width: 1200px!important;
 }
 }
 @media only screen and (max-width: 768px) {
@@ -128,12 +131,16 @@
   height: 50px;
 }
 .list-group-item a{
-  font-size: 16px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 20px;
   line-height: 24px;
   color: #000000;
-  font-family: "Lato 900 normal";
+  font-family: "Lato";
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 900;
 }
 .list-group-item .active{
   color: #0073ff;

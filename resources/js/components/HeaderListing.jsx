@@ -34,9 +34,6 @@ export default function HeaderListing() {
                 <Link to="/logout" className="nav-link logout">Logout</Link>
               </li>
             </ul>
-            <div className="navbar-text me-auto">
-              
-            </div>
             <div className="lesson-complete me-4">
               <span className="complete-lesson">completed lessons</span>
               <span className="lesson-count">0 of {lesson.length}</span>
