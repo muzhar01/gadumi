@@ -1,16 +1,16 @@
 import React from 'react'
-import HeaderListing from './HeaderListing'
-import ListingSidebar from './ListingSidebar'
+import HeaderLogoOnly from './HeaderLogoOnly'
+import ListingSidebarWithoutFilter from './ListingSidebarWithoutFilter'
 import MobileBottomSidebar from './MobileBottomSidebar'
 
 export default function Replay() {
   return (
     <>
-      <HeaderListing/>
+      <HeaderLogoOnly/>
       <div className="container">
         <div className="container-fluid mt-5">
           <div className="row">
-            <ListingSidebar/>
+            <ListingSidebarWithoutFilter/>
             <div className="col-lg-8">
               <div className="overflow-auto h-100">
                 <p className='text-center replay-heading'>W jaki sposób chcesz powtarzać?</p>

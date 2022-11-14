@@ -1,6 +1,6 @@
 import {React,useState,useEffect} from 'react'
 import axios from "axios";
-import HeaderListing from './HeaderListing'
+import HeaderLogoOnly from './HeaderLogoOnly'
 import ListingSidebar from './ListingSidebar'
 import {Link, useParams } from 'react-router-dom';
 import PostExercise from './PostExercise';
@@ -28,7 +28,7 @@ export default function Exercise() {
   const paginate= pageNumber => setCurrentPage(pageNumber)
   return (
     <>
-    <HeaderListing/>
+    <HeaderLogoOnly/>
     <div className="container">
       <div className="container-fluid mt-5">
         <div className="row">

@@ -278,6 +278,10 @@ a{
   .hide-mobile{
     display: none;
   }
+  .lesson-heading{
+    padding-left: 0px;
+    padding-right: 0px;
+  }
 }
 .logo-heading{
   font-size: 20px;
@@ -321,4 +325,8 @@ a{
 .privacy-policy-btn{
   color: gray;
   font-size: 13px;
+}
+.mobile-count-lesson-h5{
+  font-size: 24px;
+  font-weight: 700;
 }
