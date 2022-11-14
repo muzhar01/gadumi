@@ -13,7 +13,6 @@ function Replays() {
                     <div className="row">
                         <ListingSidebar/>
                         <div className="col-lg-8 px-5">
-                            
                             <div className="mb-5">
                                 <h3 className="text-center">W jaki sposób chcesz powtarzać?</h3>
                                 <div className="d-flex gap-5 justify-content-center align-items-center">

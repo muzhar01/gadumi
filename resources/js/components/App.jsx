@@ -9,7 +9,9 @@ import LessonDetail from './LessonDetail';
 import Exercise from './Exercise';
 import Logout from './Logout';
 import Setting from './Setting';
+import Lesson1 from './Lesson1';
 import Replay from './Replay';
+
 function App() {
   const [token, setToken] = useState(localStorage.getItem('token'));
   
@@ -32,6 +34,10 @@ function App() {
                   <Route exact path="setting" element={<Setting/>}/>
                   <Route  path="lessonDetail/:id" element={<LessonDetail/>}/>
                   <Route exact path="exercise/:id" element={<Exercise/>}/>
+                  <Route exact path="replays" element={<Replay />} />
+
+                  {/* Component previews */}
+                  <Route exact path="lesson1" element={<Lesson1 />} />
                 </>
               }
 
