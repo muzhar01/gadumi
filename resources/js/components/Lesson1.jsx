@@ -25,7 +25,7 @@ function Lesson1() {
             </div>
             <BottomBar>
                 <div className="text-center p-4">
-                    <button className="btn btn-primary" onClick={(event) => event.target.style.height = '100px'}>Next</button>
+                    <button className="btn btn-primary" onClick={(event) => event.target.style.height = (event.target.clientHeight + 100) + 'px'}>Next</button>
                 </div>
             </BottomBar>
         </>
