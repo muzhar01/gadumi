@@ -1,10 +1,10 @@
-import HeaderListing from "./HeaderListing";
+import HeaderLogoOnly from "./HeaderLogoOnly";
 import BottomBar from "./BottomBar";
 
 function Lesson1() {
     return (
         <>
-            <HeaderListing/>
+            <HeaderLogoOnly/>
             <div className="container">
                 <div className="container-fluid mt-5">
                     <h4 className="text-center" style={{color: '#0b7cfe'}}>Odsłuchaj i powtórz za lektorem</h4>

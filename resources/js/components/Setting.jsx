@@ -1,7 +1,7 @@
 import React, {useState,useEffect} from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import HeaderListing from './HeaderListing'
+import HeaderWithLogoAndProgressBar from './HeaderWithLogoAndProgressBar';
 import ListingSidebar from './ListingSidebar'
 
 export default function Setting() {
@@ -96,7 +96,7 @@ export default function Setting() {
 }
   return (
     <>
-    <HeaderListing/>
+    <HeaderWithLogoAndProgressBar/>
     <div className="container">
       <div className="container-fluid mt-5">
         <div className="row">
