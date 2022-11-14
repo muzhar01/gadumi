@@ -1,9 +1,9 @@
 import React from 'react'
 import axios from "axios";
-import HeaderListing from './HeaderListing'
 import ListingSidebar from './ListingSidebar'
 import { Link } from 'react-router-dom';
 import MobileBottomSidebar from './MobileBottomSidebar';
+import HeaderWithLogoAndProgressBar from './HeaderWithLogoAndProgressBar';
 
 export default function Listing() {
   const [lessons, setPost] = React.useState([]);
@@ -19,10 +19,15 @@ export default function Listing() {
       setSetting(response.data);
     });
   }, []);
-
+  const [lesson, setLesson] = React.useState([]);
+  React.useEffect(() => {
+    axios.get("http://localhost:8000/api/lessons/").then((response) => {
+      setLesson(response.data.data);
+    });
+  }, []);
   return (
     <>
-      <HeaderListing/>
+      <HeaderWithLogoAndProgressBar/>
       <div className="container">
         <div className="container-fluid mt-5">
           <div className="row">
@@ -34,6 +39,17 @@ export default function Listing() {
                     <option value="">Advanced A3</option>
                   </select>
                 </div>
+            </div>
+            
+            <div className="col-lg-12 d-block d-md-none mt-3 mb-3 d-flex">
+              <div className='me-4'>
+                <h5 className='mobile-count-lesson-h5'>0 <span>z</span> {lesson.length}</h5>
+                <span>Ukończona lekcja</span>
+              </div>
+              <div>
+                <h5 className='mobile-count-lesson-h5'>0 % </h5>
+                <span>z tego poziomu</span>
+              </div>
             </div>
             <ListingSidebar/>
             <div className="col-lg-8">

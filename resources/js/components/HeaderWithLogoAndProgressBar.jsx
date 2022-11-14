@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export default function HeaderListing() {
+export default function HeaderWithLogoAndProgressBar() {
   const [lesson, setPost] = React.useState([]);
   React.useEffect(() => {
     axios.get("http://localhost:8000/api/lessons/").then((response) => {

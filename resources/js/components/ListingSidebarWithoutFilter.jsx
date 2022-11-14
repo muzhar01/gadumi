@@ -1,9 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export default function ListingSidebar() {
+export default function ListingSidebarWithoutFilter() {
   let pathname = window.location.pathname;
-
   return (
     <>
       <div className="col-lg-4 mr-5 d-none d-md-block">
@@ -15,15 +14,6 @@ export default function ListingSidebar() {
           <li className="list-group-item">
             <img src="/images/replay.svg" alt="" srcSet=""/>
             <Link to="/portal/replay" className={'' + (pathname === '/portal/replay'? 'active': '')}>Powtórki</Link>
-          </li>
-          <hr/>
-          <li className="list-group-item d-none d-md-block">
-            <p className="level-text">Wybierz poziom na jakim chcesz się uczyć</p>
-            <select className="btn btn-outline-primary d-block w-100 select-level">
-              <option value="">Beginner A1</option>
-              <option value="">Intermediate A2</option>
-              <option value="">Advanced A3</option>
-            </select>
           </li>
           <hr/>
           <li className="list-group-item">
