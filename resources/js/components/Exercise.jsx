@@ -36,6 +36,7 @@ export default function Exercise() {
           <div className="col-lg-8">
             <PostExercise exercises={currentExercise} loading={loading}/>
             <Pagination exercisePerPage={exercisePerPage} totalExercise={exercises.length} paginate={paginate}/>
+            
           </div>
         </div>
       </div>

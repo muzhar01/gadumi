@@ -37,15 +37,15 @@ export default function HeaderListing() {
             <div className="navbar-text me-auto">
               
             </div>
-            <div className="lesson-complete me-4">
+            <div className="lesson-complete me-4 hide-mobile">
               <span className="complete-lesson">completed lessons</span>
               <span className="lesson-count">0 of {lesson.length}</span>
             </div>
-            <span className="navbar-text">
+            <span className="navbar-text hide-mobile">
               Your knowledge of this level
             </span>
             
-            <div className="nav-item level">
+            <div className="nav-item level hide-mobile">
               <span>0%</span>
             </div>
           </div>
