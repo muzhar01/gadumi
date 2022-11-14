@@ -36,19 +36,19 @@ export default function Login({setToken}) {
   return (
     <>
     <div className="container">
-        <div className="row justify-content-center align-items-center" style={{height:'100vh'}}>
-            <div className='col-12 col-md-10 col-lg-6'>
-                <div className='d-flex justify-content-center align-items-center'>
+        <div className="row justify-content-center align-items-center">
+            <div className='col-12 col-md-10 col-lg-4'>
+                <div className='d-flex justify-content-center align-items-center mt-5'>
                     <img src="/images/logo.svg" style={{height:'40px'}} className='mx-2'/>
-                    <span className=''>Hello!</span>
+                    <span className='logo-heading'>Hello!</span>
                 </div>
-                <h1 className='text-center'>Witaj na Gadumi</h1>
-                <div className='d-flex justify-content-center align-content-center border-bottom'>
-                    <ul className='list-group list-group-horizontal'>
-                        <li className='list-group-item'>
+                <h1 className='text-center mt-3 login-h1'>Witaj na Gadumi</h1>
+                <div className='d-flex justify-content-center align-content-center mt-4'>
+                    <ul className='list-group list-group-horizontal login-collaps'>
+                        <li className='list-group-item border-bottom-not-active'>
                             <Link to="/portal/register" className='m-auto text-center'>Zarejestruj się</Link>
                         </li>
-                        <li className='list-group-item'>
+                        <li className='list-group-item border-bottom-active'>
                             <Link to="/portal/login" className='m-auto text-center active'>Zaloguj sie</Link>
                         </li>
                     </ul>
@@ -73,7 +73,10 @@ export default function Login({setToken}) {
                         <span className='col m-0 p-0'><hr/></span>
                     </div>
                     <div className="form-group mt-4">
-                        <button type="submit" className='btn btn-light form-control'>Google</button>
+                        <button type="submit" className='btn btn-light form-control google-btn'>
+                            <img src="/images/google1.png" alt="" className='google-icon'/>
+                            kontynuuj prezez konto Google
+                        </button>
                     </div>
                 </form>
             </div>
