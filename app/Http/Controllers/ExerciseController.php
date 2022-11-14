@@ -217,7 +217,7 @@ class ExerciseController extends Controller
     }
     public function exercise($id)
     {
-        $exercise = Exercise::where('lesson_id',$id)->get();
+        $exercise = Exercise::where('lesson_id',$id)->with(['questions.options'])->get();
         $exercise->map(function($q){
         $q->image=url($q->image);
             return $q;

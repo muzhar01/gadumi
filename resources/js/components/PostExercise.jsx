@@ -4,6 +4,7 @@ const PostExercise=({exercises,loading}) => {
   if(loading){
     return <h2>Loading...</h2>;
   }
+  console.log(exercises);
   return (<ul>
     {
       exercises.map(exercise=> (
