@@ -279,3 +279,46 @@ a{
     display: none;
   }
 }
+.logo-heading{
+  font-size: 20px;
+  font-weight: 700;
+}
+.login-h1{
+  font-size: 26px;
+  font-weight: 600;
+}
+.login-collaps li a{
+  font-weight: 400;
+  font-size: 18px;
+  color: #6e6e6e;
+}
+.login-collaps li .active{
+  color: #000000;
+}
+.border-bottom-not-active{
+  border-bottom: 1px solid #dee2e6!important;
+  border-radius: 0!important;
+  border-bottom-left-radius:0!important;
+  border-top-right-radius:0!important;
+  width: 175px;
+  padding-bottom: 11px;
+}
+.border-bottom-active{
+  border-bottom: 1px solid #080808!important;
+  border-radius: 0!important;
+  border-bottom-left-radius:0!important;
+  border-top-right-radius:0!important;
+  width: 175px;
+  padding-bottom: 11px;
+}
+.google-icon{
+  height: 35px;
+}
+.google-btn{
+  font-size: 17px;
+  font-weight: 500;
+}
+.privacy-policy-btn{
+  color: gray;
+  font-size: 13px;
+}
