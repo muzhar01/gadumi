@@ -5,6 +5,7 @@ import ListingSidebar from './ListingSidebar'
 import {Link, useParams } from 'react-router-dom';
 import PostExercise from './PostExercise';
 import Pagination from './Pagination';
+import ProgressBar from './ProgressBar';
 
 export default function Exercise() {
   let param = useParams()
@@ -26,6 +27,10 @@ export default function Exercise() {
   const currentExercise=exercises.slice(indexOfFirstExercise,indexOfLastExercise)
 
   const paginate= pageNumber => setCurrentPage(pageNumber)
+  let progress = (currentPage / exercises.length) * 100;
+  useEffect(() => {
+    progress = (currentPage / exercises.length) * 100;
+  }, [currentPage])
   return (
     <>
     <HeaderListing/>
@@ -34,6 +39,7 @@ export default function Exercise() {
         <div className="row">
           <ListingSidebar/>
           <div className="col-lg-8">
+            <ProgressBar progress={progress} />
             <PostExercise exercises={currentExercise} loading={loading}/>
             <Pagination exercisePerPage={exercisePerPage} totalExercise={exercises.length} paginate={paginate}/>
             
