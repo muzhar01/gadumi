@@ -35,7 +35,6 @@ export default function HeaderWithLogoAndProgressBar() {
         </div>
       </nav>
     </div>
-    <div className="border-bottom mt-2"></div>
     </>
   )
 }

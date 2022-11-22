@@ -11,6 +11,7 @@ import Logout from './Logout';
 import Setting from './Setting';
 import Lesson1 from './Lesson1';
 import Replay from './Replay';
+import ReplayView from './ReplayView';
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem('token'));
@@ -31,6 +32,7 @@ function App() {
                   <Route exact index element={<Listing/>} />
                   <Route exact path="courses" element={<Listing/>}/>
                   <Route exact path="replay" element={<Replay/>}/>
+                  <Route exact path="replay/view" element={<ReplayView/>}/>
                   <Route exact path="setting" element={<Setting/>}/>
                   <Route  path="lessonDetail/:id" element={<LessonDetail/>}/>
                   <Route exact path="exercise/:id" element={<Exercise/>}/>
