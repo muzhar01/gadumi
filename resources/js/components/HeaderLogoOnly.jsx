@@ -29,9 +29,19 @@ export default function HeaderLogoOnly(props) {
                 <Link to="/logout" className="nav-link logout">Logout</Link>
               </li>
             </ul>
-            <div className="navbar-text me-auto">
+            {props.lessonBar==true ?
+              <div className="progress w-50" style={{ height: '3px' }}>
+                <div className="progress-bar" role="progressbar" style={{width: '50%'}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+              :
+              ''
+            }
+            <div className={props.lessonBar==true ? 'ms-2 navbar-text p-0':'navbar-text p-0 m-auto'}>
+              
               {props.lessonClose==true ?
-                  <Link to='/portal' className="btn-close"></Link>
+                  <Link to='/portal' >
+                    <img src="/images/cross.svg" alt="" className='cross-btn' />
+                  </Link>
                   :
                   ''
               }

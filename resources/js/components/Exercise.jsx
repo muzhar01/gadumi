@@ -9,6 +9,8 @@ import ProgressBar from './ProgressBar';
 
 export default function Exercise() {
   let param = useParams()
+  const lesson = true;
+  const exercise = true;
   const [exercises, setExercises] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
@@ -33,9 +35,9 @@ export default function Exercise() {
   }, [currentPage])
   return (
     <>
-    <HeaderLogoOnly/>
+    <HeaderLogoOnly lessonBar={exercise ? true : false} lessonClose={lesson ? true : false}/>
     <div className="container">
-      <div className="container-fluid mt-5">
+      <div className="container-fluid mt-3">
         <div className="row justify-content-center">
           <div className="col-lg-8">
             <ProgressBar progress={progress} />

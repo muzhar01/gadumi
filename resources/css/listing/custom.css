@@ -341,7 +341,26 @@ a{
 .lesson-img{
   width: 366px;
   height: 245px;
+  border-radius: 1.25rem!important;
 }
 .speeker-img{
   height: 60px;
+}
+.cross-btn{
+  height: 100%;
+  width: 2em;
+}
+.exercise-title{
+  text-align: center;
+  font-size: 17px;
+  line-height: 20px;
+  color: #0b7cfe;
+  font-family: "Lato";
+  font-weight: 700;
+}
+.exercise-desc{
+  line-height: 24px;
+  font-size: 17px;
+  font-family: "Lato";
+  font-weight: 400;
 }
