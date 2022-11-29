@@ -8,21 +8,16 @@ const PostExercise=({exercises,loading}) => {
     {
       exercises.map(exercise=> (
       <div className='row' key={exercise.id}>
-      
-
         <div className="col-lg-12">
-          <div className="progress" style={{ height: '1px' }}>
-            <div className="progress-bar" role="progressbar" style={{width: '25%'}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
-          <p>{exercise.title}</p>
+          <p className='exercise-title'>{exercise.title}</p>
         </div>
-        <div className="col-lg-12">
-          <img src={exercise.image} alt="" className='mb-2'/>
+        <div className="col-lg-12 mb-3">
+          <img src={exercise.image} alt="" className='lesson-img d-block m-auto'/>
         </div>
-        <div className="col-lg-12">
-          <p>{exercise.description}</p>
+        <div className="col-lg-8 m-auto">
+          <p className='exercise-desc'>{exercise.description}</p>
         </div>
-        <div className="col-lg-12">
+        <div className="col-lg-8 m-auto">
           <p>{exercise.content}</p>
         </div>
         

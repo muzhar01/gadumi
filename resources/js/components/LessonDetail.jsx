@@ -30,7 +30,7 @@ export default function LessonDetail() {
                   </>
                   :
                   <>
-                    <img src={lesson.image} className="rounded mx-auto d-block mb-2 lesson-img" />
+                    <img src={lesson.image} className="mx-auto d-block mb-2 lesson-img" />
                   </>
                 }
                 <div className="text-justify mb-5 justify-content-center">
