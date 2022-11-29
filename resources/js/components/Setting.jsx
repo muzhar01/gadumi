@@ -104,7 +104,7 @@ export default function Setting() {
           <div className="col-lg-8">
           <ul className="nav nav-tabs mb-4" id="myTab" role="tablist">
             <li className="nav-item">
-              <a className="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Proflie</a>
+              <a className="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Profile</a>
             </li>
             <li className="nav-item">
               <a className="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Change Password</a>

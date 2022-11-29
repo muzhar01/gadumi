@@ -330,3 +330,18 @@ a{
   font-size: 24px;
   font-weight: 700;
 }
+.view-pic-text{
+  color: #0b7cfe;
+  font-family: "Lato";
+  font-weight: 700;
+  text-align: center;
+  font-size: 17px;
+  line-height: 20px;
+}
+.lesson-img{
+  width: 366px;
+  height: 245px;
+}
+.speeker-img{
+  height: 60px;
+}

@@ -31,8 +31,7 @@ export default function Exercise() {
     <HeaderLogoOnly/>
     <div className="container">
       <div className="container-fluid mt-5">
-        <div className="row">
-          <ListingSidebar/>
+        <div className="row justify-content-center">
           <div className="col-lg-8">
             <PostExercise exercises={currentExercise} loading={loading}/>
             <Pagination exercisePerPage={exercisePerPage} totalExercise={exercises.length} paginate={paginate}/>
