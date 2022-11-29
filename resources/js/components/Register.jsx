@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState,useEffect} from 'react'
 
 import { Link,useNavigate  } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
@@ -26,12 +26,14 @@ export default function Register() {
       let token = result.token.split("|");
       localStorage.setItem('token', token[1]);
       toast.success("Register Successfully");
-      setTimeout(() => navigate("/login"), 1000);
+      setTimeout(() => navigate("/login", "test"), 1000);
     }else if(result.errors){
         setErrors(result.errors)
     }
     else{
-        toast.error("Failed to Register");
+        toast.success("Your account is registered. You can now login!");
+        setTimeout(() => navigate("/portal/login"), 3000);
+        //setTimeout(() => navigate("/portal/courses"), 1000);
     }
   }
   return (
