@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export default function HeaderWithLogoAndProgressBar() {
+export default function HeaderLogoOnly(props) {
+  
   return (
     <>
     <div className="container">
@@ -29,7 +30,11 @@ export default function HeaderWithLogoAndProgressBar() {
               </li>
             </ul>
             <div className="navbar-text me-auto">
-              
+              {props.lessonClose==true ?
+                  <Link to='/portal' className="btn-close"></Link>
+                  :
+                  ''
+              }
             </div>
           </div>
         </div>
