@@ -1,13 +1,15 @@
 import React from 'react'
-
-const PostExercise=({exercises,loading}) => {
-  if(loading){
-    return <h2>Loading...</h2>;
-  }
-  return (<ul>
+const PostExercise=({exercise}) => {
+  // let i=eid;
+  // let exercise=exercises[i]
+  // function increment(){
+  //   console.log(i);
+  //   i=i+1
+  //   exercise=exercises[i]
+  // }
+  return (<>
     {
-      exercises.map(exercise=> (
-      <div className='row' key={exercise.id}>
+      <div className='row'>
         <div className="col-lg-12">
           <p className='exercise-title'>{exercise.title}</p>
         </div>
@@ -16,16 +18,41 @@ const PostExercise=({exercises,loading}) => {
           <img src={exercise.image} alt="" className='lesson-img d-block m-auto'/> : ''
         }
         </div>
-        <div className="col-lg-8 m-auto">
+        <div className="col-lg-12 m-auto">
           <p className='exercise-desc'>{exercise.description}</p>
         </div>
-        <div className="col-lg-8 m-auto">
+        <div className="col-lg-12 m-auto">
           <p>{exercise.content}</p>
         </div>
-        
+        <div className="col-lg-8 m-auto">
+          {(exercise.questions?
+            exercise.questions.map(question=>(
+              <>
+                <div key={question.id}>
+                  <h1 className='exercise-question'>{question.content}</h1>
+                  {question.image?
+                    <img src={question.image} alt="" className='lesson-img d-block m-auto'/> : ''
+                  }
+                  {question.options?
+                    question.options.map(option=>(
+                      <div key={option.id} className='row'>
+                        <div className='col-lg-8 m-auto '>
+                          <button className=' btn exercsie-option w-100 m-2'>{option.content}</button>
+                        </div>
+                      </div>
+                    ))
+                    : ''
+                  }
+                </div>
+              </>
+            ))
+          :''
+      )}
+        </div>
+        {/* <button  onClick={increment} type="button"  className='btn btn-primary form-control'>Next</button> */}
       </div>
-    ))}
-  </ul>
-  );
+    }
+    </>
+    );
 };
 export default PostExercise
