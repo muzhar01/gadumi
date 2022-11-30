@@ -1,10 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Header from './Header'
-import ListingSidebarWithoutFilter from './ListingSidebarWithoutFilter'
 import Logo from './Logo'
 import MobileBottomSidebar from './MobileBottomSidebar'
 import MobileMenu from './MobileMenu'
+import Sidebar from './Sidebar'
+import LessonMenu from './LessonMenu'
+import Menu from './Menu'
 
 export default function Replay() {
   return (
@@ -16,7 +18,11 @@ export default function Replay() {
       <div className="container">
         <div className="container-fluid mt-5">
           <div className="row">
-            <ListingSidebarWithoutFilter/>
+            <Sidebar>
+                <LessonMenu />
+                <hr />
+                <Menu />
+            </Sidebar>
             <div className="col-lg-8">
               <div className="overflow-auto h-100">
                 <p className='text-center replay-heading'>W jaki sposób chcesz powtarzać?</p>

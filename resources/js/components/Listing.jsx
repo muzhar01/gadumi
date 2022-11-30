@@ -1,12 +1,15 @@
 import React from 'react'
 import axios from "axios";
-import ListingSidebar from './ListingSidebar'
 import { Link } from 'react-router-dom';
 import MobileBottomSidebar from './MobileBottomSidebar';
 import Header from './Header';
 import Logo from './Logo';
 import MobileMenu from './MobileMenu';
 import LessonProgress from './LessonProgress';
+import Sidebar from './Sidebar';
+import LessonMenu from './LessonMenu';
+import LevelSelect from './LevelSelect';
+import Menu from './Menu';
 
 export default function Listing() {
   const [lessons, setPost] = React.useState([]);
@@ -58,7 +61,11 @@ export default function Listing() {
                 <span>z tego poziomu</span>
               </div>
             </div>
-            <ListingSidebar/>
+            <Sidebar>
+              <LessonMenu />
+              <LevelSelect />
+              <Menu />
+            </Sidebar>
             <div className="col-lg-8">
               <div className="overflow-auto h-100">
                 <ul className="list-group">
