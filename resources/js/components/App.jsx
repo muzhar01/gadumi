@@ -13,6 +13,7 @@ import Lesson1 from './Lesson1';
 import Replay from './Replay';
 import ReplayView from './ReplayView';
 import { Navigate } from 'react-router-dom';
+import Congrats from './Congrats';
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem('token'));
@@ -41,6 +42,7 @@ function App() {
 
                   {/* Component previews */}
                   <Route exact path="lesson1" element={<Lesson1 />} />
+                  <Route exact path="congrats" element={<Congrats />} />
                 </>
               }
 

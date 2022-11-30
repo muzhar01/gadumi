@@ -26,7 +26,7 @@ export default function Exercise() {
 
   const loadNextExercise = (event) => {
     if(currentExercise+1 == exercises.length){
-      console.log('congrats')
+      window.location.href='/portal/congrats';
     }
     if (currentExercise + 1 < exercises.length) {
       setCurrentExercise(state => state + 1);
