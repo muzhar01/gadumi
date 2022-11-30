@@ -2,10 +2,13 @@ import React, {useState,useEffect} from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Header from './Header';
+import LessonMenu from './LessonMenu';
 import LessonProgress from './LessonProgress';
-import ListingSidebar from './ListingSidebar'
+import LevelSelect from './LevelSelect';
 import Logo from './Logo';
+import Menu from './Menu';
 import MobileMenu from './MobileMenu';
+import Sidebar from './Sidebar';
 
 export default function Setting() {
   let [current_password,setCurrentPassword]=useState("")
@@ -104,7 +107,11 @@ export default function Setting() {
     <div className="container">
       <div className="container-fluid mt-5">
         <div className="row">
-          <ListingSidebar/>
+          <Sidebar>
+            <LessonMenu />
+            <LevelSelect />
+            <Menu />
+          </Sidebar>
           <div className="col-lg-8">
           <ul className="nav nav-tabs mb-4" id="myTab" role="tablist">
             <li className="nav-item">
