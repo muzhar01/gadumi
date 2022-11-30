@@ -386,5 +386,32 @@ a{
   border-top: 1px solid rgb(171, 184, 212);
   border-bottom: 1px solid rgb(171, 184, 212);
   box-shadow: none;
-
+}
+.exercsie-wrong-option{
+  opacity: 1;
+  background-color: rgb(255, 255, 255);
+  background-size: cover;
+  background-attachment: scroll;
+  background-repeat: repeat;
+  background-position: left top;
+  border-radius: 50px;
+  border-left: 2px solid rgb(254, 44, 85);
+  border-right: 2px solid rgb(254, 44, 85);
+  border-top: 2px solid rgb(254, 44, 85);
+  border-bottom: 2px solid rgb(254, 44, 85);
+  box-shadow: none;
+}
+.correct-option{
+  opacity: 1;
+  background-color: rgb(20, 225, 136);
+  background-size: cover;
+  background-attachment: scroll;
+  background-repeat: repeat;
+  background-position: left top;
+  border-radius: 50px;
+  border-left: 2px solid rgb(26, 197, 153);
+  border-right: 2px solid rgb(26, 197, 153);
+  border-top: 2px solid rgb(26, 197, 153);
+  border-bottom: 2px solid rgb(26, 197, 153);
+  box-shadow: none;
 }
