@@ -1,9 +1,12 @@
 import {React,useState,useEffect} from 'react'
 import axios from "axios";
-import HeaderLogoOnly from './HeaderLogoOnly'
 import {useParams } from 'react-router-dom';
 import PostExercise from './PostExercise';
 import BottomBar from './BottomBar';
+import Header from './Header';
+import Logo from './Logo';
+import LessonClose from './LessonClose';
+import ExerciseProgressBar from './ProgressBar';
 
 
 export default function Exercise() {
@@ -35,7 +38,11 @@ export default function Exercise() {
   
   return (
     <>
-    <HeaderLogoOnly lessonBar={exercise ? true : false} lessonClose={lesson ? true : false}/>
+    <Header>
+      <Logo />
+      <ExerciseProgressBar progress="50" />
+      <LessonClose />
+    </Header>
     <div className="container">
       <div className="container-fluid mt-3">
         <div className="row justify-content-center">
@@ -48,8 +55,8 @@ export default function Exercise() {
 
     <BottomBar>
         <div className="text-center p-4">
-          <button className="btn btn-primary" onClick={(event) => loadPrevExercise(event)}>Prev</button>
-          <button className="btn btn-primary" onClick={(event) => loadNextExercise(event)}>Next</button>
+          {/* <button className="btn btn-primary" onClick={(event) => loadPrevExercise(event)}>Prev</button> */}
+          <button className="btn btn-primary" onClick={(event) => loadNextExercise(event)}>Continue</button>
         </div>
     </BottomBar>
   </>

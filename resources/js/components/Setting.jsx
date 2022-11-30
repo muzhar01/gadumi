@@ -1,8 +1,11 @@
 import React, {useState,useEffect} from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import HeaderWithLogoAndProgressBar from './HeaderWithLogoAndProgressBar';
+import Header from './Header';
+import LessonProgress from './LessonProgress';
 import ListingSidebar from './ListingSidebar'
+import Logo from './Logo';
+import MobileMenu from './MobileMenu';
 
 export default function Setting() {
   let [current_password,setCurrentPassword]=useState("")
@@ -93,7 +96,11 @@ export default function Setting() {
 }
   return (
     <>
-    <HeaderWithLogoAndProgressBar/>
+    <Header>
+      <Logo />
+      <MobileMenu />
+      <LessonProgress />
+    </Header>
     <div className="container">
       <div className="container-fluid mt-5">
         <div className="row">
