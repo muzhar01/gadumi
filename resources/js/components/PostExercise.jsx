@@ -1,15 +1,10 @@
 import React from 'react'
-const PostExercise=({exercise}) => {
-  // let i=eid;
-  // let exercise=exercises[i]
-  // function increment(){
-  //   console.log(i);
-  //   i=i+1
-  //   exercise=exercises[i]
-  // }
-  return (<>
+import { Link } from 'react-router-dom';
+const PostExercise=({exercises}) => {
+  return (<ul>
     {
-      <div className='row'>
+      exercises.map(exercise=>(
+        <div className='row' key={exercise.id}>
         <div className="col-lg-12">
           <p className='exercise-title'>{exercise.title}</p>
         </div>
@@ -49,10 +44,10 @@ const PostExercise=({exercise}) => {
           :''
       )}
         </div>
-        {/* <button  onClick={increment} type="button"  className='btn btn-primary form-control'>Next</button> */}
       </div>
+      ))
     }
-    </>
-    );
+  </ul>
+  );
 };
 export default PostExercise
