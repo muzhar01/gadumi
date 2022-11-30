@@ -415,3 +415,16 @@ a{
   border-bottom: 2px solid rgb(26, 197, 153);
   box-shadow: none;
 }
+.congrats-title{
+  text-align: center;
+  font-size: 36px;
+  line-height: 43px;
+  color: #161823;
+  font-weight: 900; 
+}
+.congrats-desc{
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: #161823;
+}

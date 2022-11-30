@@ -26,11 +26,15 @@ export default function Exercise() {
   const [progressPercentage, setProgressPercentage] = useState(0);
 
   const loadNextExercise = (event) => {
+    if(currentExercise+1 == exercises.length){
+      window.location.href='/portal/congrats';
+    }
     if (currentExercise + 1 < exercises.length) {
       setCurrentExercise(state => state + 1);
     } else {
       setProgressPercentage(100);
     }
+    
   }
 
   const loadPrevExercise = (event) => {
