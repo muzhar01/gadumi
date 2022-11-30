@@ -4,10 +4,13 @@ import HeaderLogoOnly from './HeaderLogoOnly'
 import {useParams } from 'react-router-dom';
 import PostExercise from './PostExercise';
 
+<<<<<<< HEAD
 import Pagination from './Pagination';
 import ProgressBar from './ProgressBar';
 import BottomBar from './BottomBar';
 
+=======
+>>>>>>> dc3ba2abe94ba4e8f7bed92694616a1fdb64650d
 
 export default function Exercise() {
   let param = useParams()
