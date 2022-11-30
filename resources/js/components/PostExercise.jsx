@@ -12,7 +12,9 @@ const PostExercise=({exercises,loading}) => {
           <p className='exercise-title'>{exercise.title}</p>
         </div>
         <div className="col-lg-12 mb-3">
-          <img src={exercise.image} alt="" className='lesson-img d-block m-auto'/>
+        {exercise.image?
+          <img src={exercise.image} alt="" className='lesson-img d-block m-auto'/> : ''
+        }
         </div>
         <div className="col-lg-8 m-auto">
           <p className='exercise-desc'>{exercise.description}</p>
