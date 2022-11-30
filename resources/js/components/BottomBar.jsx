@@ -1,13 +1,19 @@
-import { bottom } from "@popperjs/core";
 import { useEffect, useRef, useState } from "react";
 
 function BottomBar({children}) {
     const bottomBar = useRef();
-    const [bottomBarHeight, setBottomBarHeight] = useState(bottomBar.current.clientHeight);
+    const [bottomBarHeight, setBottomBarHeight] = useState(bottomBar.current? bottomBar.current.clientHeight: 0);;
+    let resizeObserver;
 
     useEffect(() => {
+        if (resizeObserver === undefined) {
+            resizeObserver = new ResizeObserver(entries => setBottomBarHeight(bottomBar.current.clientHeight));
+            // start observing a DOM node
+            resizeObserver.observe(bottomBar.current);
+        }
+
         // Get Bottom Bar Height
-        document.body.style.paddingBottom = bottomBar.current.clientHeight + 'px';
+        document.body.style.paddingBottom = (bottomBarHeight === 0? bottomBarHeight: bottomBar.current.clientHeight) + 'px';
     });
 
     return (
