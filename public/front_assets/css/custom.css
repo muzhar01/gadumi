@@ -188,7 +188,3 @@ a{
 .list-group-item .settings,.list-group-item .prime_account,.list-group-item .contact_us,.list-group-item .logout{
   font-size: 14px;
 }
-.hidden_sidebar{
-  flex-direction: row!important;
-  border-radius: 0.25rem;
-}
