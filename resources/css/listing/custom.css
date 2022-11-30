@@ -330,6 +330,11 @@ a{
   font-size: 24px;
   font-weight: 700;
 }
+
+.mobile-footer-nav {
+  position: fixed !important;
+  width: 100%;
+
 .view-pic-text{
   color: #0b7cfe;
   font-family: "Lato";
@@ -381,4 +386,5 @@ a{
   border-top: 1px solid rgb(171, 184, 212);
   border-bottom: 1px solid rgb(171, 184, 212);
   box-shadow: none;
+
 }

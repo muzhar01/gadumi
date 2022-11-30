@@ -4,6 +4,10 @@ import HeaderLogoOnly from './HeaderLogoOnly'
 import {useParams } from 'react-router-dom';
 import PostExercise from './PostExercise';
 
+import Pagination from './Pagination';
+import ProgressBar from './ProgressBar';
+
+
 export default function Exercise() {
   let param = useParams()
   const lesson = true;
@@ -26,6 +30,7 @@ export default function Exercise() {
     };
     fatchExercises()
   }, []);
+
   return (
     <>
     <HeaderLogoOnly lessonBar={isExercise ? true : false} lessonClose={lesson ? true : false}/>
@@ -40,6 +45,7 @@ export default function Exercise() {
           </>
             :
             <h3>No Exersise</h3>}
+
           </div>
         </div>
       </div>
