@@ -12,6 +12,7 @@ import Setting from './Setting';
 import Lesson1 from './Lesson1';
 import Replay from './Replay';
 import ReplayView from './ReplayView';
+import { Navigate } from 'react-router-dom';
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem('token'));
