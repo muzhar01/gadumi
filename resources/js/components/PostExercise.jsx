@@ -1,10 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-const PostExercise=({exercises}) => {
+const PostExercise=({exercise}) => {
+  if (exercise === null) {
+    return <></>
+  }
+
   return (<ul>
-    {
-      exercises.map(exercise=>(
-        <div className='row' key={exercise.id}>
+        <div className='row'>
         <div className="col-lg-12">
           <p className='exercise-title'>{exercise.title}</p>
         </div>
@@ -23,14 +25,14 @@ const PostExercise=({exercises}) => {
           {(exercise.questions?
             exercise.questions.map(question=>(
               <>
-                <div key={question.id}>
+                <div key={question.id + 'q'}>
                   <h1 className='exercise-question'>{question.content}</h1>
                   {question.image?
                     <img src={question.image} alt="" className='lesson-img d-block m-auto'/> : ''
                   }
                   {question.options?
                     question.options.map(option=>(
-                      <div key={option.id} className='row'>
+                      <div key={option.id + 'o'} className='row'>
                         <div className='col-lg-8 m-auto '>
                           <button className=' btn exercsie-option w-100 m-2'>{option.content}</button>
                         </div>
@@ -45,8 +47,6 @@ const PostExercise=({exercises}) => {
       )}
         </div>
       </div>
-      ))
-    }
   </ul>
   );
 };
