@@ -1,9 +1,12 @@
 import {React,useState,useEffect} from 'react'
 import axios from "axios";
-import HeaderLogoOnly from './HeaderLogoOnly'
 import {useParams } from 'react-router-dom';
 import PostExercise from './PostExercise';
 import BottomBar from './BottomBar';
+import Header from './Header';
+import Logo from './Logo';
+import LessonClose from './LessonClose';
+import ExerciseProgressBar from './ProgressBar';
 
 
 export default function Exercise() {
@@ -35,16 +38,21 @@ export default function Exercise() {
   
   return (
     <>
-    <HeaderLogoOnly lessonBar={exercise ? true : false} lessonClose={lesson ? true : false}/>
-      <div className="container">
-      <PostExercise key={currentExercise + 'e'} exercise={exercises.length > 0? exercises[currentExercise]: null}/>
-          
-      </div>
-      <BottomBar>
-          <div className="text-center p-4">
-              <button className="btn btn-primary" onClick={(event) => loadNextExercise(event)}>Next</button>
-          </div>
-      </BottomBar>
+    <Header>
+      <Logo />
+      <ExerciseProgressBar progress="50" />
+      <LessonClose />
+    </Header>
+    
+    <div className="container">
+    <PostExercise key={currentExercise + 'e'} exercise={exercises.length > 0? exercises[currentExercise]: null}/>
+        
+    </div>
+    <BottomBar>
+        <div className="text-center p-4">
+            <button className="btn btn-primary" onClick={(event) => loadNextExercise(event)}>Next</button>
+        </div>
+    </BottomBar>
   </>
   )
 }

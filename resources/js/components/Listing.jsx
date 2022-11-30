@@ -3,7 +3,10 @@ import axios from "axios";
 import ListingSidebar from './ListingSidebar'
 import { Link } from 'react-router-dom';
 import MobileBottomSidebar from './MobileBottomSidebar';
-import HeaderWithLogoAndProgressBar from './HeaderWithLogoAndProgressBar';
+import Header from './Header';
+import Logo from './Logo';
+import MobileMenu from './MobileMenu';
+import LessonProgress from './LessonProgress';
 
 export default function Listing() {
   const [lessons, setPost] = React.useState([]);
@@ -27,7 +30,11 @@ export default function Listing() {
   }, []);
   return (
     <>
-      <HeaderWithLogoAndProgressBar/>
+      <Header>
+        <Logo />
+        <MobileMenu />
+        <LessonProgress />
+      </Header>
       <div className="container">
         <div className="container-fluid mt-5">
           <div className="row">

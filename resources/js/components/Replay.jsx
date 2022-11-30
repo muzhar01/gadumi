@@ -1,14 +1,18 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import HeaderLogoOnly from './HeaderLogoOnly'
+import Header from './Header'
 import ListingSidebarWithoutFilter from './ListingSidebarWithoutFilter'
+import Logo from './Logo'
 import MobileBottomSidebar from './MobileBottomSidebar'
+import MobileMenu from './MobileMenu'
 
 export default function Replay() {
   return (
     <>
-      <HeaderLogoOnly/>
-    <div className="border-bottom mt-2"></div>
+    <Header>
+        <Logo />
+        <MobileMenu />
+    </Header>
       <div className="container">
         <div className="container-fluid mt-5">
           <div className="row">

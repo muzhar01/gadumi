@@ -1,10 +1,13 @@
 import {React,useState,useEffect} from 'react'
 import axios from "axios";
-import HeaderLogoOnly from './HeaderLogoOnly'
 import ListingSidebar from './ListingSidebar'
 import {Link, useParams } from 'react-router-dom';
 import ReactHtmlParser from 'react-html-parser';
 import BottomBar from './BottomBar';
+import Header from './Header';
+import Logo from './Logo';
+import LessonClose from './LessonClose';
+import MobileMenu from './MobileMenu';
 export default function LessonDetail() {
   let param = useParams()
   const [lesson, setPost] = useState([]);
@@ -16,7 +19,11 @@ export default function LessonDetail() {
   }, []);
   return (
     <>
-      <HeaderLogoOnly lessonClose={lesson.id ? true : false}/>
+      <Header>
+        <Logo />
+        <MobileMenu />
+        <LessonClose />
+      </Header>
       <div className="container">
           <div className="container-fluid mt-5">
               <h4 className="text-center" style={{color: '#0b7cfe'}}>{ lesson.title }</h4>

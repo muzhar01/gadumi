@@ -13,7 +13,8 @@ function BottomBar({children}) {
         }
 
         // Get Bottom Bar Height
-        document.body.style.paddingBottom = (bottomBarHeight === 0? bottomBarHeight: bottomBar.current.clientHeight) + 'px';
+        const root = document.querySelector('#root');
+        root.style.paddingBottom = (bottomBarHeight === 0? bottomBarHeight: bottomBar.current.clientHeight) + 'px';
     });
 
     return (
