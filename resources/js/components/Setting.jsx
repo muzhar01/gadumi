@@ -36,8 +36,7 @@ export default function Setting() {
         "Accept":'application/json',
         "Authorization": `Bearer ${token1}`
 
-      },
-      body:JSON.stringify(item)
+      }
     })
     result = await result.json()
     if(result && result.success==true){
@@ -58,9 +57,7 @@ export default function Setting() {
         "Content-Type":'application/json',
         "Accept":'application/json',
         "Authorization": `Bearer ${token1}`
-
-      },
-      body:JSON.stringify(item)
+      }
     })
     result = await result.json()
     if(result && result.success==true){
