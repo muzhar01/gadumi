@@ -4,6 +4,7 @@ import HeaderLogoOnly from './HeaderLogoOnly'
 import ListingSidebar from './ListingSidebar'
 import {Link, useParams } from 'react-router-dom';
 import ReactHtmlParser from 'react-html-parser';
+import BottomBar from './BottomBar';
 export default function LessonDetail() {
   let param = useParams()
   const [lesson, setPost] = useState([]);
@@ -15,34 +16,30 @@ export default function LessonDetail() {
   }, []);
   return (
     <>
-    <HeaderLogoOnly lessonClose={lesson.id ? true : false}/>
-    <div className="container">
-      <div className="container-fluid mt-5">
-        <div className="row justify-content-center">
-          <div className="col-lg-8">
-            <div className="alert alert-dismissible fade show text-center" role="alert">
-              
-              <p className="text-left view-pic-text">
-              { lesson.overview }
-              </p>
-                {!lesson.image?
-                  <>
-                  </>
-                  :
-                  <>
-                    <img src={lesson.image} className="mx-auto d-block mb-2 lesson-img" />
-                  </>
-                }
-                <div className="text-justify mb-5 justify-content-center">
-                  <div>{ReactHtmlParser(lesson.description)}</div>
-                  <img src="/images/speeker.svg" alt="" className='d-block speeker-img m-auto' />
-                </div>
-                <Link className="btn btn-outline-primary" to={`/portal/exercise/${lesson.id}`}>Continue</Link>
-            </div>
+      <HeaderLogoOnly lessonClose={lesson.id ? true : false}/>
+      <div className="container">
+          <div className="container-fluid mt-5">
+              <h4 className="text-center" style={{color: '#0b7cfe'}}>{ lesson.title }</h4>
+              <div style={{width: '366px', height: '221px', borderRadius: '15px'}} className="mb-3 d-flex align-items-center justify-content-center mx-auto overflow-hidden">
+                  <img style={{minWidth: '100%', minHeight: '100%', borderRadius: '15px'}} src={lesson.image} />
+              </div>
+              <div style={{width: '366px'}} className="mx-auto">
+                  <h2 className="text-center mb-1">{ lesson.overview }</h2>
+                  <p className="text-center">cześć</p>
+                  <div className="mb-4">
+                      <span style={{width: '50px', height: '50px'}} className="d-block mx-auto">
+                          <img style={{width: '100%'}} src="https://gadumi.pl/lib/glcqhy/glosniczek-maly-powtorki-l9zfjbve.svg" />
+                      </span>
+                  </div>
+                  <p className='text-center'>{ lesson.description }🤝</p>
+              </div>
           </div>
-        </div>
       </div>
-    </div>
-  </>
+      <BottomBar>
+          <div className="text-center p-4">
+            <Link className="btn btn-outline-primary" to={`/portal/exercise/${lesson.id}`}>Continue</Link>
+          </div>
+      </BottomBar>
+    </>
   )
 }

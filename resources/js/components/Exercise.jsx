@@ -4,9 +4,6 @@ import HeaderLogoOnly from './HeaderLogoOnly'
 import {useParams } from 'react-router-dom';
 import PostExercise from './PostExercise';
 
-import Pagination from './Pagination';
-import ProgressBar from './ProgressBar';
-
 
 export default function Exercise() {
   let param = useParams()
@@ -43,7 +40,7 @@ export default function Exercise() {
         <div className="row justify-content-center">
           <div className="col-lg-8">
             <PostExercise key={currentExercise + 'e'} exercise={exercises.length > 0? exercises[currentExercise]: null}/>
-            <button onClick={(event) => loadPrevExercise(event)}>Prev</button>
+            {/* <button onClick={(event) => loadPrevExercise(event)}>Prev</button> */}
             <button onClick={(event) => loadNextExercise(event)}>Next</button>
           </div>
         </div>
