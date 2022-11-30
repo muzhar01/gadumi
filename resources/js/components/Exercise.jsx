@@ -23,10 +23,13 @@ export default function Exercise() {
   }, []);
 
   const [currentExercise, setCurrentExercise] = useState(0);
+  const [progressPercentage, setProgressPercentage] = useState(0);
 
   const loadNextExercise = (event) => {
     if (currentExercise + 1 < exercises.length) {
       setCurrentExercise(state => state + 1);
+    } else {
+      setProgressPercentage(100);
     }
   }
 
@@ -35,12 +38,16 @@ export default function Exercise() {
       setCurrentExercise(state => state - 1);
     }
   }
+
+  useEffect(() => {
+    setProgressPercentage((currentExercise / exercises.length) * 100);
+  }, [currentExercise]);
   
   return (
     <>
     <Header>
       <Logo />
-      <ExerciseProgressBar progress="50" />
+      <ExerciseProgressBar progress={progressPercentage} />
       <LessonClose />
     </Header>
     
