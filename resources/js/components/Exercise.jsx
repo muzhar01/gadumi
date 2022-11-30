@@ -3,10 +3,13 @@ import axios from "axios";
 import {useParams } from 'react-router-dom';
 import PostExercise from './PostExercise';
 import BottomBar from './BottomBar';
+<<<<<<< HEAD
 import Header from './Header';
 import Logo from './Logo';
 import LessonClose from './LessonClose';
 import ExerciseProgressBar from './ProgressBar';
+=======
+>>>>>>> efc7098cb8cb4fe02a261aa38472e68a793b436b
 
 
 export default function Exercise() {
@@ -43,20 +46,14 @@ export default function Exercise() {
       <ExerciseProgressBar progress="50" />
       <LessonClose />
     </Header>
+    
     <div className="container">
-      <div className="container-fluid mt-3">
-        <div className="row justify-content-center">
-          <div className="col-lg-8">
-            <PostExercise key={currentExercise + 'e'} exercise={exercises.length > 0? exercises[currentExercise]: null}/>
-          </div>
-        </div>
-      </div>
+    <PostExercise key={currentExercise + 'e'} exercise={exercises.length > 0? exercises[currentExercise]: null}/>
+        
     </div>
-
     <BottomBar>
         <div className="text-center p-4">
-          {/* <button className="btn btn-primary" onClick={(event) => loadPrevExercise(event)}>Prev</button> */}
-          <button className="btn btn-primary" onClick={(event) => loadNextExercise(event)}>Continue</button>
+            <button className="btn btn-primary" onClick={(event) => loadNextExercise(event)}>Next</button>
         </div>
     </BottomBar>
   </>
