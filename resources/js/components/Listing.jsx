@@ -25,6 +25,9 @@ export default function Listing() {
       setLesson(response.data.data);
     });
   }, []);
+  let i = 1;
+
+
   return (
     <>
       <HeaderWithLogoAndProgressBar/>
@@ -33,7 +36,7 @@ export default function Listing() {
           <div className="row">
             <div className="col-lg-12 d-block d-md-none">
                 <div className="input-group">
-                  <select className="form-select d-block w-100">
+                  <select className="form-select d-block w-100 difficulty-level" style={{border: 0, fontSize: '28px', fontWeight: '700',}}>
                     <option value="">Beginner A1</option>
                     <option value="">Intermediate A2</option> 
                     <option value="">Advanced A3</option>
@@ -41,14 +44,14 @@ export default function Listing() {
                 </div>
             </div>
             
-            <div className="col-lg-12 d-block d-md-none mt-3 mb-3 d-flex">
+            <div className="col-lg-12 d-block d-md-none mt-3 mb-3 d-flex justify-content-center text-center">
               <div className='me-4'>
-                <h5 className='mobile-count-lesson-h5'>0 <span>z</span> {lesson.length}</h5>
-                <span>Ukończona lekcja</span>
+                <h5 className='mobile-count-lesson-h5' style={{ fontSize: '30px', }}>0 <span>z</span> {lesson.length}</h5>
+                <span style={{ fontWeight: '500', }}>Ukończona lekcja</span>
               </div>
               <div>
-                <h5 className='mobile-count-lesson-h5'>0 % </h5>
-                <span>z tego poziomu</span>
+                <h5 className='mobile-count-lesson-h5' style={{ fontSize: '30px', }}>0 % </h5>
+                <span style={{ fontWeight: '500', }}>z tego poziomu</span>
               </div>
             </div>
             <ListingSidebar/>
@@ -60,7 +63,7 @@ export default function Listing() {
                    return <Link to={`lessonDetail/${lesson.id}`} key={lesson.id} className="lesson-heading">
                    <li  className="list-group-item course-listing">
                     <div className="row border-bottom">
-                      <div className="col-9 course-list"> 
+                      <div className="col-11 course-list"> 
                         <div className="row">
                           <div className="col-4 col-md-2 col-lg-2">
                             
@@ -68,13 +71,13 @@ export default function Listing() {
                           </div>
                           <div className="col-6 col-md-9 col-lg-9 ms-4">
                             
-                            <h2 className="lesson-heading" style={{';font_size':`${setting.color}`,';line_spacing':`${setting.color}`,';font_weight':`${setting.color}`}}>{lesson.title}</h2>
+                            <h2 className="lesson-heading" style={{';font_size':`${setting.color}`,';line_spacing':`${setting.color}`,';font_weight':`${setting.color}`}}>{i}.{lesson.title}</h2>
                             <span className="d-block text-muted">lesson time: 7 min</span><br/>
                           </div>
                         </div>
                         <p>{lesson.overview}</p>
                       </div>
-                      <div className="col-3 d-block check-image">
+                      <div className="col-1 d-block check-image">
                         <img src="../images/check.svg" alt=""/>
                       </div>
                     </div>
