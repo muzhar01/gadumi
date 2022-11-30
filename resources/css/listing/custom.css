@@ -330,3 +330,61 @@ a{
   font-size: 24px;
   font-weight: 700;
 }
+
+.mobile-footer-nav {
+  position: fixed !important;
+  width: 100%;
+
+.view-pic-text{
+  color: #0b7cfe;
+  font-family: "Lato";
+  font-weight: 700;
+  text-align: center;
+  font-size: 17px;
+  line-height: 20px;
+}
+.lesson-img{
+  width: 366px;
+  height: 245px;
+  border-radius: 1.25rem!important;
+}
+.speeker-img{
+  height: 60px;
+}
+.cross-btn{
+  height: 100%;
+  width: 2em;
+}
+.exercise-title{
+  text-align: center;
+  font-size: 17px;
+  line-height: 20px;
+  color: #0b7cfe;
+  font-family: "Lato";
+  font-weight: 700;
+}
+.exercise-desc{
+  line-height: 24px;
+  font-size: 17px;
+  font-family: "Lato";
+  font-weight: 400;
+}
+.exercise-question{
+  font-size: 17px;
+  font-weight: 600;
+}
+.exercsie-option{
+  opacity: 1;
+  background-color: rgb(255, 255, 255);
+  background-size: cover;
+  background-attachment: scroll;
+  background-repeat: repeat;
+  background-position: left top;
+  border-radius: 50px;
+  border-left: 1px solid rgb(171, 184, 212);
+  border-right: 1px solid rgb(171, 184, 212);
+  border-top: 1px solid rgb(171, 184, 212);
+  border-bottom: 1px solid rgb(171, 184, 212);
+  box-shadow: none;
+
+}

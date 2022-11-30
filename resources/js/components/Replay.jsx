@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import HeaderLogoOnly from './HeaderLogoOnly'
 import ListingSidebarWithoutFilter from './ListingSidebarWithoutFilter'
 import MobileBottomSidebar from './MobileBottomSidebar'
@@ -7,6 +8,7 @@ export default function Replay() {
   return (
     <>
       <HeaderLogoOnly/>
+    <div className="border-bottom mt-2"></div>
       <div className="container">
         <div className="container-fluid mt-5">
           <div className="row">
@@ -17,13 +19,16 @@ export default function Replay() {
                 <div className='justify-content-center align-content-center'>
                   <ul class="list-group list-group-horizontal justify-content-center align-content-center">
                     <li class="list-group-item">
-                      <img src="/images/replay/reply_image1.png" className='replay-image' />
-                      <span className='replay-img-text text-center'>Fiszki</span>
+                        <img src="/images/replay/reply_image1.png" className='replay-image' />
+                        <span className='replay-img-text text-center'>Fiszki</span>
                     </li>
-                    <li class="list-group-item">
-                      <img src="/images/replay/reply_image2.png" className='replay-image' />
-                      <span className='replay-img-text text-center'>Odkryj</span>
-                    </li>
+                    <Link to="view">
+                        <li class="list-group-item">
+                        <img src="/images/replay/reply_image2.png" className='replay-image' />
+                        <span className='replay-img-text text-center'>Odkryj</span>
+                        </li>
+                    </Link>
+                    
                   </ul>
                 </div>
                 <div className='mt-5'>

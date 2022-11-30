@@ -16,8 +16,7 @@ export default function Login({setToken}) {
             headers:{
               "Content-Type":'application/json',
               "Accept":'application/json'
-            },
-            body:JSON.stringify(item)
+            }
           })
           result = await result.json()
           if(result.token){
@@ -33,6 +32,7 @@ export default function Login({setToken}) {
             toast.error(result.message);
           }
     }
+
   return (
     <>
     <div className="container">
