@@ -3,13 +3,10 @@ import axios from "axios";
 import {useParams } from 'react-router-dom';
 import PostExercise from './PostExercise';
 import BottomBar from './BottomBar';
-<<<<<<< HEAD
 import Header from './Header';
 import Logo from './Logo';
 import LessonClose from './LessonClose';
 import ExerciseProgressBar from './ProgressBar';
-=======
->>>>>>> efc7098cb8cb4fe02a261aa38472e68a793b436b
 
 
 export default function Exercise() {
