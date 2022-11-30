@@ -3,6 +3,7 @@ import axios from "axios";
 import HeaderLogoOnly from './HeaderLogoOnly'
 import {useParams } from 'react-router-dom';
 import PostExercise from './PostExercise';
+import BottomBar from './BottomBar';
 
 
 export default function Exercise() {
@@ -35,17 +36,15 @@ export default function Exercise() {
   return (
     <>
     <HeaderLogoOnly lessonBar={exercise ? true : false} lessonClose={lesson ? true : false}/>
-    <div className="container">
-      <div className="container-fluid mt-3">
-        <div className="row justify-content-center">
-          <div className="col-lg-8">
-            <PostExercise key={currentExercise + 'e'} exercise={exercises.length > 0? exercises[currentExercise]: null}/>
-            {/* <button onClick={(event) => loadPrevExercise(event)}>Prev</button> */}
-            <button onClick={(event) => loadNextExercise(event)}>Next</button>
-          </div>
-        </div>
+      <div className="container">
+      <PostExercise key={currentExercise + 'e'} exercise={exercises.length > 0? exercises[currentExercise]: null}/>
+          
       </div>
-    </div>
+      <BottomBar>
+          <div className="text-center p-4">
+              <button className="btn btn-primary" onClick={(event) => loadNextExercise(event)}>Next</button>
+          </div>
+      </BottomBar>
   </>
   )
 }
