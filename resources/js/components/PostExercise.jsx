@@ -5,24 +5,25 @@ const PostExercise=({exercise}) => {
     return <></>
   }
 
-  return (<ul>
-        <div className='row'>
-        <div className="col-lg-12">
-          <p className='exercise-title'>{exercise.title}</p>
-        </div>
-        <div className="col-lg-12 mb-3">
-        {exercise.image?
-          <img src={exercise.image} alt="" className='lesson-img d-block m-auto'/> : ''
-        }
-        </div>
-        <div className="col-lg-12 m-auto">
-          <p className='exercise-desc'>{exercise.description}</p>
-        </div>
-        <div className="col-lg-12 m-auto">
-          <p>{exercise.content}</p>
-        </div>
-        <div className="col-lg-8 m-auto">
-          {(exercise.questions?
+  return (
+      <div className="container-fluid mt-5">
+          <h4 className="text-center" style={{color: '#0b7cfe'}}>{exercise.title}</h4>
+          
+          {exercise.image?
+            <div style={{width: '366px', height: '221px', borderRadius: '15px'}} className="mb-3 d-flex align-items-center justify-content-center mx-auto overflow-hidden">
+            <img style={{minWidth: '100%', minHeight: '100%', borderRadius: '15px'}} src={exercise.image} />
+            </div> : ''
+          }
+          <div style={{width: '366px'}} className="mx-auto">
+              <h2 className="text-center mb-1">{exercise.content}</h2>
+              <p className="text-center">cześć</p>
+              <div className="mb-4">
+                  <span style={{width: '50px', height: '50px'}} className="d-block mx-auto">
+                      <img style={{width: '100%'}} src="https://gadumi.pl/lib/glcqhy/glosniczek-maly-powtorki-l9zfjbve.svg" />
+                  </span>
+              </div>
+              <p>{exercise.description} 🤝</p>
+              {(exercise.questions?
             exercise.questions.map(question=>(
               <>
                 <div key={question.id + 'q'}>
@@ -45,9 +46,8 @@ const PostExercise=({exercise}) => {
             ))
           :''
       )}
-        </div>
+          </div>
       </div>
-  </ul>
   );
 };
 export default PostExercise
