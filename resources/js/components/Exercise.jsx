@@ -55,7 +55,7 @@ export default function Exercise() {
       <LessonClose />
     </Header>
     
-    <div className="container">
+    <div className="container pt-5">
     <PostExercise key={currentExercise + 'e'} exercise={exercises.length > 0? exercises[currentExercise]: null}/>
         
     </div>

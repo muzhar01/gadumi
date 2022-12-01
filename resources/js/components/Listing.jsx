@@ -38,8 +38,8 @@ export default function Listing() {
         <MobileMenu />
         <LessonProgress />
       </Header>
-      <div className="container">
-        <div className="container-fluid mt-5">
+      <div className="container pt-5">
+        <div className="container-fluid">
           <div className="row">
             <div className="col-lg-12 d-block d-md-none">
                 <div className="input-group">

@@ -7,7 +7,7 @@ function BottomBar({children}) {
 
     useEffect(() => {
         if (!bottomBar.current) return;
-
+        
         if (resizeObserver === undefined) {
             resizeObserver = new ResizeObserver(entries => setBottomBarHeight(bottomBar.current.clientHeight));
             // start observing a DOM node
@@ -16,7 +16,7 @@ function BottomBar({children}) {
 
         // Get Bottom Bar Height
         const root = document.querySelector('#root');
-        root.style.paddingBottom = (bottomBarHeight === 0? bottomBarHeight: bottomBar.current.clientHeight) + 'px';
+        root.style.paddingBottom = (bottomBarHeight === 0? bottomBarHeight: bottomBar.current.clientHeight + 32) + 'px';
     });
 
     return (

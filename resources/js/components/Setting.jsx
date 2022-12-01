@@ -104,8 +104,8 @@ export default function Setting() {
       <MobileMenu />
       <LessonProgress />
     </Header>
-    <div className="container">
-      <div className="container-fluid mt-5">
+    <div className="container pt-5">
+      <div className="container-fluid">
         <div className="row">
           <Sidebar>
             <LessonMenu />
