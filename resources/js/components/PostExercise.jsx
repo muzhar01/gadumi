@@ -15,15 +15,16 @@ const PostExercise=({exercise}) => {
       event.target.classList.add('exercsie-wrong-option');
     }
   };
+
   return (
-      <div className="container-fluid mt-5">
+      <div className="container-fluid">
           <h4 className="text-center" style={{color: '#0b7cfe'}}>{exercise.title}</h4>
           {exercise.image?
-            <div style={{width: '366px', height: '221px', borderRadius: '15px'}} className="mb-3 d-flex align-items-center justify-content-center mx-auto overflow-hidden">
+            <div style={{width: '366px', height: '221px', borderRadius: '15px', maxWidth: '100%'}} className="mb-3 d-flex align-items-center justify-content-center mx-auto overflow-hidden">
             <img style={{minWidth: '100%', minHeight: '100%', borderRadius: '15px'}} src={exercise.image} />
             </div> : ''
           }
-          <div style={{width: '366px'}} className="mx-auto">
+          <div style={{width: '366px', maxWidth: '100%'}} className="mx-auto">
               <h2 className="text-center mb-1">{exercise.content}</h2>
               <p className="text-center">cześć</p>
               <div className="mb-4">
@@ -40,6 +41,7 @@ const PostExercise=({exercise}) => {
                       {question.image?
                         <img src={question.image} alt="" className='lesson-img d-block m-auto'/> : ''
                       }
+                      <div className='container'>
                       {question.options?
                       
                         question.options.map(option=>(
@@ -51,6 +53,7 @@ const PostExercise=({exercise}) => {
                         ))
                         : ''
                       }
+                      </div>
                     </div>
                   </>
                 ))

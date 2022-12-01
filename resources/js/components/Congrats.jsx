@@ -7,15 +7,15 @@ import MobileMenu from "./MobileMenu";
 export default function Congrats() {
   return (
     <>
-        <Header>
+        {/* <Header>
             <Logo />
             <MobileMenu />
-        </Header>    
+        </Header>     */}
         <div className="container">
             <div className="container-fluid mt-5">
                 <div className="row justify-content-center">
                     <div className="col-lg-6">
-                        <div style={{borderRadius: '15px'}} className="mb-1 d-flex align-items-center justify-content-center mx-auto overflow-hidden">
+                        <div style={{borderRadius: '15px', maxWidth: '100%'}} className="mb-1 d-flex align-items-center justify-content-center mx-auto overflow-hidden">
                             <img style={{height: '100px', borderRadius: '50%'}} src="/images/congratulation.svg" />
                         </div>
                         <h4 className="text-center congrats-title">Great!</h4>

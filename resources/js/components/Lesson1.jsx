@@ -10,8 +10,8 @@ function Lesson1() {
                 <Logo />
                 <MobileMenu />
             </Header>
-            <div className="container">
-                <div className="container-fluid mt-5">
+            <div className="container pt-5">
+                <div className="container-fluid">
                     <h4 className="text-center" style={{color: '#0b7cfe'}}>Odsłuchaj i powtórz za lektorem</h4>
                     <div style={{width: '366px', height: '221px', borderRadius: '15px'}} className="mb-3 d-flex align-items-center justify-content-center mx-auto overflow-hidden">
                         <img style={{minWidth: '100%', minHeight: '100%', borderRadius: '15px'}} src="https://media.istockphoto.com/id/1322277517/photo/wild-grass-in-the-mountains-at-sunset.jpg?s=612x612&w=0&k=20&c=6mItwwFFGqKNKEAzv0mv6TaxhLN3zSE43bWmFN--J5w=" />
