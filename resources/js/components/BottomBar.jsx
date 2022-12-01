@@ -6,6 +6,8 @@ function BottomBar({children}) {
     let resizeObserver;
 
     useEffect(() => {
+        if (!bottomBar.current) return;
+
         if (resizeObserver === undefined) {
             resizeObserver = new ResizeObserver(entries => setBottomBarHeight(bottomBar.current.clientHeight));
             // start observing a DOM node
