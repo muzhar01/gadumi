@@ -49,30 +49,29 @@ export default function Exercise() {
   }, [currentExercise]);
   return (
     <>
-    {
-      congratsComponent!=true?
-      <>
         <Header>
           <Logo />
           <ExerciseProgressBar progress={progressPercentage} lesson_id={param.id} total_exercise={exercises.length}/>
           <LessonClose />
         </Header>
-        
-        <div className="container">
-        <PostExercise key={currentExercise + 'e'} exercise={exercises.length > 0? exercises[currentExercise]: null}/>
+          { !progressPercentage || progressPercentage < 100?
+              <>
+                <div className="container">
+                  <PostExercise key={currentExercise + 'e'} exercise={exercises.length > 0? exercises[currentExercise]: null}/>
+                </div>
+                <BottomBar>
+                    <div className="text-center p-4">
+                        <button className="btn btn-primary" onClick={(event) => loadNextExercise(event)}>Next</button>
+                    </div>
+                </BottomBar>
+                
+              </>
+            :
+            <Congrats />
+          }
             
-        </div>
-        <BottomBar>
-            <div className="text-center p-4">
-                <button className="btn btn-primary" onClick={(event) => loadNextExercise(event)}>Next</button>
-            </div>
-        </BottomBar>
-      </>
-      :
-      <>
-        <Congrats/>
-      </>
-    }
+        
+        
   </>
   )
 }

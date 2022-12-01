@@ -7,10 +7,10 @@ import MobileMenu from "./MobileMenu";
 export default function Congrats() {
   return (
     <>
-        <Header>
+        {/* <Header>
             <Logo />
             <MobileMenu />
-        </Header>    
+        </Header>     */}
         <div className="container">
             <div className="container-fluid mt-5">
                 <div className="row justify-content-center">
