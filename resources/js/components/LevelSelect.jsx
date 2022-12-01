@@ -1,4 +1,6 @@
 function LevelSelect({setLevel}) {
+    if (typeof setLevel !== 'function')
+        setLevel = () => {}
     return (
         <>
             <hr/>

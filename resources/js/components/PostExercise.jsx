@@ -15,6 +15,7 @@ const PostExercise=({exercise}) => {
       event.target.classList.add('exercsie-wrong-option');
     }
   };
+
   return (
       <div className="container-fluid">
           <h4 className="text-center" style={{color: '#0b7cfe'}}>{exercise.title}</h4>

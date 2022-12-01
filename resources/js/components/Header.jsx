@@ -6,10 +6,11 @@ function Header({children}) {
     let resizeObserver;
 
     useEffect(() => {
-        if (!header.current) return;
-        
         if (resizeObserver === undefined) {
-            resizeObserver = new ResizeObserver(entries => setHeaderHeight(header.current.clientHeight));
+            resizeObserver = new ResizeObserver(entries => {
+                if (header.current === null) return;
+                setHeaderHeight(header.current.clientHeight)
+            });
             // start observing a DOM node
             resizeObserver.observe(header.current);
         }

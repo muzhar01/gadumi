@@ -9,7 +9,10 @@ function BottomBar({children}) {
         if (!bottomBar.current) return;
         
         if (resizeObserver === undefined) {
-            resizeObserver = new ResizeObserver(entries => setBottomBarHeight(bottomBar.current.clientHeight));
+            resizeObserver = new ResizeObserver(entries => {
+                if (bottomBar.current === null) return;
+                setBottomBarHeight(bottomBar.current.clientHeight)
+            });
             // start observing a DOM node
             resizeObserver.observe(bottomBar.current);
         }
