@@ -57,7 +57,7 @@ export default function Exercise() {
     </Header>
     
     <div className="container pt-5">
-      {isNaN(progressPercentage) || progressPercentage < 100?
+      {!progressPercentage || progressPercentage < 100?
         <PostExercise key={currentExercise + 'e'} exercise={exercises.length > 0? exercises[currentExercise]: null}/>
         :
         <Congrats />

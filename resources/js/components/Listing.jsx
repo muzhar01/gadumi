@@ -1,4 +1,5 @@
 import React from 'react'
+import { useState } from 'react';
 import axios from "axios";
 import { Link } from 'react-router-dom';
 import MobileBottomSidebar from './MobileBottomSidebar';
@@ -33,7 +34,8 @@ export default function Listing() {
   }, []);
   let i = 1;
 
-
+  const [level, setLevel] = useState('Beginner');
+  
   return (
     <>
       <Header>
@@ -66,7 +68,7 @@ export default function Listing() {
             </div>
             <Sidebar>
               <LessonMenu />
-              <LevelSelect />
+              <LevelSelect setLevel={setLevel} />
               <Menu />
             </Sidebar>
             <div className="col-lg-8">
@@ -74,6 +76,8 @@ export default function Listing() {
                 <ul className="list-group">
                   {
                     lessons.map((lesson)=>{
+                      if (lesson.level !== level) return;
+
                    return <Link to={`lessonDetail/${lesson.id}`} key={lesson.id} className="lesson-heading">
                    <li  className="list-group-item course-listing">
                     <div className="row border-bottom">
