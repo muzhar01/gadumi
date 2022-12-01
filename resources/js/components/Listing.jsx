@@ -14,9 +14,10 @@ import Menu from './Menu';
 export default function Listing() {
   const [lessons, setLessons] = useState([]);
   const [setting, setSetting] = useState([]);
+  const user_id=localStorage.getItem('user_id');
   const base_url =import.meta.env.VITE_SENTRY_DSN_PUBLIC;
   useEffect(() => {
-    axios.get(`${base_url}/lessons`).then((response) => {
+    axios.get(`${base_url}/lessons${'?user_id='+user_id}`).then((response) => {
       setLessons(response.data.data);
     });
   }, []);
@@ -90,7 +91,7 @@ export default function Listing() {
                         <p>{lesson.overview}</p>
                       </div>
                       <div className="col-1 d-block check-image">
-                        <img src="../images/check.svg" alt=""/>
+                        <img className={lesson?.progress ? 'bg-success' : ''} src="../images/check.svg" alt=""/>
                       </div>
                     </div>
                   </li></Link>
