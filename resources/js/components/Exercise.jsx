@@ -7,27 +7,28 @@ import Header from './Header';
 import Logo from './Logo';
 import LessonClose from './LessonClose';
 import ExerciseProgressBar from './ProgressBar';
+import Congrats from './Congrats';
 
 
 export default function Exercise() {
   let param = useParams()
-  const lesson = true;
-  const exercise = true;
+  const base_url =import.meta.env.VITE_SENTRY_DSN_PUBLIC;
   const [exercises, setExercises] = useState([]);
   useEffect(() => {
     const fatchExercises = async()=>{
-      const res= await axios.get("http://localhost:8000/api/exercise/"+param.id);
+      const res= await axios.get(`${base_url}/exercise/`+param.id);
       setExercises(res.data.data);
     };
     fatchExercises();
   }, []);
 
+  const [congratsComponent, setCongratsComponent] = useState(false);
   const [currentExercise, setCurrentExercise] = useState(0);
   const [progressPercentage, setProgressPercentage] = useState(0);
 
   const loadNextExercise = (event) => {
     if(currentExercise+1 == exercises.length){
-      window.location.href='/portal/congrats';
+      setCongratsComponent(true);
     }
     if (currentExercise + 1 < exercises.length) {
       setCurrentExercise(state => state + 1);
@@ -46,24 +47,32 @@ export default function Exercise() {
   useEffect(() => {
     setProgressPercentage((currentExercise / exercises.length) * 100);
   }, [currentExercise]);
-  
   return (
     <>
-    <Header>
-      <Logo />
-      <ExerciseProgressBar progress={progressPercentage} />
-      <LessonClose />
-    </Header>
-    
-    <div className="container">
-    <PostExercise key={currentExercise + 'e'} exercise={exercises.length > 0? exercises[currentExercise]: null}/>
+    {
+      congratsComponent!=true?
+      <>
+        <Header>
+          <Logo />
+          <ExerciseProgressBar progress={progressPercentage} lesson_id={param.id} total_exercise={exercises.length}/>
+          <LessonClose />
+        </Header>
         
-    </div>
-    <BottomBar>
-        <div className="text-center p-4">
-            <button className="btn btn-primary" onClick={(event) => loadNextExercise(event)}>Next</button>
+        <div className="container">
+        <PostExercise key={currentExercise + 'e'} exercise={exercises.length > 0? exercises[currentExercise]: null}/>
+            
         </div>
-    </BottomBar>
+        <BottomBar>
+            <div className="text-center p-4">
+                <button className="btn btn-primary" onClick={(event) => loadNextExercise(event)}>Next</button>
+            </div>
+        </BottomBar>
+      </>
+      :
+      <>
+        <Congrats/>
+      </>
+    }
   </>
   )
 }

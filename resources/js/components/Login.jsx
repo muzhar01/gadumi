@@ -4,13 +4,14 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function Login({setToken}) {
+    const base_url =import.meta.env.VITE_SENTRY_DSN_PUBLIC;
     const [email,setEmail]=useState("")
     const [password,setPassword]=useState("")
     var [errors,setErrors]=useState("")
     const navigate =useNavigate();
     async function login(){
         let item={email,password}
-        let result = await fetch("http://localhost:8000/api/login",{
+        let result = await fetch(`${base_url}/login`,{
             method:"POST",
             body:JSON.stringify(item),
             headers:{
@@ -22,10 +23,10 @@ export default function Login({setToken}) {
           if(result.token){
             let token = result.token.split("|");
             localStorage.setItem('token', token[1]);
+            localStorage.setItem('user_id', result.user_id);
             console.log(result.token);
             setToken(token[1]);
             navigate('/portal');
-            //setTimeout(() => navigate("/portal/courses"), 1000);
           }else if(result.errors){
             setErrors(result.errors)
         }else{

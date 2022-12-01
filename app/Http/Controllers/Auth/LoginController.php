@@ -16,8 +16,7 @@ class LoginController extends Controller
 
         if (auth()->once($credentials)) {
             $token = auth()->user()->createToken($request->email);
-
-            return ['token' => $token->plainTextToken];
+            return ['token' => $token->plainTextToken,'user_id'=>$token->accessToken->tokenable_id];
         } else {
             return ['status' => false, 'message' => "Invalide Credentials"];
         }

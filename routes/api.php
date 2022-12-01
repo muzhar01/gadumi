@@ -10,6 +10,7 @@ use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\PlanController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserProgressController;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -66,3 +67,5 @@ Route::group(['middleware' => 'auth:sanctum'], function() {
 
 });
 Route::get('/setting',[SettingController::class,'indexjson']);
+Route::post('progressStore/',[UserProgressController::class,'store']);
+Route::get('/countProgress/{id}',[UserProgressController::class,'count']);
