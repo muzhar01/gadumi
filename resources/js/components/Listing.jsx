@@ -28,7 +28,8 @@ export default function Listing() {
 
   let i = 1;
 
-
+  const [level, setLevel] = useState('Beginner');
+  
   return (
     <>
       <Header>
@@ -36,8 +37,8 @@ export default function Listing() {
         <MobileMenu />
         <LessonProgress />
       </Header>
-      <div className="container">
-        <div className="container-fluid mt-5">
+      <div className="container pt-5">
+        <div className="container-fluid">
           <div className="row">
             <div className="col-lg-12 d-block d-md-none">
                 <div className="input-group">
@@ -61,7 +62,7 @@ export default function Listing() {
             </div>
             <Sidebar>
               <LessonMenu />
-              <LevelSelect />
+              <LevelSelect setLevel={setLevel} />
               <Menu />
             </Sidebar>
             <div className="col-lg-8">
@@ -69,6 +70,8 @@ export default function Listing() {
                 <ul className="list-group">
                   {
                     lessons.map((lesson)=>{
+                      if (lesson.level !== level) return;
+
                    return <Link to={`lessonDetail/${lesson.id}`} key={lesson.id} className="lesson-heading">
                    <li  className="list-group-item course-listing">
                     <div className="row border-bottom">

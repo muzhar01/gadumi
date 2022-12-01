@@ -50,7 +50,8 @@ class UserProgressController extends Controller
         $model->user_id=$request->user_id;
         $model->lesson_id=$request->lesson_id;
         $model->total_exercise=$request->total_exercise;
-        $model->progress=$request->progress;
+        if ((int) $model->progress < $request->progress)
+            $model->progress=$request->progress;
         $model->save();
         return "Added successfully";
     }
