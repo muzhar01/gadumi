@@ -10,10 +10,11 @@ import LessonClose from './LessonClose';
 import MobileMenu from './MobileMenu';
 export default function LessonDetail() {
   let param = useParams()
+  const base_url =import.meta.env.VITE_SENTRY_DSN_PUBLIC;
   const [lesson, setPost] = useState([]);
   
   useEffect(() => {
-    axios.get("http://localhost:8000/api/lesson/"+param.id).then((response) => {
+    axios.get(`${base_url}/lesson/`+param.id).then((response) => {
       setPost(response.data.data);
     });
   }, []);

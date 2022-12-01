@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 function BottomBar({children}) {
     const bottomBar = useRef();
-    const [bottomBarHeight, setBottomBarHeight] = useState(bottomBar.current? bottomBar.current.clientHeight: 0);;
+    const [bottomBarHeight, setBottomBarHeight] = useState(bottomBar.current? bottomBar.current.clientHeight: 0);
     let resizeObserver;
 
     useEffect(() => {
