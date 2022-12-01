@@ -1,5 +1,4 @@
-import React from 'react'
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react'
 import axios from "axios";
 import { Link } from 'react-router-dom';
 import MobileBottomSidebar from './MobileBottomSidebar';
@@ -13,25 +12,20 @@ import LevelSelect from './LevelSelect';
 import Menu from './Menu';
 
 export default function Listing() {
-  const [lessons, setPost] = React.useState([]);
-  const [setting, setSetting] = React.useState([]);
-
-  React.useEffect(() => {
-    axios.get('http://localhost:8000/api/lessons').then((response) => {
-      setPost(response.data.data);
+  const [lessons, setLessons] = useState([]);
+  const [setting, setSetting] = useState([]);
+  const base_url =import.meta.env.VITE_SENTRY_DSN_PUBLIC;
+  useEffect(() => {
+    axios.get(`${base_url}/lessons`).then((response) => {
+      setLessons(response.data.data);
     });
   }, []);
-  React.useEffect(() => {
-    axios.get('http://localhost:8000/api/setting').then((response) => {
+  useEffect(() => {
+    axios.get(`${base_url}/setting`).then((response) => {
       setSetting(response.data);
     });
   }, []);
-  const [lesson, setLesson] = React.useState([]);
-  React.useEffect(() => {
-    axios.get("http://localhost:8000/api/lessons/").then((response) => {
-      setLesson(response.data.data);
-    });
-  }, []);
+
   let i = 1;
 
   const [level, setLevel] = useState('Beginner');
@@ -58,7 +52,7 @@ export default function Listing() {
             
             <div className="col-lg-12 d-block d-md-none mt-3 mb-3 d-flex justify-content-center text-center">
               <div className='me-4'>
-                <h5 className='mobile-count-lesson-h5' style={{ fontSize: '30px', }}>0 <span>z</span> {lesson.length}</h5>
+                <h5 className='mobile-count-lesson-h5' style={{ fontSize: '30px', }}>0 <span>z</span> {lessons.length}</h5>
                 <span style={{ fontWeight: '500', }}>Ukończona lekcja</span>
               </div>
               <div>

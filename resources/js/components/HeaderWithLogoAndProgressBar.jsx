@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom'
 
 export default function HeaderWithLogoAndProgressBar() {
   const [lesson, setPost] = React.useState([]);
+  const base_url =import.meta.env.VITE_SENTRY_DSN_PUBLIC;
   React.useEffect(() => {
-    axios.get("http://localhost:8000/api/lessons/").then((response) => {
+    axios.get(`${base_url}/lessons/`).then((response) => {
       setPost(response.data.data);
     });
   }, []);

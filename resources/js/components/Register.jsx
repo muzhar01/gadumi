@@ -12,7 +12,8 @@ export default function Register() {
   const navigate =useNavigate();
   async function signUp(){
     let item={email,password,password_confirmation}
-    let result = await fetch("http://localhost:8000/api/register",{
+    const base_url =import.meta.env.VITE_SENTRY_DSN_PUBLIC;
+    let result = await fetch(`${base_url}/register`,{
         method:"POST",
         body:JSON.stringify(item),
         headers:{
@@ -33,7 +34,6 @@ export default function Register() {
     else{
         toast.success("Your account is registered. You can now login!");
         setTimeout(() => navigate("/portal/login"), 3000);
-        //setTimeout(() => navigate("/portal/courses"), 1000);
     }
   }
   return (

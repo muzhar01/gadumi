@@ -77,7 +77,8 @@ export default function Setting() {
   async function deleteAccount(){
     const token1=localStorage.getItem('token');
     let item={delete_password}
-    let result = await fetch("http://localhost:8000/api/deleteAccount",{
+    const base_url =import.meta.env.VITE_SENTRY_DSN_PUBLIC;
+    let result = await fetch(`${base_url}/deleteAccount`,{
       method:"POST",
       body:JSON.stringify(item),
       headers:{
