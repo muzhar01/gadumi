@@ -7,6 +7,7 @@ import Header from './Header';
 import Logo from './Logo';
 import LessonClose from './LessonClose';
 import ExerciseProgressBar from './ProgressBar';
+import Congrats from './Congrats';
 
 
 export default function Exercise() {
@@ -27,7 +28,7 @@ export default function Exercise() {
 
   const loadNextExercise = (event) => {
     if(currentExercise+1 == exercises.length){
-      window.location.href='/portal/congrats';
+      //window.location.href='/portal/congrats';
     }
     if (currentExercise + 1 < exercises.length) {
       setCurrentExercise(state => state + 1);
@@ -56,7 +57,11 @@ export default function Exercise() {
     </Header>
     
     <div className="container pt-5">
-    <PostExercise key={currentExercise + 'e'} exercise={exercises.length > 0? exercises[currentExercise]: null}/>
+      {isNaN(progressPercentage) || progressPercentage < 100?
+        <PostExercise key={currentExercise + 'e'} exercise={exercises.length > 0? exercises[currentExercise]: null}/>
+        :
+        <Congrats />
+      }
         
     </div>
     <BottomBar>
