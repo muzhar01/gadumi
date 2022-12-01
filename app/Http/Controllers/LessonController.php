@@ -11,9 +11,13 @@ class LessonController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $lessons = Lesson::where('status',1)->get();
+        $user_id = $request->user_id;
+        $lessons = Lesson::where('status',1)->with(['progress'=> function($q)use($user_id){
+            return $q->where('user_id',$user_id);
+        }])->get();
+
         $lessons->map(function($q){
             $q->image=url($q->image);
             return $q;
