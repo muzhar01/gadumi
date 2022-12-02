@@ -20,6 +20,14 @@ class LessonController extends Controller
 
         $lessons->map(function($q){
             $q->image=url($q->image);
+            // Check if dependencies completed
+            if ($q->dependencies !== null) {
+                $dependenciesIds = json_decode($q->dependencies);
+                $lessons = Lesson::whereIn('id', $dependenciesIds)->get();
+                $lessons->each(function ($lesson) {
+                    
+                });
+            }
             return $q;
         });
         if($lessons->count() > 0){
