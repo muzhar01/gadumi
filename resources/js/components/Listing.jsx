@@ -29,7 +29,7 @@ export default function Listing() {
 
   let i = 1;
 
-  const [level, setLevel] = useState('Beginner');
+  const [level, setLevel] = useState( localStorage.lessonLevel? localStorage.lessonLevel: 'Beginner');
   
   return (
     <>
