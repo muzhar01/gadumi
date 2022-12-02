@@ -85,7 +85,7 @@
                             <div class="col-lg-6">
                               <label for="" class="mt-3">Image</label>
                                 <br>
-                                <img src="{{ asset('images/imageperview.png') }}" class="preview" alt="" style="height: 100px" width="100px">
+                                <img src="{{ asset($question->image? $question->image: 'images/imageperview.png') }}" class="preview" alt="" style="height: 100px" width="100px">
                                 <input type="file" name="questions[{{ $q + 1 }}][image]" class="form-control" onchange="previewFile(event)">
                             </div>
                             <div class="options-container col-12 mt-4">
@@ -107,7 +107,7 @@
                                         <div class="col-lg-6">
                                           <label for="" class="mt-3">Image</label>
                                             <br>
-                                            <img src="{{ asset('images/imageperview.png') }}" class="preview" alt="" style="height: 100px" width="100px">
+                                            <img src="{{ asset($option->image? $option->image: 'images/imageperview.png') }}" class="preview" alt="" style="height: 100px" width="100px">
                                             <input type="file" name="questions[{{ $q + 1 }}][options][{{ $o + 1 }}][image]" class="form-control" onchange="previewFile(event)">
                                         </div>
                                         <div class="col-lg-6 d-flex align-items-end justify-content-center">

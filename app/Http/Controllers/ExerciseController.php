@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Exercise;
 use App\Models\Lesson;
 use App\Models\Option;
+use App\Models\Exercise;
 use App\Models\Question;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class ExerciseController extends Controller
 {
@@ -155,11 +156,18 @@ class ExerciseController extends Controller
         // Store Questions
         $questions = $request->questions;
         if (is_array($questions)) {
-            foreach ($questions as $q) {
+            foreach ($questions as $x => $q) {
+                $out = null;
+                if ($request->hasFile("questions.$x.image")) {
+                    $name = $x . '_' . microtime() . '.' .  $q['image']->getClientOriginalExtension();
+                    $data = $q['image']->move('storage/questions', $name);
+                    $out = "/storage/questions/" . $name;
+                }
                 $question = Question::create([
                     'exercise_id' => $exercise->id,
                     'content' => $q['question'],
                     'translation' => $q['translation'],
+                    'image' => $out,
                 ]);
 
                 if (!isset($q['options']))
@@ -168,11 +176,18 @@ class ExerciseController extends Controller
                 // Store options
                 $options = $q['options'];
                 if (is_array($options)) {
-                    foreach ($options as $o) {
+                    foreach ($options as $y => $o) {
+                        $out = null;
+                        if ($request->hasFile("questions.$x.options.$y.image")) {
+                            $name = $x . '_' . $y . '_' . microtime() . '.' . $o['image']->getClientOriginalExtension();
+                            $data = $o['image']->move('storage/options', $name);
+                            $out = "/storage/options/" . $name;
+                        }
                         $option = Option::create([
                             'question_id' => $question->id,
                             'content' => $o['option'],
-                            'translation' => $o['translation']
+                            'translation' => $o['translation'],
+                            'image' => $out,
                         ]);
                         if (isset($o['correct']) && $o['correct'] == 'on')
                             $option->correct = 1;
@@ -265,9 +280,17 @@ class ExerciseController extends Controller
         if (is_array($questions)) {
             foreach ($exercise->questions as $question) {
                 $questionExists = false;
-                foreach ($questions as $q) {
+                foreach ($questions as $x => $q) {
                     if (array_key_exists('id', $q) && (int) $q['id'] === $question->id) {
                         $questionExists = true;
+                        $out = null;
+                        if ($request->hasFile("questions.$x.image")) {
+                            $name = $x . '_' . microtime() . '.' .  $q['image']->getClientOriginalExtension();
+                            $data = $q['image']->move('storage/questions', $name);
+                            $out = "/storage/questions/" . $name;
+                            File::delete(public_path($question->image));
+                            $question->image = $out;
+                        }
                         $question->content = $q['question'];
                         $question->translation = $q['translation'];
                         $question->save();
@@ -275,9 +298,17 @@ class ExerciseController extends Controller
                         if (isset($q['options'])) {
                             foreach ($question->options as $option) {
                                 $optionExists = false;
-                                foreach ($q['options'] as $o) {
+                                foreach ($q['options'] as $y => $o) {
                                     if (array_key_exists('id', $o) && (int) $o['id'] === $option->id) {
                                         $optionExists = true;
+                                        $out = null;
+                                        if ($request->hasFile("questions.$x.options.$y.image")) {
+                                            $name = $x .'_'. $y .'_'. microtime() .'.'. $o['image']->getClientOriginalExtension();
+                                            $data = $o['image']->move('storage/options', $name);
+                                            $out = "/storage/options/" . $name;
+                                            File::delete(public_path($option->image));
+                                            $option->image = $out;
+                                        }
                                         $option->content = $o['option'];
                                         $option->translation = $o['translation'];
                                         if (isset($o['correct']) && $o['correct'] == 'on')
@@ -309,14 +340,20 @@ class ExerciseController extends Controller
 
         // Store Questions
         if (is_array($questions)) {
-            foreach ($questions as $q) {
+            foreach ($questions as $x => $q) {
                 if (array_key_exists('id', $q))
                     continue;
-
+                $out = null;
+                if ($request->hasFile("questions.$x.image")) {
+                    $name = $x . '_' . microtime() . '.' .  $q['image']->getClientOriginalExtension();
+                    $data = $q['image']->move('storage/questions', $name);
+                    $out = "/storage/questions/" . $name;
+                }
                 $question = Question::create([
                     'exercise_id' => $exercise->id,
                     'content' => $q['question'],
                     'translation' => $q['translation'],
+                    'image' => $out,
                 ]);
 
                 if (!isset($q['options']))
@@ -325,14 +362,22 @@ class ExerciseController extends Controller
                 // Store options
                 $options = $q['options'];
                 if (is_array($options)) {
-                    foreach ($options as $o) {
+                    foreach ($options as $y => $o) {
                         if (array_key_exists('id', $o))
                             continue;
+
+                        $out = null;
+                        if ($request->hasFile("questions.$x.options.$y.image")) {
+                            $name = $x . '_' . $y . '_' . microtime() . '.' . $o['image']->getClientOriginalExtension();
+                            $data = $o['image']->move('storage/options', $name);
+                            $out = "/storage/options/" . $name;
+                        }
 
                         $option = Option::create([
                             'question_id' => $question->id,
                             'content' => $o['option'],
-                            'translation' => $o['translation']
+                            'translation' => $o['translation'],
+                            'image' => $out,
                         ]);
                         if (isset($o['correct']) && $o['correct'] == 'on')
                             $option->correct = 1;
