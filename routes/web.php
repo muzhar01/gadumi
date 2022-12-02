@@ -48,6 +48,7 @@ Route::get('/lesson', [LessonController::class,'lessonList'])->name('lesson-inde
 Route::get('/lesson/add', [LessonController::class,'addlesson'])->name('add-lesson');
 Route::post('/lesson/submit', [LessonController::class,'submitLesson'])->name('submit-lesson');
 Route::get('/lesson/delete/{id}', [LessonController::class,'deleteLesson'])->name('lesson-delete');
+Route::get('/lesson/{course_id}/json', [LessonController::class, 'lessonsJSON'])->name('lesson-json');
 Route::get('/lesson/{id}/{status}', [LessonController::class,'changeStatus'])->name('lesson-status');
 Route::get('/lesson/{id}', [LessonController::class,'editLesson'])->name('lesson-edit');
 Route::post('/lesson/update/{id}', [LessonController::class,'updateLesson'])->name('update-lesson');

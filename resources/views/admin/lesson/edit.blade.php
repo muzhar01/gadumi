@@ -39,10 +39,10 @@
                 </div>
                 <div class="col-lg-6">
                   <label for="" class="mt-3">Course</label>
-                  <select name="course_id"  class="form-control" required>
+                  <select name="course_id"  class="form-control" required onchange="loadLessons(this)">
                     <option>Select Course</option>
                     @foreach ($courses as $course)
-                      <option value="{{ $course->id }}" <?php if($course->id==$lesson->course_id) echo 'selected' ?>>{{ $course->title }}</option>
+                      <option value="{{ $course->id }}" data-lessons-url="{{ route('lesson-json', $course->id) }}" <?php if($course->id==$lesson->course_id) echo 'selected' ?>>{{ $course->title }}</option>
                     @endforeach
                   </select>
                   @error('course_id')
@@ -80,6 +80,12 @@
                   <label for="" class="mt-3">Description</label>
                   <textarea name="description" class="form-control" placeholder="Enter description">{{$lesson->overview ?? ''}}</textarea>
                 </div>
+                <div class="col-lg-6">
+                  <label for="" class="mt-3">Dependent On</label>
+                  <select id="dependencies" name="dependencies[]" class="form-control" multiple>
+                    <option value="" selected disabled>Select</option>
+                  </select>
+                </div>
                 <div class="col-lg-12">
                   <button type="submit" class="btn btn-outline-primary mt-4">Update</button>
                 </div>
@@ -108,5 +114,22 @@
       URL.revokeObjectURL(output.src) // free memory
     }
   };
+</script>
+<script>
+  $('#dependencies').select2();
+</script>
+<script>
+  function loadLessons(self) {
+    let url = $(self).find(':selected').data('lessons-url');
+    $.ajax({
+      url: url,
+      type: 'GET',
+      success: function (res) {
+        res.forEach((lesson) => {
+          $('#dependencies').append('<option value="'+lesson.id+'">'+lesson.title+'</option>')
+        });
+      }
+    })
+  }
 </script>
 @endsection

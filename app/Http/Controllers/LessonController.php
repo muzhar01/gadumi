@@ -97,6 +97,8 @@ class LessonController extends Controller
         $lesson->level=$request->level;
         $lesson->overview=$request->overview;
         $lesson->description=$request->description;
+        if ($request->dependencies)
+            $lesson->dependencies = json_encode($request->dependencies);
         if($lesson->save()){
             return redirect('/admin/lesson')->with('success',"Lesson Add Successfully!");
         }else{
@@ -235,10 +237,17 @@ class LessonController extends Controller
         $lesson->description=$request->description;
         $lesson->recommended=$request->recommended;
         $lesson->level=$request->level;
+        if ($request->dependencies)
+            $lesson->dependencies = json_encode($request->dependencies);
         if($lesson->update()){
             return redirect('/admin/lesson')->with('success',"Lesson Updated Successfully!");
         }else{
             return redirect('/admin/lesson')->with('error',"Lesson not updated");
         }
+    }
+
+    public function lessonsJSON($course_id)
+    {
+        return Lesson::where('course_id', $course_id)->get();
     }
 }
