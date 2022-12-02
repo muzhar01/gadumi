@@ -91,7 +91,7 @@ export default function Listing() {
                         <p>{lesson.overview}</p>
                       </div>
                       <div className="col-1 d-block check-image">
-                        <img className={lesson?.progress ? 'bg-success' : ''} src="../images/check.svg" alt=""/>
+                        <img src={lesson?.progress && lesson.progress.progress == 100 ? '../images/check_success.svg' : '../images/check.svg'} alt=""/>
                       </div>
                     </div>
                   </li></Link>
