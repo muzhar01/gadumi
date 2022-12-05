@@ -14,10 +14,12 @@ export default function ReplayView() {
         <MobileMenu />
       </Header>
       <div className="container">
-        <div className="container-fluid mt-5">
+        <div className="container-fluid mt-5 position-relative">
+            <div className="reset-btn">
+                <img src="/images/reset.svg" alt="" />
+            </div>
           <div className="row justify-content-center">
             <div className="col-lg-8">
-            <img src="/images/reset.svg" alt="" style={{height: '36px',background:'rgb(0, 131, 255)'}}/>
               <div className="overflow-auto h-100">
                 <div className='row'>
                   <div className="col-10 align-content-center">
