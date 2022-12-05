@@ -16385,3 +16385,14 @@ ul {
   font-size: 1.3rem;
 }
 /*-------------------End: ImageContent Component----------- */
+
+/*-------------------Start: Option Component----------- */
+.option {
+  border: 1px solid #adb8ce;
+  border-radius: 64px;
+  color: #272933;
+  font-weight: 400;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+/*-------------------End: Option Component----------- */
