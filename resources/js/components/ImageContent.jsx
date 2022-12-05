@@ -5,7 +5,7 @@ function ImageContent({children, src, className, style, width, height}) {
 
     return (
         <div className={'image-content ' + className} style={{...style, width: width}}>
-            <div className="image" style={{height: height}}>
+            <div className="image d-flex justify-content-center align-items-center" style={{height: height}}>
                 <img src={src} alt="" />
             </div>
             { children !== undefined &&

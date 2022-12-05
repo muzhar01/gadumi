@@ -16366,6 +16366,8 @@ ul {
   border-radius: 16px;
   min-width: 100%;
   min-height: 100%;
+  max-width: none;
+  max-height: none;
   width: auto;
   height: auto;
 }
