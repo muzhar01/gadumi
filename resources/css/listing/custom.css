@@ -451,3 +451,26 @@ a{
   border: 1px solid rgb(22, 24, 35);
   color: #000000;
 }
+.heading{
+  font-size: 26px;
+  line-height: 31px;
+  color: #161823;
+  font-family: "Lato";
+  font-weight: 900;
+}
+.contact-list-item li{
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: 400;
+  font-family: "Lato";
+}
+.contact-footer span{
+  display: list-item;
+  list-style: outside none none;
+  padding-top: 1rem;
+}
+.contact-footer .mail{
+  color: #0b7cfe;
+  font-size: 20px;
+  line-height: 24px;
+}
