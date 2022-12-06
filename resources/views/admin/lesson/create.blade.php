@@ -1,5 +1,7 @@
 @extends('admin.layout')
 @section('container')
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <div class="content-wrapper">
   <!-- Content -->
 
@@ -39,10 +41,10 @@
                 </div>
                 <div class="col-lg-6">
                   <label for="" class="mt-3">Course</label>
-                  <select name="course_id"  class="form-control" required>
-                    <option>Select Course</option>
+                  <select name="course_id"  class="form-control" required onchange="loadLessons(this)">
+                    <option value="" disabled selected>Select Course</option>
                     @foreach ($courses as $course)
-                      <option value="{{ $course->id }}">{{ $course->title }}</option>
+                      <option value="{{ $course->id }}" data-lessons-url="{{ route('lesson-json', $course->id) }}">{{ $course->title }}</option>
                     @endforeach
                   </select>
                   @error('course_id')
@@ -79,6 +81,12 @@
                   <textarea name="description" ></textarea>
                   
                 </div>
+                <div class="col-lg-6">
+                  <label for="" class="mt-3">Dependent On</label>
+                  <select id="dependencies" name="dependencies[]" class="form-control" multiple>
+                    <option value="" selected disabled>Select</option>
+                  </select>
+                </div>
                 <div class="col-lg-12">
                   <button type="submit" class="btn btn-outline-primary mt-4">Add</button>
                 </div>
@@ -109,6 +117,21 @@
   };
 </script>
 <script>
+  $('#dependencies').select2();
   CKEDITOR.replace( 'description' );
+</script>
+<script>
+  function loadLessons(self) {
+    let url = $(self).find(':selected').data('lessons-url');
+    $.ajax({
+      url: url,
+      type: 'GET',
+      success: function (res) {
+        res.forEach((lesson) => {
+          $('#dependencies').append('<option value="'+lesson.id+'">'+lesson.title+'</option>')
+        });
+      }
+    })
+  }
 </script>
 @endsection

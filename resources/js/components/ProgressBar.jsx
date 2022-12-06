@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 function ProgressBar({progress,lesson_id,total_exercise}) {
-    console.log(progress)
+    const progressBarRef = useRef();
     const {userProgress,setUserProgress}=useState();
     const user_id=localStorage.getItem('user_id');
     useEffect(()=>{
@@ -16,8 +16,12 @@ function ProgressBar({progress,lesson_id,total_exercise}) {
         }
     })
     });
+
+    if (progressBarRef.current !== undefined && progress === 100) {
+        setTimeout(() => progressBarRef.current.style.display = "none", 1000);
+    }
     return (
-        <div className="progress" style={{height: '10px', width: '50%'}}>
+        <div ref={progressBarRef} className="progress" style={{height: '10px', width: '50%'}}>
             <div className="progress-bar progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style={{width: progress + '%'}}></div>
         </div>
     )
