@@ -474,3 +474,50 @@ a{
   font-size: 20px;
   line-height: 24px;
 }
+.price-heading{
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 600;
+}
+.price-list-item div{
+  padding: 10px;
+  font-size: 16px;
+  line-height: 19px;
+}
+.price-footer .first-span{
+  font-size: 18px;
+  line-height: 21px;
+  font-family: "Lato";
+  font-weight:  900;
+  color: #161823;
+}
+.price-footer .second-span{
+  font-size: 16px;
+  line-height: 19px;
+  font-family: "Lato";
+  font-weight:  400;
+  color: #161823;
+}
+.price-list-item div img{
+  height: 40px;
+}
+.price-box{
+  border-radius: 7px;
+  border: 3px solid rgb(11, 124, 254);
+  margin: auto;
+  width: 35%;
+}
+.price-box div .row{
+  padding: 10px;
+}
+.price-btn{
+  font-weight: bold;
+  background-color: rgb(255, 121, 15);
+  border-color: rgb(255, 121, 15);
+  color: #333333;
+}
+.price-btn:hover{
+  background-color: rgb(255, 121, 15);
+  border-color: rgb(255, 121, 15);
+  color: #333333;
+}

@@ -21,9 +21,10 @@ function Test() {
                         <Option className='m-4'>Cat</Option>
                         <Option className='m-4'>Dog</Option>
                         <Option className='m-4'>Cow</Option>
+                        <Link to="/contact">Contact</Link>
+                        <Link to="/price">Pricing</Link>
                 </div>
             </div>
-            <Link to="/contact">Contact</Link>
         </>
     )
 }
