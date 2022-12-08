@@ -16,7 +16,8 @@ export default defineConfig({
                 'resources/css/login-page/js/imagesloaded.js',
                 'resources/css/login-page/js/validator.js',
                 'resources/css/listing/custom.css',
-                'resources/css/listing/bootstrap.js'
+                'resources/css/listing/bootstrap.js',
+                'resources/css/listing/bootstrap.css'
             ],
             refresh: true,
         }),
