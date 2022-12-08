@@ -87,7 +87,6 @@ export default function Setting() {
         "Authorization": `Bearer ${token1}`
 
       },
-      body:JSON.stringify(item)
     })
     result = await result.json()
     if(result && result.success==true){
