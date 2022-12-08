@@ -8,7 +8,6 @@
 
     @viteReactRefresh
     @vite('resources/js/app.js')
-    @vite('resources/css/login-page/css/stylee.css')
     
     @vite('resources/css/listing/bootstrap.css')
     @vite('resources/css/listing/custom.css')
