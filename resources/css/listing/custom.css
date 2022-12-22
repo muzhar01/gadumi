@@ -470,12 +470,12 @@ a{
   font-weight: 400;
   font-family: "Lato";
 }
-.contact-footer span{
+.contact-footer-section span{
   display: list-item;
   list-style: outside none none;
   padding-top: 1rem;
 }
-.contact-footer .mail{
+.contact-footer-section .mail{
   color: #0b7cfe;
   font-size: 20px;
   line-height: 24px;
@@ -564,4 +564,23 @@ a{
 .post-exercise-p{
   line-height: 32px;
   width: 500px;
+}
+.container-fluid .list-group-horizontal .list-group-item{
+  color: #666e7e;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 700;
+}
+.container-fluid div ul{
+  margin-left: 270px;
+}
+.container-fluid div span{
+  position: absolute;
+  right: 330px;
+}
+.contact-footer{
+  border-top: 1px solid #80808069;
+  border-bottom: 1px solid #80808069;
+  height: 55px;
+  padding-top: 13px;
 }
