@@ -87,11 +87,11 @@ a{
   font-size: 24px;
   line-height: 28px;
 }
-.knowledge-level{
+/* .knowledge-level{
   font-size: 16px;
   line-height: 19px;
   margin-left: 2.05rem;
-}
+} */
 .level{
   margin-left: 2rem;
 }
@@ -117,11 +117,27 @@ a{
   font-size: 24px;
   line-height: 28px;
 }
-@media (min-width: 992px){
+/* @media (min-width: 992px){
 .container, .container-lg, .container-md, .container-sm {
     max-width: 1154px!important;
 }
+} */
+.container {
+  padding-left: 0;
+  padding-right: 0;
 }
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1054px !important;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1054px !important;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .nav-lesson,.knowledge-level,.level{
     margin-left: 0px;
@@ -451,3 +467,77 @@ a{
   border: 1px solid rgb(22, 24, 35);
   color: #000000;
 }
+
+/*====================== START: Header =======================*/
+.header {
+  padding: 0.5rem 0;
+}
+
+.header.bordered {
+  border-left: 1px solid rgb(230, 230, 230);
+  border-right: 1px solid rgb(230, 230, 230);
+  border-top: 1px solid rgb(230, 230, 230);
+  border-bottom: 1px solid rgb(230, 230, 230);
+}
+/*====================== END: Header =======================*/
+
+
+/*====================== START: Lesson Progress =======================*/
+.lesson-progress {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .lesson-progress {
+      display: flex;
+      gap: 1rem;
+  }
+}
+
+.lesson-progress .lessons-count {
+  background-color: rgb(241, 241, 242);
+  border-radius: 3px;
+  padding: 0.25rem 1rem;
+}
+
+.lesson-progress .lessons-count .text {
+  color: #a3a3a3;
+  font-size: 16px;
+  line-height: 19px;
+  margin-right: 1rem;
+}
+
+.lesson-progress .lessons-count .count {
+  color: #333333;
+  font-size: 22px;
+  line-height: 28px;
+  font-weight: 500;
+}
+
+.lesson-progress .knowledge-level {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.lesson-progress .knowledge-level .text {
+  color: #a3a3a3;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.lesson-progress .knowledge-level .percentage {
+  background-color: rgb(11, 124, 254);
+  border-radius: 3px;
+  color: #ffffff;
+  font-size: 26px;
+  line-height: 28px;
+  font-weight: 600;
+  padding: 0.3rem 1.37rem;
+}
+.lesson-progress .knowledge-level .percentage .symbol {
+  font-size: 20px;
+  line-height: 21px;
+  margin-left: 2px;
+}
+/*====================== END: Lesson Progress =======================*/

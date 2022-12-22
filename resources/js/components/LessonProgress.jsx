@@ -19,20 +19,14 @@ function LessonProgress() {
       }, []);
 
     return (
-        <div className="collapse navbar-collapse">
-            <div className="navbar-text me-auto">
-            
+        <div className="lesson-progress">
+            <div className="lessons-count">
+                <span className="text">Completed Lessons</span>
+                <span className="count">{userProgress} out {lesson.length}</span>
             </div>
-            <div className="lesson-complete me-4 hide-mobile">
-                <span className="complete-lesson">completed lessons</span>
-                <span className="lesson-count">{userProgress} of {lesson.length}</span>
-            </div>
-            <span className="navbar-text hide-mobile">
-            Your knowledge of this level
-            </span>
-            
-            <div className="nav-item level hide-mobile">
-                <span>{((userProgress/lesson.length)*100).toFixed(0)}%</span>
+            <div className="knowledge-level">
+                <span className="text">Your knowledge of this level</span>
+                <span className="percentage">{((userProgress/lesson.length)*100).toFixed(0)}<span className="symbol">%</span></span>
             </div>
         </div>
     )

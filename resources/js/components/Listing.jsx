@@ -33,7 +33,7 @@ export default function Listing() {
   
   return (
     <>
-      <Header>
+      <Header className="bordered">
         <Logo />
         <MobileMenu />
         <LessonProgress />
