@@ -436,13 +436,19 @@ a{
   font-size: 36px;
   line-height: 43px;
   color: #161823;
-  font-weight: 900; 
+  font-weight: 900;
+  margin-bottom: 10px;
 }
-.congrats-desc{
+.congrats-h2{
   text-align: center;
   font-size: 30px;
   font-weight: bold;
   color: #161823;
+  margin-bottom: 17px;
+}
+.congrats-desc{
+  width: 455px;
+  text-align: center;
 }
 .congrats-btn{
   opacity: 1;
@@ -662,3 +668,130 @@ a{
   margin-right: 0.7rem;
 }
 /*====================== END: Menu =======================*/
+.heading{
+  font-size: 26px;
+  line-height: 31px;
+  color: #161823;
+  font-family: "Lato";
+  font-weight: 900;
+}
+.contact-list-item li{
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: 400;
+  font-family: "Lato";
+}
+.contact-footer-section span{
+  display: list-item;
+  list-style: outside none none;
+  padding-top: 1rem;
+}
+.contact-footer-section .mail{
+  color: #0b7cfe;
+  font-size: 20px;
+  line-height: 24px;
+}
+.price-heading{
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 600;
+}
+.price-list-item div{
+  padding: 10px;
+  font-size: 16px;
+  line-height: 19px;
+}
+.price-footer .first-span{
+  font-size: 18px;
+  line-height: 21px;
+  font-family: "Lato";
+  font-weight:  900;
+  color: #161823;
+}
+.price-footer .second-span{
+  font-size: 16px;
+  line-height: 19px;
+  font-family: "Lato";
+  font-weight:  400;
+  color: #161823;
+}
+.price-list-item div img{
+  height: 40px;
+}
+.price-box{
+  border-radius: 7px;
+  border: 3px solid rgb(11, 124, 254);
+  margin: auto;
+  width: 35%;
+}
+.price-box div .row{
+  padding: 10px;
+}
+.price-btn{
+  font-weight: bold;
+  background-color: rgb(255, 121, 15);
+  border-color: rgb(255, 121, 15);
+  color: #333333;
+}
+.price-btn:hover{
+  background-color: rgb(255, 121, 15);
+  border-color: rgb(255, 121, 15);
+  color: #333333;
+}
+.continue-btn{
+  padding-top: 10px;
+  opacity: 1;
+  background-color: rgb(11, 124, 254);
+  background-size: cover;
+  background-attachment: scroll;
+  background-repeat: repeat;
+  background-position: left top;
+  border-radius: 100px;
+  border-left: 1px solid rgb(22, 24, 35);
+  border-right: 1px solid rgb(22, 24, 35);
+  border-top: 1px solid rgb(22, 24, 35);
+  border-bottom: 1px solid rgb(22, 24, 35);
+  box-shadow: none;
+  width: 208px;
+  height: 50px;
+}
+.congrats-main{
+  margin-top: 55px;
+}
+.lesson-h4{
+  color: #0b7cfe;
+  margin-bottom: 38px;
+  font-size: 17px;
+  line-height: 20px;
+
+}
+.post-exercise-h4{
+  color: #0b7cfe;
+  margin-bottom: 38px;
+  font-size: 17px;
+  line-height: 20px;
+
+}
+.post-exercise-p{
+  line-height: 32px;
+  width: 500px;
+}
+.container-fluid .list-group-horizontal .list-group-item{
+  color: #666e7e;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 700;
+}
+.container-fluid div ul{
+  margin-left: 270px;
+}
+.container-fluid div span{
+  position: absolute;
+  right: 330px;
+}
+.contact-footer{
+  border-top: 1px solid #80808069;
+  border-bottom: 1px solid #80808069;
+  height: 55px;
+  padding-top: 13px;
+}

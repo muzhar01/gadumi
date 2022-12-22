@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Header from "./Header";
 import ImageContent from "./ImageContent";
 import Logo from "./Logo";
@@ -17,9 +18,11 @@ function Test() {
                             Whats in the image?
                     </ImageContent> */}
 
-                    <Option className='m-4'>Cat</Option>
-                    <Option className='m-4'>Dog</Option>
-                    <Option className='m-4'>Cow</Option>
+                        <Option className='m-4'>Cat</Option>
+                        <Option className='m-4'>Dog</Option>
+                        <Option className='m-4'>Cow</Option>
+                        <Link to="/contact">Contact</Link>
+                        <Link to="/price">Pricing</Link>
                 </div>
             </div>
         </>

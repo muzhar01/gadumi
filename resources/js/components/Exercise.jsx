@@ -49,19 +49,20 @@ export default function Exercise() {
   }, [currentExercise]);
   return (
     <>
-        <Header>
-          <Logo />
-          <ExerciseProgressBar progress={progressPercentage} lesson_id={param.id} total_exercise={exercises.length}/>
-          <LessonClose />
-        </Header>
+        
           { !progressPercentage || progressPercentage < 100?
               <>
+              <Header>
+                <Logo />
+                <ExerciseProgressBar progress={progressPercentage} lesson_id={param.id} total_exercise={exercises.length}/>
+                <LessonClose />
+              </Header>
                 <div className="container">
                   <PostExercise key={currentExercise + 'e'} exercise={exercises.length > 0? exercises[currentExercise]: null}/>
                 </div>
                 <BottomBar>
                     <div className="text-center p-4">
-                        <button className="btn btn-primary" onClick={(event) => loadNextExercise(event)}>Next</button>
+                        <button className="btn continue-btn text-white" onClick={(event) => loadNextExercise(event)}>Next</button>
                     </div>
                 </BottomBar>
                 

@@ -1,0 +1,39 @@
+{
+  "resources/js/app.js": {
+    "file": "assets/app.c649e319.js",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "css": [
+      "assets/app.26b45885.css"
+    ]
+  },
+  "resources/css/app.css": {
+    "file": "assets/app.7c3c19f82.js",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/css/listing/bootstrap.js": {
+    "file": "assets/bootstrap.ace09dab.js",
+    "src": "resources/css/listing/bootstrap.js",
+    "isEntry": true
+  },
+  "resources/js/app.css": {
+    "file": "assets/app.26b45885.css",
+    "src": "resources/js/app.css"
+  },
+  "resources/css/listing/custom.css": {
+    "file": "assets/custom.823f0686.css",
+    "src": "resources/css/listing/custom.css",
+    "isEntry": true
+  },
+  "resources/sass/app.scss": {
+    "file": "assets/app.525f5899.css",
+    "src": "resources/sass/app.scss",
+    "isEntry": true
+  },
+  "resources/css/listing/bootstrap.css": {
+    "file": "assets/bootstrap.df9343e5.css",
+    "src": "resources/css/listing/bootstrap.css",
+    "isEntry": true
+  }
+}

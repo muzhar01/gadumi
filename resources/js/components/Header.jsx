@@ -27,7 +27,6 @@ function Header({children, className = ''}) {
                     {children}
                 </nav>
             </div>
-            {/* <div className="border-bottom mt-2"></div> */}
         </header>
     )
 }

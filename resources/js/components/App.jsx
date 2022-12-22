@@ -14,6 +14,8 @@ import Replay from './Replay';
 import ReplayView from './ReplayView';
 import Congrats from './Congrats';
 import Test from './Test';
+import Contact from './Contact';
+import Price from './Price';
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem('token'));
@@ -44,6 +46,8 @@ function App() {
                   <Route exact path="lesson1" element={<Lesson1 />} />
                   <Route exact path="congrats" element={<Congrats />} />
                   <Route exact path='test' element={<Test />} />
+                  <Route exact path='contact' element={<Contact />} />
+                  <Route exact path='price' element={<Price />} />
                 </>
               }
 
