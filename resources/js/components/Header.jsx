@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-function Header({children,borderBottom}) {
+function Header({children, className = ''}) {
     const header = useRef();
     const [headerHeight, setHeaderHeight] = useState(header.current? header.current.clientHeight: 0);;
     let resizeObserver;
@@ -15,25 +15,18 @@ function Header({children,borderBottom}) {
             resizeObserver.observe(header.current);
         }
 
-        // Get Bottom Bar Height
+        // Get Top Bar Height
         const root = document.querySelector('#root');
         root.style.marginTop = (headerHeight === 0? headerHeight: header.current.clientHeight) + 'px';
     });
     
     return (
-        <header ref={header} className="position-fixed w-100 top-0 bg-white" style={{zIndex: 100}}>
+        <header ref={header} className={"header position-fixed w-100 top-0 bg-white " + className} style={{zIndex: 100}}>
             <div className="container">
-            <nav className="navbar navbar-expand-lg">
-                <div className="container-fluid">
-                {children}
-                </div>
-            </nav>
+                <nav className="navbar navbar-expand-lg">
+                    {children}
+                </nav>
             </div>
-            {
-                borderBottom==true?<div className="border-bottom mt-2"></div>:
-                ''
-            }
-            
         </header>
     )
 }

@@ -10,6 +10,8 @@ import Sidebar from './Sidebar';
 import LessonMenu from './LessonMenu';
 import LevelSelect from './LevelSelect';
 import Menu from './Menu';
+import Content from './Content';
+import Divider from './Divider';
 
 export default function Listing() {
   const [lessons, setLessons] = useState([]);
@@ -34,12 +36,65 @@ export default function Listing() {
   
   return (
     <>
-      <Header borderBottom={borderBottom}>
+      <Header className="bordered">
         <Logo />
         <MobileMenu />
         <LessonProgress />
       </Header>
-      <div className="container pt-5">
+      <div className="container">
+        <div className="row">
+          <div className="col-4 d-none d-lg-block">
+            <Sidebar>
+              <LessonMenu />
+              <Divider />
+              <LevelSelect setLevel={setLevel} />
+              <Divider />
+              <Menu />
+            </Sidebar>
+          </div>
+          <div className="col-12 col-lg-8">
+            <Content>
+              <ul className="list-group">
+                {
+                    lessons.map((lesson)=>{
+                      if (lesson.level !== level) return;
+
+                   return <Link to={`lessonDetail/${lesson.id}`} key={lesson.id} className="lesson-heading">
+                   <li  className="list-group-item course-listing">
+                    <div className="row border-bottom">
+                      <div className="col-11 course-list"> 
+                        <div className="row">
+                          <div className="col-4 col-md-2 col-lg-2">
+                            
+                            <img src={lesson.image} alt="" srcSet=""/>
+                          </div>
+                          <div className="col-6 col-md-9 col-lg-9 ms-4">
+                            
+                            <h2 className="lesson-heading" style={{';font_size':`${setting.color}`,';line_spacing':`${setting.color}`,';font_weight':`${setting.color}`}}>{i}.{lesson.title}</h2>
+                            <span className="d-block text-muted">lesson time: 7 min</span><br/>
+                          </div>
+                        </div>
+                        <p>{lesson.overview}</p>
+                      </div>
+                      <div className="col-1 d-block check-image">
+                        <img src={lesson?.progress && lesson.progress.progress == 100 ? '../images/check_success.svg' : '../images/check.svg'} alt=""/>
+                      </div>
+                    </div>
+                  </li></Link>
+                })
+                }
+              </ul>
+            </Content>
+          </div>
+        </div>
+      </div>
+      <MobileBottomSidebar/>
+    </>
+  )
+}
+
+
+/*<div className="container pt-5">
         <div className="container-fluid">
           <div className="row">
             <div className="col-lg-12 d-block d-md-none">
@@ -103,8 +158,4 @@ export default function Listing() {
             </div>
           </div>
         </div>
-      </div>
-      <MobileBottomSidebar/>
-    </>
-  )
-}
+      </div>*/
