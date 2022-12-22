@@ -11,6 +11,7 @@ import LessonMenu from './LessonMenu';
 import LevelSelect from './LevelSelect';
 import Menu from './Menu';
 import Content from './Content';
+import Divider from './Divider';
 
 export default function Listing() {
   const [lessons, setLessons] = useState([]);
@@ -44,6 +45,7 @@ export default function Listing() {
           <div className="col-4 d-none d-lg-block">
             <Sidebar>
               <LessonMenu />
+              <Divider />
             </Sidebar>
           </div>
           <div className="col-12 col-lg-8">
