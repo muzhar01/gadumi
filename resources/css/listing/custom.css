@@ -420,13 +420,19 @@ a{
   font-size: 36px;
   line-height: 43px;
   color: #161823;
-  font-weight: 900; 
+  font-weight: 900;
+  margin-bottom: 10px;
 }
-.congrats-desc{
+.congrats-h2{
   text-align: center;
   font-size: 30px;
   font-weight: bold;
   color: #161823;
+  margin-bottom: 17px;
+}
+.congrats-desc{
+  width: 455px;
+  text-align: center;
 }
 .congrats-btn{
   opacity: 1;
@@ -520,4 +526,42 @@ a{
   background-color: rgb(255, 121, 15);
   border-color: rgb(255, 121, 15);
   color: #333333;
+}
+.continue-btn{
+  padding-top: 10px;
+  opacity: 1;
+  background-color: rgb(11, 124, 254);
+  background-size: cover;
+  background-attachment: scroll;
+  background-repeat: repeat;
+  background-position: left top;
+  border-radius: 100px;
+  border-left: 1px solid rgb(22, 24, 35);
+  border-right: 1px solid rgb(22, 24, 35);
+  border-top: 1px solid rgb(22, 24, 35);
+  border-bottom: 1px solid rgb(22, 24, 35);
+  box-shadow: none;
+  width: 208px;
+  height: 50px;
+}
+.congrats-main{
+  margin-top: 55px;
+}
+.lesson-h4{
+  color: #0b7cfe;
+  margin-bottom: 38px;
+  font-size: 17px;
+  line-height: 20px;
+
+}
+.post-exercise-h4{
+  color: #0b7cfe;
+  margin-bottom: 38px;
+  font-size: 17px;
+  line-height: 20px;
+
+}
+.post-exercise-p{
+  line-height: 32px;
+  width: 500px;
 }

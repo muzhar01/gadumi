@@ -27,7 +27,7 @@ export default function LessonDetail() {
       </Header>
       <div className="container pt-5">
           <div className="container-fluid">
-              <h4 className="text-center" style={{color: '#0b7cfe'}}>{ lesson.title }</h4>
+              <h4 className="text-center lesson-h4">{ lesson.title }</h4>
               <div style={{width: '366px', height: '221px', borderRadius: '15px', maxWidth: '100%'}} className="mb-3 d-flex align-items-center justify-content-center mx-auto overflow-hidden">
                   <img style={{minWidth: '100%', minHeight: '100%', borderRadius: '15px'}} src={lesson.image} />
               </div>
@@ -45,7 +45,7 @@ export default function LessonDetail() {
       </div>
       <BottomBar>
           <div className="text-center p-4">
-            <Link className="btn btn-outline-primary" to={`/portal/exercise/${lesson.id}`}>Continue</Link>
+            <Link className="btn continue-btn text-white" to={`/portal/exercise/${lesson.id}`}>Continue</Link>
           </div>
       </BottomBar>
     </>
