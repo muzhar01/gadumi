@@ -555,3 +555,42 @@ a{
   padding-top: 3rem;
 }
 /*====================== END: Page Layout =======================*/
+
+
+/*====================== START: Lesson Menu =======================*/
+.lesson-menu ul {
+  margin: 0;
+  padding: 0;
+}
+
+.lesson-menu ul li {
+  margin-bottom: 2rem;
+}
+
+.lesson-menu ul li a {
+  color: #161823;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+}
+
+.lesson-menu ul li a img {
+  margin-right: 1rem;
+}
+
+
+.lesson-menu ul li a.active {
+  color: #0073ff;
+}
+
+.lesson-menu ul li a.active .icon, .lesson-menu ul li a .icon-active {
+  display: none;
+}
+
+.lesson-menu ul li a.active .icon-active{
+  display: block;
+}
+/*====================== END: Lesson Menu =======================*/

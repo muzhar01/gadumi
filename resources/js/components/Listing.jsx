@@ -43,7 +43,7 @@ export default function Listing() {
         <div className="row">
           <div className="col-4 d-none d-lg-block">
             <Sidebar>
-              <h1>Sidebar</h1>
+              <LessonMenu />
             </Sidebar>
           </div>
           <div className="col-12 col-lg-8">
