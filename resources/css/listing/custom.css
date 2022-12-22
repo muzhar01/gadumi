@@ -600,3 +600,35 @@ a{
   display: block;
 }
 /*====================== END: Lesson Menu =======================*/
+
+/*====================== START: Level Select =======================*/
+.level-select {
+  padding-top: 1.5rem;
+  padding-bottom: 2.4rem;
+}
+
+.level-select label {
+  color: #b3b3b3;
+  font-size: 16px;
+  line-height: 19px;
+  margin-bottom: 1.12rem;
+}
+
+.level-select select {
+  color: #0b7cfe;
+  font-size: 20px;
+  line-height: 24px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  -moz-appearance: none;
+  /* Firefox */
+  -webkit-appearance: none;
+  /* Safari and Chrome */
+  appearance: none;
+  background: transparent;
+  background-size: 25px;
+  background-repeat: no-repeat;
+  background-position-x: 95%;
+  background-position-y: 55%;
+}
+/*====================== END: Level Select =======================*/

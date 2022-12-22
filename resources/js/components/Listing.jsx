@@ -46,6 +46,8 @@ export default function Listing() {
             <Sidebar>
               <LessonMenu />
               <Divider />
+              <LevelSelect setLevel={setLevel} />
+              <Divider />
             </Sidebar>
           </div>
           <div className="col-12 col-lg-8">
