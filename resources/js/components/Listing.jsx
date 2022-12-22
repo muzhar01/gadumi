@@ -48,6 +48,7 @@ export default function Listing() {
               <Divider />
               <LevelSelect setLevel={setLevel} />
               <Divider />
+              <Menu />
             </Sidebar>
           </div>
           <div className="col-12 col-lg-8">
