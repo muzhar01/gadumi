@@ -23,7 +23,7 @@ function BottomBar({children}) {
     });
 
     return (
-        <div ref={bottomBar} className="w-100 position-fixed bottom-0 bg-white" style={{boxShadow: '0px -4px 13px rgb(240 240 240)'}}>
+        <div ref={bottomBar} className="w-100 bg-white" style={{boxShadow: '0px -4px 13px rgb(240 240 240)',marginTop:'100px'}}>
             {children}
         </div>
     )

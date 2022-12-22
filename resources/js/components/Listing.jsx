@@ -30,10 +30,11 @@ export default function Listing() {
   let i = 1;
 
   const [level, setLevel] = useState( localStorage.lessonLevel? localStorage.lessonLevel: 'Beginner');
+  const [borderBottom, setBorderBottom] = useState(true);
   
   return (
     <>
-      <Header>
+      <Header borderBottom={borderBottom}>
         <Logo />
         <MobileMenu />
         <LessonProgress />

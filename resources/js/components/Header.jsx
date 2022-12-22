@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-function Header({children}) {
+function Header({children,borderBottom}) {
     const header = useRef();
     const [headerHeight, setHeaderHeight] = useState(header.current? header.current.clientHeight: 0);;
     let resizeObserver;
@@ -29,7 +29,11 @@ function Header({children}) {
                 </div>
             </nav>
             </div>
-            <div className="border-bottom mt-2"></div>
+            {
+                borderBottom==true?<div className="border-bottom mt-2"></div>:
+                ''
+            }
+            
         </header>
     )
 }
