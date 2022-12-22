@@ -542,3 +542,16 @@ a{
   font-weight: 700;
 }
 /*====================== END: Lesson Progress =======================*/
+
+
+/*====================== START: Page Layout =======================*/
+.sidebar {
+  position: sticky;
+  top: 61px;
+  padding-top: 3rem;
+}
+
+.content {
+  padding-top: 3rem;
+}
+/*====================== END: Page Layout =======================*/
