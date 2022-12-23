@@ -7,23 +7,27 @@ import MobileMenu from './MobileMenu'
 import Sidebar from './Sidebar'
 import LessonMenu from './LessonMenu'
 import Menu from './Menu'
+import Divider from './Divider'
+import Content from './Content'
 
 export default function Replay() {
   return (
     <>
-    <Header>
+    <Header className="bordered">
         <Logo />
         <MobileMenu />
     </Header>
-      <div className="container pt-5">
-        <div className="container-fluid">
-          <div className="row">
+    <div className="container">
+        <div className="row">
+          <div className="col-4 d-none d-lg-block">
             <Sidebar>
-                <LessonMenu />
-                <hr />
-                <Menu />
+              <LessonMenu />
+              <Divider />
+              <Menu />
             </Sidebar>
-            <div className="col-lg-8">
+          </div>
+          <div className="col-12 col-lg-8">
+            <Content>
               <div className="overflow-auto h-100">
                 <p className='text-center replay-heading'>W jaki sposób chcesz powtarzać?</p>
                 <div className='justify-content-center align-content-center'>
@@ -175,7 +179,7 @@ export default function Replay() {
                   </ul>
                 </div>
               </div>
-            </div>
+            </Content>
           </div>
         </div>
       </div>
