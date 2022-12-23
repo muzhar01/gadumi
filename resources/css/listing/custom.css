@@ -875,4 +875,8 @@ a{
   border-bottom: 1px solid #80808069;
   height: 55px;
   padding-top: 13px;
+  position: relative;
+}
+.contactFooter{
+  top:285px;
 }
