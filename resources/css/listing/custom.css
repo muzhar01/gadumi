@@ -222,9 +222,9 @@ a{
 .hide-scroll-bar{
   height: 500px;
 }
-/* ::-webkit-scrollbar{
+::-webkit-scrollbar{
   display: none;
-} */
+}
 .replay-heading{
   font-size: 18px;
   color: #161823;
@@ -476,13 +476,7 @@ a{
 
 /*====================== START: Header =======================*/
 .header {
-  padding: 1rem 1rem;
-}
-
-@media (min-width: 992px) {
-  .header {
-    padding: 0.5rem 0;
-  }
+  padding: 0.5rem 0;
 }
 
 .header.bordered {
@@ -565,19 +559,6 @@ a{
 
 .content {
   padding-top: 3rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-@media (min-width: 992px) {
-  .sidebar {
-    padding-right: 1.875rem;
-  }
-
-  .content {
-    padding-top: 3rem;
-    padding-left: 3rem;
-  }
 }
 
 .divider {
