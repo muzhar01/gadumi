@@ -1,4 +1,5 @@
 import React from 'react'
+import Footer from './Footer'
 import Header from './Header'
 import Logo from './Logo'
 
@@ -27,19 +28,7 @@ export default function Contact() {
           <span>We will respond to your message within 48 hours</span>
         </div>
       </div>
-      <footer className='contact-footer'>
-      <div className="container-fluid">
-        <div className="d-flex">
-        <ul className='list-group list-group-horizontal'>
-          <li className='list-group-item'>Gadumi</li>
-          <li className='list-group-item'>Regulamin</li>
-          <li className='list-group-item'>Polityka prywatności</li>
-          <li className='list-group-item'>Kontakt</li>
-        </ul>
-        <span>Created with ❤️ by language lovers</span>
-        </div>
-      </div>
-      </footer>
+      <Footer className="footerContact"/>
     </>
   )
 }

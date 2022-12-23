@@ -1,36 +1,37 @@
 import React from 'react'
+import Footer from './Footer'
 import Header from './Header'
 import Logo from './Logo'
 
 export default function Price() {
   return (
     <>
-      <Header>
+      <Header className="bordered">
         <Logo />
       </Header>
-      <div className="container pt-4">
-        <h4 className='price-heading text-center'>Access the full course capabilities</h4>
+      <div className="container price-container">
+        <h4 className='price-heading text-center'>Uzyskaj dostęp do pełnych możliwości kursu</h4>
         <div className="row price-list-item">
-          <div className="col-lg-6">
+          <div className="col-lg-5">
             <img src="/images/tick-mark.svg" alt="" />
-            Access to all developed lessons
+            <span>Dostęp do wszystkich opracowanych lekcji</span>
           </div>
-          <div className="col-lg-6">
+          <div className="col-lg-5">
           <img src="/images/tick-mark.svg" alt="" />
-            Grammar lessons
+            <span>Lekcje gramatyki</span>
           </div>
-          <div className="col-lg-6">
+          <div className="col-lg-5">
             <img src="/images/tick-mark.svg" alt="" /> 
-            Over 1000 new words only at "Beginner A1" level
+            <span>Ponad 1000 nowych słów tylko na poziomie "Początkujący A1"</span>
           </div>
-          <div className="col-lg-6">
+          <div className="col-lg-5">
             <img src="/images/tick-mark.svg" alt="" /> 
-            New lessons every week until "Advanced C1" is completed
+            <span>Nowe lekcje każdego tygodnia aż do ukończenia poziomu "Zaawansowany C1"</span>
           </div>
         </div>
         <div className='price-footer mt-4'>
-          <p className='first-span'>Now Premium Account at a reduced price!</p>
-          <span className='second-span'>Until the Gadumi team completes the "Advanced C1" level, access to the Premium Account at one low price!</span>
+          <p className='first-span'>Teraz Konto Premium w obniżonej cenie!</p>
+          <span className='second-span'>Do momentu ukończenia przez zespół Gadumi poziomu "Zaawansowany C1" dostęp do Konta Premium w jednej, niskiej cenie!</span>
         </div>
         <div className="price-box justify-content-center mt-5">
           <div className="w-100">
@@ -47,6 +48,7 @@ export default function Price() {
           </div>
         </div>
       </div>
+      <Footer className="footerPrice"/>
     </>
   )
 }
