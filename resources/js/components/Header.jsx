@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 function Header({children, className = ''}) {
     const header = useRef();
-    const [headerHeight, setHeaderHeight] = useState(header.current? header.current.clientHeight: 0);;
+    const [headerHeight, setHeaderHeight] = useState(header.current? header.current.clientHeight: 0);
     let resizeObserver;
 
     useEffect(() => {
