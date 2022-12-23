@@ -101,7 +101,7 @@ export default function Setting() {
 }
   return (
     <>
-    <Header>
+    <Header className="bordered">
       <Logo />
       <MobileMenu />
       <LessonProgress />
