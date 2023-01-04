@@ -46,11 +46,11 @@ export default function Replay() {
                   </ul>
                 </div>
                 <div className='mt-5'>
-                  <p style={{fontWeight: 'bold'}}>ilość słówek: 17</p>
+                  <p style={{fontWeight: 'bold', color:"#424242", marginLeft:"31px"}}>ilość słówek: 17</p>
                   <ul>
                       <li style={{borderBottom: '1px solid rgb(230, 230, 230)'}} className="d-flex gap-4 mb-2 pb-2">
                           <div className="flex-grow-1">
-                              <h4 className="m-0">hello</h4>
+                              <h4 className="m-0" style={{ fontSize:"18px" }}>hello</h4>
                               <p className="m-0">cześć</p>
                           </div>
                           <div className="d-flex align-items-center">
@@ -66,7 +66,7 @@ export default function Replay() {
                       </li>
                       <li style={{borderBottom: '1px solid rgb(230, 230, 230)'}} className="d-flex gap-4 mb-2 pb-2">
                           <div className="flex-grow-1">
-                              <h4 className="m-0">wonderful</h4>
+                              <h4 className="m-0" style={{ fontSize:"18px" }}>wonderful</h4>
                               <p className="m-0">wspaniały</p>
                           </div>
                           <div className="d-flex align-items-center">
@@ -82,7 +82,7 @@ export default function Replay() {
                       </li>
                       <li style={{borderBottom: '1px solid rgb(230, 230, 230)'}} className="d-flex gap-4 mb-2 pb-2">
                           <div className="flex-grow-1">
-                              <h4 className="m-0">fish</h4>
+                              <h4 className="m-0" style={{ fontSize:"18px" }}>fish</h4>
                               <p className="m-0">ryba</p>
                           </div>
                           <div className="d-flex align-items-center">
@@ -98,7 +98,7 @@ export default function Replay() {
                       </li>
                       <li style={{borderBottom: '1px solid rgb(230, 230, 230)'}} className="d-flex gap-4 mb-2 pb-2">
                           <div className="flex-grow-1">
-                              <h4 className="m-0">home</h4>
+                              <h4 className="m-0" style={{ fontSize:"18px" }}>home</h4>
                               <p className="m-0">dom</p>
                           </div>
                           <div className="d-flex align-items-center">
@@ -114,7 +114,7 @@ export default function Replay() {
                       </li>
                       <li style={{borderBottom: '1px solid rgb(230, 230, 230)'}} className="d-flex gap-4 mb-2 pb-2">
                           <div className="flex-grow-1">
-                              <h4 className="m-0">hello</h4>
+                              <h4 className="m-0" style={{ fontSize:"18px" }}>hello</h4>
                               <p className="m-0">cześć</p>
                           </div>
                           <div className="d-flex align-items-center">
@@ -130,7 +130,7 @@ export default function Replay() {
                       </li>
                       <li style={{borderBottom: '1px solid rgb(230, 230, 230)'}} className="d-flex gap-4 mb-2 pb-2">
                           <div className="flex-grow-1">
-                              <h4 className="m-0">wonderful</h4>
+                              <h4 className="m-0" style={{ fontSize:"18px" }}>wonderful</h4>
                               <p className="m-0">wspaniały</p>
                           </div>
                           <div className="d-flex align-items-center">
@@ -146,7 +146,7 @@ export default function Replay() {
                       </li>
                       <li style={{borderBottom: '1px solid rgb(230, 230, 230)'}} className="d-flex gap-4 mb-2 pb-2">
                           <div className="flex-grow-1">
-                              <h4 className="m-0">fish</h4>
+                              <h4 className="m-0" style={{ fontSize:"18px" }}>fish</h4>
                               <p className="m-0">ryba</p>
                           </div>
                           <div className="d-flex align-items-center">
@@ -162,7 +162,7 @@ export default function Replay() {
                       </li>
                       <li style={{borderBottom: '1px solid rgb(230, 230, 230)'}} className="d-flex gap-4 mb-2 pb-2">
                           <div className="flex-grow-1">
-                              <h4 className="m-0">home</h4>
+                              <h4 className="m-0" style={{ fontSize:"18px" }}>home</h4>
                               <p className="m-0">dom</p>
                           </div>
                           <div className="d-flex align-items-center">

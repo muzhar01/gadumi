@@ -18,26 +18,24 @@ const PostExercise=({exercise}) => {
 
   return (
       <div className="container-fluid">
-          <h4 className="text-center post-exercise-h4">{exercise.title}</h4>
+          <h4 className="text-center post-exercise-h4" style={{ fontSize:"20px", fontWeight:500, marginTop:"68px" }}>{exercise.title}</h4>
           {exercise.image?
             <div style={{width: '366px', height: '221px', borderRadius: '15px', maxWidth: '100%'}} className="mb-3 d-flex align-items-center justify-content-center mx-auto overflow-hidden">
             <img style={{minWidth: '100%', minHeight: '100%', borderRadius: '15px'}} src={exercise.image} />
             </div> : ''
           }
           <div style={{width: '366px', maxWidth: '100%'}} className="mx-auto">
-              <p className="text-center mb-1">{exercise.content}</p>
-              <p className="text-center">cześć</p>
+              <p className="text-center mb-1" style={{ fontSize:"20px", fontWeight:"bold" }}>{exercise.content}</p>
+              <p className="text-center" style={{ fontWeight:500, fontSize:"18px", color:"#7a7777" }}>cześć</p>
               <div className="mb-4">
-                  <span style={{width: '50px', height: '50px'}} className="d-block mx-auto">
-                      <img style={{width: '100%'}} src="https://gadumi.pl/lib/glcqhy/glosniczek-maly-powtorki-l9zfjbve.svg" />
-                  </span>
+                <img style={{width: '100%', height:"4.7vh"}} src="https://gadumi.pl/lib/glcqhy/glosniczek-maly-powtorki-l9zfjbve.svg" />
               </div>
               <p className='post-exercise-p'>{exercise.description}</p>
               {(exercise.questions?
                 exercise.questions.map(question=>(
                   <>
                     <div key={question.id + 'q'}>
-                      <h1 className='exercise-question'>{question.content}</h1>
+                      <h1 className='exercise-question text-center'>{question.content}</h1>
                       {question.image?
                         <img src={question.image} alt="" className='lesson-img d-block m-auto'/> : ''
                       }

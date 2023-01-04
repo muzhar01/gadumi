@@ -11,20 +11,12 @@ export default function Contact() {
       </Header>
       <div className="container pt-4">
         <h4 className='heading'>Contact</h4>
-        <ul className='contact-list-item pl-0 pb-1'>
-          <li>
-            Have additional questions?
-          </li>
-          <li>
-            Want to report a bug or a problem?
-          </li>
-          <li>
-            Or maybe you would like to establish cooperation with us?
-          </li>
-        </ul>
+            <p style={{ fontSize:"20.5px" }}>Have additional questions?</p>
+            <p style={{ fontSize:"20.5px" }}> Want to report a bug or a problem?</p>
+            <p style={{ fontSize:"20.5px" }}>  Or maybe you would like to establish cooperation with us?</p>
         <div className='contact-footer-section'>
-          <span>Send us a message at:</span>
-          <span className='mail'>biuro@gadumi.pl</span>
+          <span style={{ fontSize:"22px" }}>Send us a message at:</span>
+          <span className='mail' style={{ fontWeight:500 }}>biuro@gadumi.pl</span>
           <span>We will respond to your message within 48 hours</span>
         </div>
       </div>
