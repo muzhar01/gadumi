@@ -875,4 +875,27 @@ a{
   border-bottom: 1px solid #80808069;
   height: 55px;
   padding-top: 13px;
+  position: relative;
+}
+.contactFooter{
+  top:285px;
+}
+.priceFooter{
+  top:90px;
+}
+@media (max-width:768px)  {
+  .price-list-item div{
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 15px;
+    font-size: 16px;
+    line-height: 19px;
+    padding-right:0;
+  }
+  .price-list-item div img {
+    height: 53px;
+  }
+  .price-list-text{
+    font-size: 21px;
+  }
 }
