@@ -19,6 +19,7 @@ import Price from './Price';
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem('token'));
+  document.getElementsByTagName("body")[0].style.background = "white";
   
     return (
         <BrowserRouter >

@@ -32,6 +32,7 @@ export default function Listing() {
   let i = 1;
 
   const [level, setLevel] = useState( localStorage.lessonLevel? localStorage.lessonLevel: 'Beginner');
+  document.getElementsByTagName("body")[0].style.background = "white";
   
   return (
     <>

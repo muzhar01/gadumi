@@ -47,17 +47,30 @@ export default function Exercise() {
   useEffect(() => {
     setProgressPercentage((currentExercise / exercises.length) * 100);
   }, [currentExercise]);
+
+  let is_mbl = false;
+  if(window.matchMedia("(max-width: 767px)").matches){
+      is_mbl = true;
+  }
+
   return (
     <>
         
           { !progressPercentage || progressPercentage < 100?
               <>
               <Header>
-                <Logo />
+                {!is_mbl?
+                  <>
+                  <Logo />
+                  </>
+                  :
+                  <></>
+                }
                 <ExerciseProgressBar progress={progressPercentage} lesson_id={param.id} total_exercise={exercises.length}/>
                 <LessonClose />
               </Header>
                 <div className="container">
+                  <h4>{currentExercise.title}</h4>
                   <PostExercise key={currentExercise + 'e'} exercise={exercises.length > 0? exercises[currentExercise]: null}/>
                 </div>
                 <BottomBar>

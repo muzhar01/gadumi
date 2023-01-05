@@ -17,7 +17,7 @@ const PostExercise=({exercise}) => {
   };
 
   return (
-      <div className="container-fluid">
+      <div className="container-fluid" style={{ minHeight:"63vh", display:"flex", flexDirection:"column", justifyContent:"center" }}>
           <h4 className="text-center post-exercise-h4" style={{ fontSize:"20px", fontWeight:500, marginTop:"68px" }}>{exercise.title}</h4>
           {exercise.image?
             <div style={{width: '366px', height: '221px', borderRadius: '15px', maxWidth: '100%'}} className="mb-3 d-flex align-items-center justify-content-center mx-auto overflow-hidden">

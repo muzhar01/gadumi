@@ -21,7 +21,7 @@ function ProgressBar({progress,lesson_id,total_exercise}) {
         setTimeout(() => progressBarRef.current.style.display = "none", 1000);
     }
     return (
-        <div ref={progressBarRef} className="progress" style={{height: '10px', width: '50%', marginLeft:"107px"}}>
+        <div ref={progressBarRef} className="progress prog-bar" style={{height: '10px', width: '50%', marginLeft:"87px"}}>
             <div className="progress-bar progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style={{width: progress + '%'}}></div>
         </div>
     )

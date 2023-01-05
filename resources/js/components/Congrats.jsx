@@ -1,8 +1,18 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import Logo from './Logo';
+import MobileCongrats from './MobileCongrats';
+
 export default function Congrats() {
+    let is_mbl = false;
+    if(window.matchMedia("(max-width: 767px)").matches){
+        is_mbl = true;
+    }
+
   return (
+    
+    <>
+    {!is_mbl?
     <>
         <header className="position-fixed w-100 top-0 bg-white" style={{zIndex: 100}}>
             <div className="container">
@@ -34,6 +44,12 @@ export default function Congrats() {
                 <Link to='/portal' className="btn btn-primary congrats-btn">Continue</Link>
             </div>
         </div>
+        </>
+            :
+            <>
+            <MobileCongrats/>
+            </>
+            }
     </>
 )
 }

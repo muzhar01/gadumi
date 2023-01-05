@@ -18,6 +18,9 @@ export default function LessonDetail() {
       setPost(response.data.data);
     });
   }, []);
+
+  document.getElementsByTagName("body")[0].style.background = "white";
+  
   return (
     <>
       <Header>
@@ -34,10 +37,8 @@ export default function LessonDetail() {
               <div style={{width: '366px'}} className="mx-auto">
                   <h2 className="text-center mb-1">{ lesson.overview }</h2>
                   <p className="text-center">cześć</p>
-                  <div className="mb-4">
-                      <span style={{width: '50px', height: '50px'}} className="d-block mx-auto">
-                          <img style={{width: '100%'}} src="https://gadumi.pl/lib/glcqhy/glosniczek-maly-powtorki-l9zfjbve.svg" />
-                      </span>
+                  <div className='d-flex justify-content-center'>
+                    <img style={{width: '50px', height: '50px'}} src="https://gadumi.pl/lib/glcqhy/glosniczek-maly-powtorki-l9zfjbve.svg" alt="" />
                   </div>
                   <p className='text-center'>{ lesson.description }🤝</p>
               </div>
