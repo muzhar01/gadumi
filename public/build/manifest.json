@@ -1,6 +1,6 @@
 {
   "resources/js/app.js": {
-    "file": "assets/app.c649e319.js",
+    "file": "assets/app.c44fadea.js",
     "src": "resources/js/app.js",
     "isEntry": true,
     "css": [
@@ -17,23 +17,23 @@
     "src": "resources/css/listing/bootstrap.js",
     "isEntry": true
   },
+  "resources/css/listing/custom.css": {
+    "file": "assets/custom.92ee7c09.css",
+    "src": "resources/css/listing/custom.css",
+    "isEntry": true
+  },
   "resources/js/app.css": {
     "file": "assets/app.26b45885.css",
     "src": "resources/js/app.css"
   },
-  "resources/css/listing/custom.css": {
-    "file": "assets/custom.823f0686.css",
-    "src": "resources/css/listing/custom.css",
+  "resources/css/listing/bootstrap.css": {
+    "file": "assets/bootstrap.df9343e5.css",
+    "src": "resources/css/listing/bootstrap.css",
     "isEntry": true
   },
   "resources/sass/app.scss": {
     "file": "assets/app.525f5899.css",
     "src": "resources/sass/app.scss",
-    "isEntry": true
-  },
-  "resources/css/listing/bootstrap.css": {
-    "file": "assets/bootstrap.df9343e5.css",
-    "src": "resources/css/listing/bootstrap.css",
     "isEntry": true
   }
 }
