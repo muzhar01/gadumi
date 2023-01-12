@@ -9,13 +9,13 @@ function MobileMenu() {
             <div className="collapse navbar-collapse" id="navbarText">
                 <ul className="navbar-nav d-block d-md-none">
                     <li className="nav-item">
-                        <Link to="/setting" className="nav-link settings">Settings</Link>  
+                        <Link to="setting" className="nav-link settings">Settings</Link>  
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#">Price</a>
+                        <Link to="price" className="nav-link" href="#">Price</Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#">Contact</a>
+                        <Link to="contact" className="nav-link" href="#">Contact</Link>
                     </li>
                     <li className="nav-item">
                         <Link to="/logout" className="nav-link logout">Logout</Link>

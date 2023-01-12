@@ -11,13 +11,13 @@ function Menu() {
               </Link>
             </li>
             <li>
-              <Link to="#" className="prime_account">
+              <Link to="price" className="prime_account">
                 <img src="/images/prime_account.svg" width="40" height="40" alt=""/>
                 <span>Premium account</span>
               </Link>
             </li>
             <li>
-              <Link to="#" className="contact_us">
+              <Link to="contact" className="contact_us">
                 <img src="/images/contact_us.svg" width="40" height="40" alt=""/>
                 <span>contact us</span>
               </Link>
